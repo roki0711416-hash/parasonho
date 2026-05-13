@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fff6;
+  --foreground: #123524;
 }
 
 @theme inline {
@@ -14,13 +14,50 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f8fff6;
+    --foreground: #123524;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0d6938;
+  letter-spacing: 0.01em;
+}
+
+.section-subtitle {
+  margin-top: 0.75rem;
+  max-width: 48rem;
+  color: #2d5d43;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.card {
+  border: 1px solid #d8eacb;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px -20px rgba(17, 84, 47, 0.45);
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
 }
