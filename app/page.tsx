@@ -231,7 +231,7 @@ export default function Home() {
                 無料相談フォームへ
               </a>
               <a
-                href="mailto:info@parasonho.jp"
+                href="mailto:parasonho.jp@outlook.jp"
                 className="w-full rounded-full border border-white/60 px-8 py-3 text-center text-sm font-semibold transition hover:bg-white/10 sm:w-auto"
               >
                 メールで問い合わせ
