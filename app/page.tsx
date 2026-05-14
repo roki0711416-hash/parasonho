@@ -1,3 +1,5 @@
+import ContactForm from "./components/ContactForm";
+
 export default function Home() {
   const navItems = [
     { href: "#service", label: "サービス内容" },
@@ -217,25 +219,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="bg-[#0e6537] py-16 text-white">
-          <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
-            <h2 className="text-2xl font-extrabold sm:text-3xl">お問い合わせ</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">
-              留学時期やレベルが決まっていなくても大丈夫です。まずは無料相談で、あなたに合ったサントス留学の進め方を一緒に整理しましょう。
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="#"
-                className="w-full rounded-full bg-[#ffcd00] px-8 py-3 text-center text-sm font-extrabold text-[#104f2c] transition hover:bg-[#ffd735] sm:w-auto"
-              >
-                無料相談フォームへ
-              </a>
-              <a
-                href="mailto:parasonho.jp@outlook.jp"
-                className="w-full rounded-full border border-white/60 px-8 py-3 text-center text-sm font-semibold transition hover:bg-white/10 sm:w-auto"
-              >
-                メールで問い合わせ
-              </a>
+        <section id="contact" className="bg-gradient-to-b from-[#0e6537] to-[#0a5a2e] py-16 text-white">
+          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+            <div className="text-center">
+              <h2 className="text-2xl font-extrabold sm:text-3xl">無料サッカー留学相談フォーム</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">
+                ブラジル・サントスでのサッカー留学について、期間・レベル・年齢問わずお気軽にご相談ください。
+              </p>
+            </div>
+            <div className="mt-10">
+              <ContactForm />
             </div>
           </div>
         </section>
