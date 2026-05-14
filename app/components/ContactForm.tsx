@@ -1,59 +1,44 @@
 "use client";
 
-import { useState } from "react";
-
-type Status = "idle" | "submitting" | "success" | "error";
-
 const periodOptions = ["1週間", "1ヶ月", "3ヶ月", "半年", "1年", "未定"];
+const to = "parasonho.jp@outlook.jp";
+const subject = "Para Sonho 無料相談";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<Status>("idle");
-  const [errorMessage, setErrorMessage] = useState<string>("");
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("submitting");
-    setErrorMessage("");
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    if (!form.reportValidity()) {
+      return;
+    }
+
+    const formData = new FormData(form);
     const payload: Record<string, string> = {};
     formData.forEach((value, key) => {
       payload[key] = typeof value === "string" ? value : "";
     });
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const fields: Array<[string, string]> = [
+      ["お名前", payload.name || ""],
+      ["フリガナ", payload.furigana || ""],
+      ["年齢", payload.age || ""],
+      ["メールアドレス", payload.email || ""],
+      ["電話番号", payload.phone || ""],
+      ["LINE ID", payload.line || ""],
+      ["サッカー歴", payload.soccerHistory || ""],
+      ["現在の所属チーム", payload.currentTeam || ""],
+      ["留学希望期間", payload.period || ""],
+      ["留学希望時期", payload.schedule || ""],
+      ["ポジション", payload.position || ""],
+      ["ポルトガル語経験", payload.portuguese || ""],
+      ["パスポート所持", payload.passport || ""],
+      ["相談内容", payload.message || ""],
+    ];
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message ?? "送信に失敗しました。");
-      }
-
-      setStatus("success");
-    } catch (err) {
-      setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "送信に失敗しました。");
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="rounded-3xl bg-white p-8 text-center shadow-xl sm:p-12">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#0d6938] text-2xl text-white">
-          ✓
-        </div>
-        <h3 className="text-xl font-extrabold text-[#0d6938] sm:text-2xl">
-          送信ありがとうございます。
-        </h3>
-        <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
-          内容を確認後、担当者よりご連絡いたします。
-        </p>
-      </div>
-    );
+    const body = fields.map(([label, value]) => `${label}: ${value}`).join("\n");
+    const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
   }
 
   const inputClass =
@@ -69,7 +54,6 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className="rounded-3xl bg-white p-6 shadow-xl sm:p-10"
-      noValidate
     >
       <div className="grid gap-5 md:grid-cols-2">
         <div>
@@ -215,19 +199,12 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {status === "error" && (
-        <p className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
-          {errorMessage || "送信に失敗しました。時間をおいて再度お試しください。"}
-        </p>
-      )}
-
       <div className="mt-8 flex flex-col items-center gap-3">
         <button
           type="submit"
-          disabled={status === "submitting"}
-          className="w-full rounded-full bg-[#ffcd00] px-8 py-4 text-base font-extrabold text-[#0e512e] shadow-md transition hover:bg-[#ffd735] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[280px]"
+          className="w-full rounded-full bg-[#ffcd00] px-8 py-4 text-base font-extrabold text-[#0e512e] shadow-md transition hover:bg-[#ffd735] sm:w-auto sm:min-w-[280px]"
         >
-          {status === "submitting" ? "送信中..." : "無料相談する"}
+          無料相談する
         </button>
         <p className="text-xs text-[#4f735f]">
           ご入力いただいた内容は、ご相談対応のみに使用いたします。
