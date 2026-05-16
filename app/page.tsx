@@ -47,49 +47,38 @@ export default function Home() {
 
       <main id="top">
         <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] text-white">
-          <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-[#ffcd00]/25 blur-3xl" />
-          <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-          <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center md:py-24">
-            <div>
-              <p className="mb-4 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs tracking-wide">
-                ブラジル サッカー留学サポート
-              </p>
-              <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
-                本場ブラジルで学ぶ、
-                <br />
-                次の一歩へ。
-              </h1>
-              <p className="mt-5 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                Para Sonho / パラソーニョ は、日本からブラジルへ挑戦する選手のための留学サポートサービスです。
-                現地生活・練習環境まで、安心して成長に集中できる環境を整えます。
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={LINE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#06C755] px-7 py-4 text-base font-extrabold text-white transition hover:bg-[#05b34c]"
-                >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                  LINEで無料相談
-                </a>
-                <a
-                  href="#service"
-                  className="rounded-full border border-white/70 px-7 py-3 text-center text-sm font-semibold transition hover:bg-white/15"
-                >
-                  サービスを見る
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-white/25 bg-white/10 p-6 shadow-2xl backdrop-blur-sm">
-              <h2 className="text-xl font-bold">留学サポート内容</h2>
-              <ul className="mt-4 space-y-3 text-sm text-white/90">
-                <li>⚽ 現地クラブ練習参加の調整</li>
-                <li>🧭 現地スタッフによる生活サポート</li>
-                <li>✈️ 渡航前オリエンテーション</li>
-                <li>📞 保護者への定期報告</li>
-              </ul>
+          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#ffcd00]/20 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
+          <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-4 py-24 text-center sm:px-6 md:py-36">
+            <p className="mb-6 inline-flex rounded-full border border-white/30 bg-white/10 px-5 py-1.5 text-xs tracking-widest text-white/80 uppercase">
+              Brazil Soccer Study Abroad
+            </p>
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl">
+              本場ブラジルで学ぶ、
+              <br />
+              <span className="text-[#ffcd00]">次の一歩へ。</span>
+            </h1>
+            <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/80 sm:text-base md:text-lg">
+              Para Sonho / パラソーニョ は、日本からブラジルへ挑戦する選手のための留学サポートサービスです。<br className="hidden sm:block" />
+              現地生活・練習環境まで、安心して成長に集中できる環境を整えます。
+            </p>
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] px-9 py-4 text-base font-extrabold text-white shadow-lg transition hover:bg-[#05b34c] sm:w-auto"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                LINEで無料相談
+              </a>
+              <a
+                href="#service"
+                className="w-full rounded-full border border-white/60 px-8 py-4 text-center text-sm font-semibold transition hover:bg-white/15 sm:w-auto"
+              >
+                サービスを見る
+              </a>
             </div>
           </div>
         </section>
