@@ -1,7 +1,7 @@
 "use client";
 
 const periodOptions = ["1週間", "1ヶ月", "3ヶ月", "半年", "1年", "未定"];
-const to = "parasonho.jp@outlook.jp";
+const to = "parasonho.info@gmail.com";
 const subject = "Para Sonho 無料相談";
 
 export default function ContactForm() {
