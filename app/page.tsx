@@ -119,53 +119,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">ブラジル留学の特徴</h2>
-          <p className="section-subtitle">
-            サッカー文化が根付くブラジル現地で、実践に近い環境に身を置くことで成長を加速させます。
-          </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <div className="card">
-              <h3 className="text-base font-bold">実践的なトレーニング環境</h3>
-              <p className="mt-2 text-sm text-[#2d5d43]">スピードと判断力が求められる環境で、プレーの質を高めます。</p>
-            </div>
-            <div className="card">
-              <h3 className="text-base font-bold">生活面まで伴走サポート</h3>
-              <p className="mt-2 text-sm text-[#2d5d43]">移動・生活導線を整え、競技に集中できる状態を作ります。</p>
-            </div>
-            <div className="card">
-              <h3 className="text-base font-bold">保護者も安心の体制</h3>
-              <p className="mt-2 text-sm text-[#2d5d43]">定期連絡と相談窓口により、離れていても状況を把握できます。</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" className="bg-[#f3faed] py-16">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <h2 className="section-title">料金イメージ</h2>
-            <p className="section-subtitle">正式見積は無料相談後にご案内します。以下は参考イメージです。</p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-[#d4e7c8] bg-white shadow-sm">
-              <div className="grid grid-cols-1 divide-y divide-[#e7f2dd] text-sm md:grid-cols-3 md:divide-x md:divide-y-0">
-                <div className="p-6">
-                  <p className="font-bold text-[#0d6938]">短期（1〜4週間）</p>
-                  <p className="mt-2 text-2xl font-extrabold">20〜45万円</p>
-                  <p className="mt-1 text-xs text-[#456c54]">渡航時期・滞在条件により変動</p>
-                </div>
-                <div className="p-6">
-                  <p className="font-bold text-[#0d6938]">中期（1〜3ヶ月）</p>
-                  <p className="mt-2 text-2xl font-extrabold">55〜120万円</p>
-                  <p className="mt-1 text-xs text-[#456c54]">サポート範囲に応じて調整</p>
-                </div>
-                <div className="p-6">
-                  <p className="font-bold text-[#0d6938]">長期（6ヶ月〜）</p>
-                  <p className="mt-2 text-2xl font-extrabold">個別見積</p>
-                  <p className="mt-1 text-xs text-[#456c54]">目的・進路に合わせて設計</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="faq" className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6">
           <h2 className="section-title">よくある質問</h2>
           <div className="mt-8 space-y-3">
