@@ -14,8 +14,6 @@ const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },
   { href: "/#plans", label: "留学プラン" },
-  { href: "/#features", label: "ブラジル留学の特徴" },
-  { href: "/#pricing", label: "料金イメージ" },
   { href: "/#faq", label: "よくある質問" },
   { href: LINE_URL, label: "LINE相談", external: true },
 ];
