@@ -4,12 +4,7 @@ import SiteFooter from "../components/SiteFooter";
 
 const items = [
   { href: "/about/company", label: "会社概要" },
-  { href: "/about/parasonho", label: "Para Sonhoについて" },
-  { href: "/about/message", label: "代表メッセージ" },
   { href: "/about/support", label: "サポート内容" },
-  { href: "/about/santos", label: "ブラジル・サントス紹介" },
-  { href: "/about/flow", label: "留学の流れ" },
-  { href: "/about/faq", label: "よくある質問" },
   { href: "/about/staff", label: "スタッフ紹介" },
 ];
 
