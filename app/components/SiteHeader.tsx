@@ -14,6 +14,7 @@ const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },
   { href: "/#plans", label: "留学プラン" },
+  { href: "/#team", label: "チーム遠征" },
   { href: "/#faq", label: "よくある質問" },
   { href: LINE_URL, label: "LINE相談", external: true },
 ];
