@@ -51,9 +51,6 @@ export default function Home() {
           <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
           <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-4 py-24 text-center sm:px-6 md:py-36">
-            <p className="mb-6 inline-flex rounded-full border border-white/30 bg-white/10 px-5 py-1.5 text-xs tracking-widest text-white/80 uppercase">
-              Brazil Soccer Study Abroad
-            </p>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl">
               本場ブラジルで学ぶ、
               <br />
