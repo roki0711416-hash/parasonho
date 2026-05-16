@@ -11,9 +11,8 @@ export default function CompanyPage() {
       <dl className="mt-6 divide-y divide-[#e7f2dd] border-y border-[#e7f2dd] text-sm">
         {[
           ["サービス名", "Para Sonho / パラソーニョ"],
-          ["事業内容", "ブラジル・サントスでのサッカー留学サポート"],
+          ["事業内容", "ブラジルのサッカー留学サポート"],
           ["所在地", "（準備中）"],
-          ["代表者", "（準備中）"],
           ["お問い合わせ", "parasonho.info@gmail.com"],
         ].map(([k, v]) => (
           <div key={k} className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[160px_1fr]">

@@ -5,19 +5,14 @@ import { useEffect, useRef, useState } from "react";
 
 const aboutItems: Array<{ href: string; label: string }> = [
   { href: "/about/company", label: "会社概要" },
-  { href: "/about/parasonho", label: "Para Sonhoについて" },
-  { href: "/about/message", label: "代表メッセージ" },
   { href: "/about/support", label: "サポート内容" },
-  { href: "/about/santos", label: "ブラジル・サントス紹介" },
-  { href: "/about/flow", label: "留学の流れ" },
-  { href: "/about/faq", label: "よくある質問" },
   { href: "/about/staff", label: "スタッフ紹介" },
 ];
 
 const sectionItems: Array<{ href: string; label: string }> = [
   { href: "/#service", label: "サービス内容" },
   { href: "/#plans", label: "留学プラン" },
-  { href: "/#features", label: "サントス留学の特徴" },
+  { href: "/#features", label: "ブラジル留学の特徴" },
   { href: "/#pricing", label: "料金イメージ" },
   { href: "/#faq", label: "よくある質問" },
   { href: "/#contact", label: "お問い合わせ" },

@@ -3,7 +3,7 @@ export const metadata = { title: "スタッフ紹介 | Para Sonho" };
 export default function StaffPage() {
   const staff = [
     { name: "代表（仮）", role: "代表 / 留学コーディネーター", bio: "日本とブラジルを繋ぐ留学設計を担当。" },
-    { name: "現地担当（仮）", role: "サントス現地サポート", bio: "住居・生活・通訳など現地全般を担当。" },
+    { name: "現地担当（仮）", role: "ブラジル現地サポート", bio: "生活・通訳など現地全般を担当。" },
     { name: "サッカー担当（仮）", role: "練習環境コーディネーター", bio: "選手のレベルに合わせたクラブ調整を担当。" },
   ];
 

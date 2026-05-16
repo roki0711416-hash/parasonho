@@ -12,7 +12,7 @@ export default function Home() {
     {
       title: "中期留学プラン（1〜3ヶ月）",
       target: "実践力を高めたい選手向け",
-      points: ["実戦的トレーニング", "語学サポート", "住居手配"],
+      points: ["実戦的トレーニング", "語学サポート", "現地サポート"],
     },
     {
       title: "長期留学プラン（6ヶ月〜）",
@@ -51,7 +51,7 @@ export default function Home() {
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center md:py-24">
             <div>
               <p className="mb-4 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs tracking-wide">
-                ブラジル・サントス サッカー留学サポート
+                ブラジル サッカー留学サポート
               </p>
               <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
                 本場ブラジルで学ぶ、
@@ -59,8 +59,8 @@ export default function Home() {
                 次の一歩へ。
               </h1>
               <p className="mt-5 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                Para Sonho / パラソーニョ は、日本からサントスへ挑戦する選手のための留学サポートサービスです。
-                住居・現地生活・練習環境まで、安心して成長に集中できる環境を整えます。
+                Para Sonho / パラソーニョ は、日本からブラジルへ挑戦する選手のための留学サポートサービスです。
+                現地生活・練習環境まで、安心して成長に集中できる環境を整えます。
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -82,7 +82,6 @@ export default function Home() {
               <h2 className="text-xl font-bold">留学サポート内容</h2>
               <ul className="mt-4 space-y-3 text-sm text-white/90">
                 <li>⚽ 現地クラブ練習参加の調整</li>
-                <li>🏠 安全な住居の手配</li>
                 <li>🧭 現地スタッフによる生活サポート</li>
                 <li>✈️ 渡航前オリエンテーション</li>
                 <li>📞 保護者への定期報告</li>
@@ -99,7 +98,7 @@ export default function Home() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "現地クラブ・練習先マッチング",
-              "住居手配・生活立ち上げ支援",
+              "現地生活立ち上げ支援",
               "通訳/コミュニケーション補助",
               "滞在中の相談・緊急時対応",
             ].map((text) => (
@@ -131,9 +130,9 @@ export default function Home() {
         </section>
 
         <section id="features" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">サントス留学の特徴</h2>
+          <h2 className="section-title">ブラジル留学の特徴</h2>
           <p className="section-subtitle">
-            サッカー文化が根付く街・サントスで、実践に近い環境に身を置くことで成長を加速させます。
+            サッカー文化が根付くブラジル現地で、実践に近い環境に身を置くことで成長を加速させます。
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <div className="card">
@@ -142,7 +141,7 @@ export default function Home() {
             </div>
             <div className="card">
               <h3 className="text-base font-bold">生活面まで伴走サポート</h3>
-              <p className="mt-2 text-sm text-[#2d5d43]">住居・移動・生活導線を整え、競技に集中できる状態を作ります。</p>
+              <p className="mt-2 text-sm text-[#2d5d43]">移動・生活導線を整え、競技に集中できる状態を作ります。</p>
             </div>
             <div className="card">
               <h3 className="text-base font-bold">保護者も安心の体制</h3>
@@ -197,7 +196,7 @@ export default function Home() {
             <div className="text-center">
               <h2 className="text-2xl font-extrabold sm:text-3xl">無料サッカー留学相談フォーム</h2>
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">
-                ブラジル・サントスでのサッカー留学について、期間・レベル・年齢問わずお気軽にご相談ください。
+                ブラジルでのサッカー留学について、期間・レベル・年齢問わずお気軽にご相談ください。
               </p>
             </div>
             <div className="mt-10">

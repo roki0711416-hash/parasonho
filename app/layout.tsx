@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Para Sonho / パラソーニョ | ブラジルサッカー留学",
   description:
-    "日本からブラジル・サントスへ。住居、現地サポート、練習環境までまとめて支えるサッカー留学サービス『Para Sonho / パラソーニョ』。",
+    "日本からブラジルへ。現地サポートと練習環境をまとめて支えるサッカー留学サービス『Para Sonho / パラソーニョ』。",
 };
 
 export default function RootLayout({
