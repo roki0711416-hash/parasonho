@@ -1,15 +1,8 @@
 import ContactForm from "./components/ContactForm";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 export default function Home() {
-  const navItems = [
-    { href: "#service", label: "サービス内容" },
-    { href: "#plans", label: "留学プラン" },
-    { href: "#features", label: "サントス留学の特徴" },
-    { href: "#pricing", label: "料金イメージ" },
-    { href: "#faq", label: "よくある質問" },
-    { href: "#contact", label: "お問い合わせ" },
-  ];
-
   const plans = [
     {
       title: "短期留学プラン（1〜4週間）",
@@ -49,27 +42,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f8fff6] text-[#123524]">
-      <header className="sticky top-0 z-50 border-b border-[#d6e9c9] bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <a href="#top" className="font-bold tracking-wide">
-            <span className="text-xl text-[#0b6a37]">Para Sonho</span>
-            <span className="ml-2 text-sm font-medium text-[#4e8a3d]">/ パラソーニョ</span>
-          </a>
-          <nav className="hidden gap-5 text-sm md:flex">
-            {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="transition hover:text-[#0b6a37]">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#contact"
-            className="rounded-full bg-[#ffcd00] px-4 py-2 text-sm font-bold text-[#0e512e] shadow-sm transition hover:scale-[1.02] hover:bg-[#ffd735]"
-          >
-            無料相談する
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top">
         <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] text-white">
@@ -234,9 +207,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-[#d6e9c9] bg-white px-4 py-6 text-center text-xs text-[#4f735f] sm:px-6">
-        © {new Date().getFullYear()} Para Sonho / パラソーニョ
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
