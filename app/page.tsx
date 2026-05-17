@@ -83,19 +83,28 @@ export default function Home() {
         <section id="service" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="section-title">サービス内容</h2>
           <p className="section-subtitle">
-            サッカー留学に必要な準備と現地生活をワンストップでサポート。初めての海外でも安心して挑戦できます。
+            ブラジル挑戦に必要な準備・現地生活・通訳・サポートをワンストップで対応。
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              "現地クラブ・練習先マッチング",
-              "現地生活立ち上げ支援",
-              "通訳/コミュニケーション補助",
-              "滞在中の相談・緊急時対応",
-            ].map((text) => (
-              <div key={text} className="card">
-                <p className="text-sm font-semibold leading-6">{text}</p>
+              { title: "現地クラブ調整", desc: "選手に合わせた練習環境を厳選" },
+              { title: "現地生活サポート", desc: "滞在開始からの生活をサポート" },
+              { title: "通訳サポート", desc: "言語面での不安を解消" },
+              { title: "緊急時対応", desc: "24時間体制でお応えします" },
+            ].map(({ title, desc }) => (
+              <div key={title} className="card flex flex-col">
+                <p className="font-semibold text-[#0d6938]">{title}</p>
+                <p className="mt-2 text-xs text-[#456c54]">{desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a
+              href="/service"
+              className="inline-flex rounded-full border-2 border-[#0b6a37] px-8 py-3 text-sm font-bold text-[#0b6a37] transition hover:bg-[#0b6a37] hover:text-white"
+            >
+              詳しく見る
+            </a>
           </div>
         </section>
 

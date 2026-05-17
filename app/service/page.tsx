@@ -92,20 +92,33 @@ export default function ServicePage() {
 
       <main>
         {/* ヒーローセクション */}
-        <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] py-20 text-white md:py-32">
+        <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] py-24 text-white md:py-40">
           <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#ffcd00]/20 blur-3xl" />
           <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-          <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-4 text-center sm:px-6">
-            <h1 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              サービス内容
+          <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
+            <p className="mb-6 inline-flex rounded-full border border-white/30 bg-white/10 px-5 py-1.5 text-xs tracking-widest text-white/80 uppercase">
+              Support Service
+            </p>
+            <h1 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+              ブラジル挑戦を、
+              <br />
+              <span className="text-[#ffcd00]">現地サポートで支える。</span>
             </h1>
-            <p className="mt-5 text-lg font-semibold text-[#ffcd00]">
-              ブラジル挑戦に必要な準備と現地生活を、ワンストップでサポート。
+            <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/85 sm:text-base md:text-lg">
+              Para Sonhoでは、<br className="md:hidden" />
+              ブラジルサッカー留学に必要な<br />
+              練習先調整・生活サポート・通訳・移動・緊急時対応まで、<br />
+              選手と保護者が安心して挑戦できる環境を整えます。
             </p>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-white/80 sm:text-base">
-              Para Sonhoでは、ブラジルサッカー留学に必要な練習先の調整、現地生活、通訳、移動、
-              緊急時対応まで、選手と保護者が安心して挑戦できる環境を整えます。
-            </p>
+            <a
+              href={LINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-12 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#06C755] px-9 py-5 text-base font-extrabold text-white shadow-lg transition hover:bg-[#05b34c] sm:w-auto sm:min-w-[300px]"
+            >
+              {LINE_ICON}
+              LINEで無料相談
+            </a>
           </div>
         </section>
 
