@@ -2,6 +2,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
+const INSTAGRAM_URL = "https://instagram.com/parasonho_official";
 
 export default function Home() {
   const plans = [
@@ -105,6 +106,43 @@ export default function Home() {
             >
               詳しく見る
             </a>
+          </div>
+        </section>
+
+        <section className="bg-white py-16">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+            <h2 className="section-title">現地の様子をSNSで発信中</h2>
+            <p className="section-subtitle">ブラジルでの日常・練習・街の空気感を、リアルタイムでお届けしています。</p>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {[
+                { title: "現地クラブ練習", tag: "TRAINING" },
+                { title: "ブラジル生活", tag: "LIFE" },
+                { title: "サントスの様子", tag: "SANTOS" },
+              ].map((item) => (
+                <article key={item.title} className="overflow-hidden rounded-2xl border border-[#d6e9c9] bg-[#f9fff4] shadow-sm">
+                  <div className="flex items-center justify-between border-b border-[#d6e9c9] bg-white px-4 py-3">
+                    <p className="text-xs font-bold tracking-widest text-[#0d6938]">{item.tag}</p>
+                    <span className="h-2 w-2 rounded-full bg-[#0b6a37]" />
+                  </div>
+                  <div className="flex h-44 items-center justify-center bg-gradient-to-br from-[#e9f7de] to-[#f8fff6] px-4 text-center">
+                    <p className="text-base font-bold text-[#0d6938]">{item.title}</p>
+                  </div>
+                  <div className="px-4 py-3">
+                    <p className="text-xs text-[#4f735f]">Instagram投稿イメージ</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border-2 border-[#0b6a37] px-8 py-3 text-sm font-bold text-[#0b6a37] transition hover:bg-[#0b6a37] hover:text-white"
+              >
+                Instagramを見る
+              </a>
+            </div>
           </div>
         </section>
 
