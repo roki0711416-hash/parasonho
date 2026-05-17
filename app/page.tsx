@@ -7,7 +7,7 @@ export default function Home() {
   const plans = [
     {
       title: "短期留学プラン（1〜4週間）",
-      target: "学校の長期休みで挑戦したい中高生・大学生向け",
+      target: "学校の長期休みで挑戦したい小中高生・大学生向け",
       points: ["現地クラブ練習参加", "生活サポート", "空港送迎"],
     },
     {
