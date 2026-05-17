@@ -13,7 +13,6 @@ const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },
-  { href: "/service", label: "詳しく見る" },
   { href: "/#plans", label: "留学プラン" },
   { href: "/plans/team", label: "チーム遠征" },
   { href: "/#faq", label: "よくある質問" },
@@ -194,9 +193,7 @@ export default function SiteHeader() {
           </div>
 
           <ul className="mt-4 space-y-1 text-sm">
-            {sectionItems
-              .filter((item) => item.href !== "/service")
-              .map((item) => (
+            {sectionItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
