@@ -11,7 +11,7 @@ const aboutItems: Array<{ href: string; label: string }> = [
 ];
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
-const INSTAGRAM_URL = "https://instagram.com/parasonho_official";
+const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },

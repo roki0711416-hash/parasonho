@@ -1,8 +1,6 @@
-import { Camera, Music2, PlayCircle } from "lucide-react";
+import { Camera } from "lucide-react";
 
-const INSTAGRAM_URL = "https://instagram.com/parasonho_official";
-const TIKTOK_URL = "https://www.tiktok.com/@parasonho_official";
-const YOUTUBE_URL = "https://www.youtube.com/@parasonho_official";
+const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 
 export default function SiteFooter() {
   return (
@@ -16,28 +14,10 @@ export default function SiteFooter() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#d6e9c9] bg-white px-4 py-2 text-sm font-semibold text-[#0b6a37] transition hover:border-[#0b6a37] hover:bg-[#f3faed]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#d6e9c9] bg-white px-5 py-2.5 text-sm font-semibold text-[#0b6a37] transition hover:border-[#0b6a37] hover:bg-[#f3faed]"
             >
               <Camera className="h-4 w-4" />
-              Instagram
-            </a>
-            <a
-              href={TIKTOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#d6e9c9] bg-white px-4 py-2 text-sm font-semibold text-[#0b6a37] transition hover:border-[#0b6a37] hover:bg-[#f3faed]"
-            >
-              <Music2 className="h-4 w-4" />
-              TikTok
-            </a>
-            <a
-              href={YOUTUBE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#d6e9c9] bg-white px-4 py-2 text-sm font-semibold text-[#0b6a37] transition hover:border-[#0b6a37] hover:bg-[#f3faed]"
-            >
-              <PlayCircle className="h-4 w-4" />
-              YouTube
+              Instagram @para_sonho
             </a>
           </div>
         </div>

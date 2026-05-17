@@ -2,7 +2,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
-const INSTAGRAM_URL = "https://instagram.com/parasonho_official";
+const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 
 export default function Home() {
   const plans = [
