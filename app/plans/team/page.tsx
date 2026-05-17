@@ -55,26 +55,17 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* 3本柱 */}
+        {/* サポート内容 */}
         <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="section-title">サポート内容</h2>
           <p className="section-subtitle">遠征に必要なすべてをワンストップでサポートします。</p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             <article className="card flex flex-col border-t-4 border-[#0b6a37]">
               <h3 className="text-lg font-extrabold text-[#0d6938]">大会参加</h3>
               <ul className="mt-4 space-y-2 text-sm leading-7 text-[#2d5d43]">
                 <li>・ブラジル現地大会への出場</li>
                 <li>・本場ブラジルクラブとの対戦</li>
                 <li>・年代別カテゴリーに応じた大会相談</li>
-              </ul>
-            </article>
-
-            <article className="card flex flex-col border-t-4 border-[#0b6a37]">
-              <h3 className="text-lg font-extrabold text-[#0d6938]">現地クラブ交流</h3>
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#2d5d43]">
-                <li>・現地クラブとの交流試合</li>
-                <li>・合同トレーニング</li>
-                <li>・ブラジルサッカー文化の体験</li>
               </ul>
             </article>
 
