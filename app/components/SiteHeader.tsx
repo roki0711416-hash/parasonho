@@ -194,7 +194,9 @@ export default function SiteHeader() {
           </div>
 
           <ul className="mt-4 space-y-1 text-sm">
-            {sectionItems.map((item) => (
+            {sectionItems
+              .filter((item) => item.href !== "/service")
+              .map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
