@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Camera } from "lucide-react";
+import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const aboutItems: Array<{ href: string; label: string }> = [
@@ -12,6 +12,8 @@ const aboutItems: Array<{ href: string; label: string }> = [
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
+const X_URL = "https://x.com/Para_Sonho";
+const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
 
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },
@@ -240,6 +242,30 @@ export default function SiteHeader() {
           >
             <Camera className="h-4 w-4" />
             Instagram
+          </a>
+
+          <a
+            href={X_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpenMobile(false)}
+            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-[#e5e7eb] px-4 py-3 text-sm font-semibold text-[#0a4f2a] transition hover:bg-[#fafaf7] md:hidden"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            X
+          </a>
+
+          <a
+            href={TIKTOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpenMobile(false)}
+            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-[#e5e7eb] px-4 py-3 text-sm font-semibold text-[#0a4f2a] transition hover:bg-[#fafaf7] md:hidden"
+          >
+            <Music2 className="h-4 w-4" />
+            TikTok
           </a>
         </div>
       </div>
