@@ -65,8 +65,8 @@ export default function Home() {
               <span className="text-[#ffcd00]">次のステージへ。</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
-              Para Sonho / パラソーニョは、本場ブラジルを舅に、<br className="hidden sm:block" />
-              日本から世界へ挑戦する選手の「成長」を現地からサポートするサッカー留学ブランドです。
+              Para Sonho / パラソーニョは、本場ブラジルを舞台に、<br className="hidden sm:block" />
+              日本から世界へ挑戦する選手の成長を現地からサポートするサッカー留学ブランドです。
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
