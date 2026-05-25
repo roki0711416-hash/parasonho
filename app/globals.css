@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fff6;
-  --foreground: #123524;
+  --background: #ffffff;
+  --foreground: #0b0f0d;
+  --brand-deep: #0a4f2a;
+  --brand-green: #0b6a37;
+  --brand-accent: #ffcd00;
+  --brand-border: #e5e7eb;
+  --brand-muted: #4b5563;
 }
 
 @theme inline {
@@ -14,8 +19,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f8fff6;
-    --foreground: #123524;
+    --background: #ffffff;
+    --foreground: #0b0f0d;
   }
 }
 
@@ -34,26 +39,55 @@ body {
 }
 
 .section-title {
-  font-size: 1.75rem;
+  font-size: 1.875rem;
   font-weight: 800;
-  color: #0d6938;
+  color: #0b0f0d;
   letter-spacing: 0.01em;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: #0a4f2a;
+  border-radius: 2px;
 }
 
 .section-subtitle {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   max-width: 48rem;
-  color: #2d5d43;
-  line-height: 1.8;
+  color: #4b5563;
+  line-height: 1.85;
   font-size: 0.95rem;
 }
 
 .card {
-  border: 1px solid #d8eacb;
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   border-radius: 1rem;
-  padding: 1.25rem;
-  box-shadow: 0 10px 25px -20px rgba(17, 84, 47, 0.45);
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px -8px rgba(11, 15, 13, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: #0a4f2a;
+  box-shadow: 0 10px 28px -12px rgba(10, 79, 42, 0.18);
+  transform: translateY(-2px);
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a4f2a;
 }
 
 @media (max-width: 640px) {

@@ -24,22 +24,30 @@ const LINE_ICON = (
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-[#f8fff6] text-[#123524]">
+    <div className="min-h-screen bg-white text-[#0b0f0d]">
       <SiteHeader />
 
       <main>
         {/* ヒーロー */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b6a37] via-[#0e7d42] to-[#137744] py-20 text-white md:py-32">
-          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#ffcd00]/15 blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-20 text-white md:py-32">
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#0b6a37]/30 blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[#0a4f2a]/40 blur-3xl" />
           <div className="relative mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
-            <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[10px] font-bold tracking-[0.25em] text-white/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
+              TEAM EXPEDITION
+            </p>
+            <h1 className="mt-6 text-3xl font-extrabold leading-[1.15] sm:text-5xl">
               ブラジルチーム遠征プログラム
             </h1>
             <p className="mt-4 text-lg font-bold text-[#ffcd00] sm:text-xl">
               本場ブラジルで、チームとして世界を体感する。
             </p>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">
               Para Sonhoでは、小学生チームから社会人クラブまで、ブラジル現地大会への参加、
               現地クラブとの交流、宿泊先や現地移動の手配まで一括でサポートします。
             </p>
@@ -56,22 +64,23 @@ export default function TeamPage() {
         </section>
 
         {/* サポート内容 */}
-        <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">サポート内容</h2>
+        <section className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
+          <p className="eyebrow">SUPPORT</p>
+          <h2 className="section-title mt-2">サポート内容</h2>
           <p className="section-subtitle">遠征に必要なすべてをワンストップでサポートします。</p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="card flex flex-col border-t-4 border-[#0b6a37]">
-              <h3 className="text-lg font-extrabold text-[#0d6938]">大会参加</h3>
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#2d5d43]">
+            <article className="card flex flex-col border-t-4 border-[#0a4f2a]">
+              <h3 className="text-lg font-extrabold text-[#0b0f0d]">大会参加</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#1f2937]">
                 <li>・ブラジル現地大会への出場</li>
                 <li>・本場ブラジルクラブとの対戦</li>
                 <li>・年代別カテゴリーに応じた大会相談</li>
               </ul>
             </article>
 
-            <article className="card flex flex-col border-t-4 border-[#0b6a37]">
-              <h3 className="text-lg font-extrabold text-[#0d6938]">渡航・生活サポート</h3>
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#2d5d43]">
+            <article className="card flex flex-col border-t-4 border-[#0a4f2a]">
+              <h3 className="text-lg font-extrabold text-[#0b0f0d]">渡航・生活サポート</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#1f2937]">
                 <li>・宿泊先の手配</li>
                 <li>・空港送迎</li>
                 <li>・現地移動サポート</li>
@@ -83,10 +92,11 @@ export default function TeamPage() {
         </section>
 
         {/* 対象 */}
-        <section className="bg-white py-14">
+        <section className="bg-[#fafaf7] py-20">
           <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-            <h2 className="section-title">対象</h2>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <p className="eyebrow">TARGET</p>
+            <h2 className="section-title mt-2">対象</h2>
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 "小学生チーム",
                 "ジュニアユース",
@@ -97,9 +107,9 @@ export default function TeamPage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-3 rounded-xl border border-[#d6e9c9] bg-[#f4fbf0] px-5 py-4 text-sm font-semibold"
+                  className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-white px-5 py-4 text-sm font-semibold text-[#0b0f0d]"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0b6a37] text-xs font-extrabold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0a4f2a] text-xs font-extrabold text-white">
                     ✓
                   </span>
                   {item}
@@ -110,8 +120,12 @@ export default function TeamPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-b from-[#0e6537] to-[#0a5a2e] py-20 text-white">
-          <div className="mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white">
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
             <h2 className="text-2xl font-extrabold sm:text-3xl">チーム遠征の相談はこちら</h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
               人数・時期・目的に合わせてプランをご提案します。<br />

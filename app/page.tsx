@@ -8,17 +8,17 @@ export default function Home() {
   const plans = [
     {
       title: "短期留学プラン（1〜4週間）",
-      target: "学校の長期休みで挑戦したい小中高生・大学生向け",
+      target: "長期休みで海外に挑戦したい小中高生・大学生向け",
       points: ["現地クラブ練習参加", "生活サポート", "空港送迎"],
     },
     {
       title: "中期留学プラン（1〜3ヶ月）",
-      target: "実践力を高めたい選手向け",
+      target: "本気でレベルアップをめざす選手向け",
       points: ["実戦的トレーニング", "語学サポート", "現地サポート"],
     },
     {
       title: "長期留学プラン（6ヶ月〜）",
-      target: "本格的に海外で成長したい選手向け",
+      target: "本格的に海外で勝負したい選手向け",
       points: ["継続的な現地サポート", "進路相談", "定期面談"],
     },
   ];
@@ -26,7 +26,7 @@ export default function Home() {
   const faqs = [
     {
       q: "サッカー経験が浅くても参加できますか？",
-      a: "はい。現在のレベルや目標に合わせて、参加先やサポート内容をご提案します。",
+      a: "はい。現在のレベルや目標に合わせて、参加先やサポート内容をご提案します。大事なのは「挑戦したい」気持ちです。",
     },
     {
       q: "未成年でも留学できますか？",
@@ -43,23 +43,30 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8fff6] text-[#123524]">
+    <div className="min-h-screen bg-white text-[#0b0f0d]">
       <SiteHeader />
 
       <main id="top">
-        <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] text-white">
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#ffcd00]/20 blur-3xl" />
-          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] text-white">
+          <div className="absolute inset-0 opacity-[0.07]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#0b6a37]/30 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#0a4f2a]/40 blur-3xl" />
           <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-4 py-24 text-center sm:px-6 md:py-36">
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl">
-              本場ブラジルで学ぶ、
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[10px] font-bold tracking-[0.25em] text-white/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
+              GLOBAL FOOTBALL CHALLENGE
+            </span>
+            <h1 className="mt-7 text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-6xl md:text-7xl">
+              世界に挑む、
               <br />
               <span className="text-[#ffcd00]">次の一歩へ。</span>
             </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/80 sm:text-base md:text-lg">
-              Para Sonho / パラソーニョ は、日本からブラジルへ挑戦する選手のための留学サポートサービスです。<br className="hidden sm:block" />
-              現地生活・練習環境まで、安心して成長に集中できる環境を整えます。
+            <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
+              Para Sonho / パラソーニョは、本場ブラジルを舅に、<br className="hidden sm:block" />
+              日本から世界へ挑戦する選手の「成長」を現地からサポートするサッカー留学ブランドです。
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
@@ -73,7 +80,7 @@ export default function Home() {
               </a>
               <a
                 href="#service"
-                className="w-full rounded-full border border-white/60 px-8 py-4 text-center text-sm font-semibold transition hover:bg-white/15 sm:w-auto"
+                className="w-full rounded-full border border-white/40 px-8 py-4 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
               >
                 サービスを見る
               </a>
@@ -81,87 +88,95 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="service" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">サービス内容</h2>
+        <section id="service" className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
+          <p className="eyebrow">SERVICE</p>
+          <h2 className="section-title mt-2">サービス内容</h2>
           <p className="section-subtitle">
-            ブラジル挑戦に必要な準備・現地生活・通訳・サポートをワンストップで対応。
+            渡航準備・現地生活・通訳・練習環境まで、海外サッカー挑戦をワンストップでサポートします。
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "現地クラブ調整", desc: "選手に合わせた練習環境を厳選" },
-              { title: "現地生活サポート", desc: "滞在開始からの生活をサポート" },
-              { title: "通訳サポート", desc: "言語面での不安を解消" },
+              { title: "現地生活サポート", desc: "滞在開始からの生活を伴走" },
+              { title: "通訳サポート", desc: "言語面の不安を解消" },
               { title: "緊急時対応", desc: "24時間体制でお応えします" },
             ].map(({ title, desc }) => (
               <div key={title} className="card flex flex-col">
-                <p className="font-semibold text-[#0d6938]">{title}</p>
-                <p className="mt-2 text-xs text-[#456c54]">{desc}</p>
+                <p className="font-bold text-[#0b0f0d]">{title}</p>
+                <p className="mt-2 text-xs leading-6 text-[#4b5563]">{desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <a
               href="/service"
-              className="inline-flex rounded-full border-2 border-[#0b6a37] px-8 py-3 text-sm font-bold text-[#0b6a37] transition hover:bg-[#0b6a37] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#0a4f2a] px-8 py-3 text-sm font-bold text-[#0a4f2a] transition hover:bg-[#0a4f2a] hover:text-white"
             >
               詳しく見る
+              <span aria-hidden="true">→</span>
             </a>
           </div>
         </section>
 
-        <section className="bg-white py-16">
+        <section className="bg-[#fafaf7] py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <h2 className="section-title">現地の様子をSNSで発信中</h2>
+            <p className="eyebrow">SNS</p>
+            <h2 className="section-title mt-2">現地の様子をSNSで発信中</h2>
             <p className="section-subtitle">ブラジルでの日常・練習・街の空気感を、リアルタイムでお届けしています。</p>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 { title: "現地クラブ練習", tag: "TRAINING" },
                 { title: "ブラジル生活", tag: "LIFE" },
                 { title: "サントスの様子", tag: "SANTOS" },
               ].map((item) => (
-                <article key={item.title} className="overflow-hidden rounded-2xl border border-[#d6e9c9] bg-[#f9fff4] shadow-sm">
-                  <div className="flex items-center justify-between border-b border-[#d6e9c9] bg-white px-4 py-3">
-                    <p className="text-xs font-bold tracking-widest text-[#0d6938]">{item.tag}</p>
-                    <span className="h-2 w-2 rounded-full bg-[#0b6a37]" />
+                <article key={item.title} className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#0a4f2a] hover:shadow-md">
+                  <div className="flex items-center justify-between border-b border-[#e5e7eb] px-4 py-3">
+                    <p className="text-[10px] font-bold tracking-[0.2em] text-[#0a4f2a]">{item.tag}</p>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
                   </div>
-                  <div className="flex h-44 items-center justify-center bg-gradient-to-br from-[#e9f7de] to-[#f8fff6] px-4 text-center">
-                    <p className="text-base font-bold text-[#0d6938]">{item.title}</p>
+                  <div className="flex h-44 items-center justify-center bg-gradient-to-br from-[#0b0f0d] to-[#0a4f2a] px-4 text-center">
+                    <p className="text-base font-bold text-white">{item.title}</p>
                   </div>
                   <div className="px-4 py-3">
-                    <p className="text-xs text-[#4f735f]">Instagram投稿イメージ</p>
+                    <p className="text-xs text-[#6b7280]">Instagram投稿イメージ</p>
                   </div>
                 </article>
               ))}
             </div>
-            <div className="mt-10 text-center">
+            <div className="mt-12 text-center">
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border-2 border-[#0b6a37] px-8 py-3 text-sm font-bold text-[#0b6a37] transition hover:bg-[#0b6a37] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0a4f2a] px-8 py-3 text-sm font-bold text-[#0a4f2a] transition hover:bg-[#0a4f2a] hover:text-white"
               >
                 Instagramを見る
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </section>
 
-        <section id="plans" className="bg-white py-16">
+        <section id="plans" className="bg-white py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <h2 className="section-title">留学プラン</h2>
+            <p className="eyebrow">PLANS</p>
+            <h2 className="section-title mt-2">留学プラン</h2>
             <p className="section-subtitle">短期〜長期まで、目標とスケジュールに合わせて設計します。</p>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
               {plans.map((plan) => (
                 <article key={plan.title} className="card flex h-full flex-col">
-                  <h3 className="text-lg font-bold text-[#0d6938]">{plan.title}</h3>
-                  <p className="mt-2 text-sm text-[#2d5d43]">{plan.target}</p>
-                  <ul className="mt-4 space-y-2 text-sm">
+                  <h3 className="text-lg font-bold text-[#0b0f0d]">{plan.title}</h3>
+                  <p className="mt-2 text-sm text-[#4b5563]">{plan.target}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-[#1f2937]">
                     {plan.points.map((point) => (
-                      <li key={point}>・{point}</li>
+                      <li key={point} className="flex items-start gap-2">
+                        <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0a4f2a]" />
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
-                  <div className="mt-6 border-t border-[#d6e9c9] pt-5">
-                    <p className="text-sm leading-6 text-[#2d5d43]">費用についてはLINEでお気軽にご相談ください。</p>
+                  <div className="mt-auto border-t border-[#e5e7eb] pt-5">
+                    <p className="text-sm leading-6 text-[#4b5563]">費用についてはLINEでお気軽にご相談ください。</p>
                     <a
                       href={LINE_URL}
                       target="_blank"
@@ -179,26 +194,34 @@ export default function Home() {
         </section>
 
 
-        <section id="faq" className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">よくある質問</h2>
-          <div className="mt-8 space-y-3">
-            {faqs.map((item) => (
-              <details key={item.q} className="card group open:bg-[#f9fff4]">
-                <summary className="cursor-pointer list-none font-semibold">
-                  {item.q}
-                  <span className="float-right text-[#4e8a3d] transition group-open:rotate-45">＋</span>
-                </summary>
-                <p className="mt-3 text-sm leading-7 text-[#2d5d43]">{item.a}</p>
-              </details>
-            ))}
+        <section id="faq" className="bg-[#fafaf7] py-20">
+          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+            <p className="eyebrow">FAQ</p>
+            <h2 className="section-title mt-2">よくある質問</h2>
+            <div className="mt-10 space-y-3">
+              {faqs.map((item) => (
+                <details key={item.q} className="card group">
+                  <summary className="cursor-pointer list-none font-semibold text-[#0b0f0d]">
+                    {item.q}
+                    <span className="float-right text-[#0a4f2a] transition group-open:rotate-45">＋</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-7 text-[#4b5563]">{item.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section id="contact" className="bg-gradient-to-b from-[#0e6537] to-[#0a5a2e] py-20 text-white">
-          <div className="mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
-            <h2 className="text-2xl font-extrabold sm:text-3xl">無料サッカー留学相談</h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-              ブラジルでのサッカー留学について、期間・レベル・年齢問わずお気軽にご相談ください。<br />公式LINEよりお気軽にメッセージをお送りください。
+        <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white">
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#ffcd00]">FREE CONSULTATION</p>
+            <h2 className="mt-3 text-2xl font-extrabold sm:text-3xl">無料サッカー留学相談</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/80 sm:text-base">
+              ブラジルへのサッカー留学について、期間・レベル・年齢問わずお気軽にご相談ください。<br />公式LINEよりメッセージをお送りください。
             </p>
             <a
               href={LINE_URL}

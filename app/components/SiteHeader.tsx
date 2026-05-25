@@ -18,7 +18,6 @@ const sectionItems: Array<{ href: string; label: string; external?: boolean }> =
   { href: "/#plans", label: "留学プラン" },
   { href: "/plans/team", label: "チーム遠征" },
   { href: "/#faq", label: "よくある質問" },
-  { href: LINE_URL, label: "LINE相談", external: true },
 ];
 
 export default function SiteHeader() {
@@ -40,11 +39,14 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#d6e9c9] bg-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-[#e5e7eb] bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="font-bold tracking-wide">
-          <span className="text-xl text-[#0b6a37]">Para Sonho</span>
-          <span className="ml-2 text-sm font-medium text-[#4e8a3d]">/ パラソーニョ</span>
+        <Link href="/" className="flex flex-col leading-tight">
+          <span className="flex items-baseline">
+            <span className="text-xl font-bold tracking-wide text-[#0a4f2a]">Para Sonho</span>
+            <span className="ml-2 text-xs font-medium text-[#6b7280]">/ パラソーニョ</span>
+          </span>
+          <span className="mt-0.5 hidden text-[10px] font-semibold tracking-[0.25em] text-[#9ca3af] sm:inline">GLOBAL FOOTBALL CHALLENGE</span>
         </Link>
 
         {/* PCナビ */}
@@ -61,7 +63,7 @@ export default function SiteHeader() {
               aria-haspopup="menu"
               aria-expanded={openDesktop}
               onClick={() => setOpenDesktop((v) => !v)}
-              className="inline-flex items-center gap-1 transition hover:text-[#0b6a37]"
+              className="inline-flex items-center gap-1 transition hover:text-[#0a4f2a]"
             >
               Para Sonhoとは
               <svg
@@ -112,7 +114,7 @@ export default function SiteHeader() {
                 {item.label}
               </a>
             ) : (
-              <Link key={item.href} href={item.href} className="transition hover:text-[#0b6a37]">
+              <Link key={item.href} href={item.href} className="transition hover:text-[#0a4f2a]">
                 {item.label}
               </Link>
             )
@@ -125,7 +127,7 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hidden items-center gap-1 rounded-full border border-[#d6e9c9] px-3 py-2 text-sm font-semibold text-[#0b6a37] transition hover:border-[#0b6a37] hover:bg-[#f3faed] md:inline-flex"
+            className="hidden items-center gap-1 rounded-full border border-[#e5e7eb] px-3 py-2 text-sm font-semibold text-[#0a4f2a] transition hover:border-[#0a4f2a] hover:bg-[#fafaf7] md:inline-flex"
           >
             <Camera className="h-4 w-4" />
             Instagram
@@ -146,7 +148,7 @@ export default function SiteHeader() {
             aria-label="メニューを開く"
             aria-expanded={openMobile}
             onClick={() => setOpenMobile((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d6e9c9] bg-white text-[#0b6a37] md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e5e7eb] bg-white text-[#0a4f2a] md:hidden"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
               {openMobile ? (
@@ -161,7 +163,7 @@ export default function SiteHeader() {
 
       {/* モバイル メニュー */}
       <div
-        className={`md:hidden ${openMobile ? "block" : "hidden"} border-t border-[#d6e9c9] bg-white`}
+        className={`md:hidden ${openMobile ? "block" : "hidden"} border-t border-[#e5e7eb] bg-white`}
       >
         <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6">
           <button
@@ -210,7 +212,7 @@ export default function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={() => setOpenMobile(false)}
-                  className="block rounded-lg px-3 py-2 transition hover:bg-[#f3faed]"
+                  className="block rounded-lg px-3 py-2 transition hover:bg-[#fafaf7] hover:text-[#0a4f2a]"
                 >
                   {item.label}
                 </Link>
@@ -234,7 +236,7 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpenMobile(false)}
-            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-[#d6e9c9] px-4 py-3 text-sm font-semibold text-[#0b6a37] transition hover:bg-[#f3faed] md:hidden"
+            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-[#e5e7eb] px-4 py-3 text-sm font-semibold text-[#0a4f2a] transition hover:bg-[#fafaf7] md:hidden"
           >
             <Camera className="h-4 w-4" />
             Instagram

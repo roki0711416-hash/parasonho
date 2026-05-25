@@ -87,24 +87,29 @@ export default function ServicePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8fff6] text-[#123524]">
+    <div className="min-h-screen bg-white text-[#0b0f0d]">
       <SiteHeader />
 
       <main>
         {/* ヒーローセクション */}
-        <section className="relative overflow-hidden border-b border-[#d6e9c9] bg-gradient-to-b from-[#0b6a37] to-[#137744] py-24 text-white md:py-40">
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#ffcd00]/20 blur-3xl" />
-          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white md:py-40">
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#0b6a37]/30 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#0a4f2a]/40 blur-3xl" />
           <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
-            <p className="mb-6 inline-flex rounded-full border border-white/30 bg-white/10 px-5 py-1.5 text-xs tracking-widest text-white/80 uppercase">
+            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-1.5 text-[10px] font-bold tracking-[0.25em] text-white/80 uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
               Support Service
             </p>
-            <h1 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-              ブラジル挑戦を、
+            <h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
+              世界への挑戦を、
               <br />
               <span className="text-[#ffcd00]">現地サポートで支える。</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/85 sm:text-base md:text-lg">
+            <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
               Para Sonhoでは、<br className="md:hidden" />
               ブラジルサッカー留学に必要な<br />
               練習先調整・生活サポート・通訳・移動・緊急時対応まで、<br />
@@ -123,8 +128,9 @@ export default function ServicePage() {
         </section>
 
         {/* サービス一覧 */}
-        <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="section-title">主要サービス</h2>
+        <section className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
+          <p className="eyebrow">MAIN SERVICE</p>
+          <h2 className="section-title mt-2">主要サービス</h2>
           <p className="section-subtitle">
             選手に必要なサポートを、総合的にご提供します。
           </p>
@@ -132,16 +138,16 @@ export default function ServicePage() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="card flex flex-col border-l-4 border-[#0b6a37]"
+                className="card flex flex-col border-l-4 border-[#0a4f2a]"
               >
-                <h3 className="text-lg font-bold text-[#0d6938]">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#2d5d43]">
+                <h3 className="text-lg font-bold text-[#0b0f0d]">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#4b5563]">
                   {service.description}
                 </p>
-                <ul className="mt-4 space-y-2 border-t border-[#d6e9c9] pt-4 text-sm">
+                <ul className="mt-4 space-y-2 border-t border-[#e5e7eb] pt-4 text-sm">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-[#2d5d43]">
-                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0b6a37] text-xs font-bold text-white">
+                    <li key={point} className="flex items-start gap-2 text-[#1f2937]">
+                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0a4f2a] text-xs font-bold text-white">
                         ✓
                       </span>
                       {point}
@@ -154,26 +160,27 @@ export default function ServicePage() {
         </section>
 
         {/* サポートの流れ */}
-        <section className="bg-white py-16">
+        <section className="bg-[#fafaf7] py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <h2 className="section-title">サポートの流れ</h2>
+            <p className="eyebrow">FLOW</p>
+            <h2 className="section-title mt-2">サポートの流れ</h2>
             <p className="section-subtitle">
               相談から帰国後まで、一連のサポートプロセスをご説明します。
             </p>
             <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
               {steps.map((step, idx) => (
                 <div key={step.number} className="flex flex-col items-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-3 border-[#0b6a37] bg-[#f0fdf4] font-extrabold text-[#0b6a37]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0a4f2a] bg-white font-extrabold text-[#0a4f2a]">
                     {step.number}
                   </div>
-                  <h4 className="mt-4 text-center text-sm font-bold text-[#0d6938]">
+                  <h4 className="mt-4 text-center text-sm font-bold text-[#0b0f0d]">
                     {step.title}
                   </h4>
-                  <p className="mt-2 text-center text-xs text-[#456c54]">
+                  <p className="mt-2 text-center text-xs leading-6 text-[#4b5563]">
                     {step.description}
                   </p>
                   {idx < steps.length - 1 && (
-                    <div className="mt-4 hidden h-8 w-0.5 bg-[#d6e9c9] lg:block" />
+                    <div className="mt-4 hidden h-8 w-0.5 bg-[#e5e7eb] lg:block" />
                   )}
                 </div>
               ))}
@@ -182,12 +189,13 @@ export default function ServicePage() {
         </section>
 
         {/* 保護者向け安心サポート */}
-        <section className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6">
-          <div className="rounded-3xl border border-[#d6e9c9] bg-gradient-to-br from-[#f9fff4] to-[#f0fdf4] p-8 sm:p-10">
-            <h2 className="text-2xl font-extrabold text-[#0b6a37]">
+        <section className="mx-auto w-full max-w-4xl px-4 py-20 sm:px-6">
+          <div className="rounded-3xl border border-[#e5e7eb] bg-white p-8 shadow-sm sm:p-10">
+            <p className="eyebrow">FOR PARENTS</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0b0f0d]">
               保護者の方にも安心していただけるサポート体制
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#2d5d43]">
+            <p className="mt-4 text-sm leading-7 text-[#4b5563]">
               お子さんがブラジルで活動している間、保護者の皆様の不安を軽減するための体制を整えています。
               以下のサポートにより、遠く離れていても状況把握と緊急時対応が可能です。
             </p>
@@ -195,9 +203,9 @@ export default function ServicePage() {
               {parentSupports.map((support) => (
                 <li
                   key={support}
-                  className="flex items-center gap-3 rounded-xl border border-[#c4ddb8] bg-white px-4 py-3 text-sm font-semibold text-[#0d6938]"
+                  className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-[#fafaf7] px-4 py-3 text-sm font-semibold text-[#0b0f0d]"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0b6a37] text-xs font-extrabold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0a4f2a] text-xs font-extrabold text-white">
                     ✓
                   </span>
                   {support}
@@ -208,8 +216,12 @@ export default function ServicePage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-b from-[#0e6537] to-[#0a5a2e] py-20 text-white">
-          <div className="mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white">
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }} />
+          <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
             <h2 className="text-2xl font-extrabold sm:text-3xl">
               まずはLINEでお気軽にご相談ください。
             </h2>
