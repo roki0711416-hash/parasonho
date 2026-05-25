@@ -1,8 +1,32 @@
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
+import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
+const X_URL = "https://x.com/para_sonho";
+const TIKTOK_URL = "https://www.tiktok.com/@para_sonho";
+
+const socialItems: SocialFeedItem[] = [
+  {
+    platform: "instagram",
+    handle: "@para_sonho",
+    profileUrl: INSTAGRAM_URL,
+    // 将来: Instagram oEmbed の iframe URL を embedUrl に設定
+  },
+  {
+    platform: "x",
+    handle: "@para_sonho",
+    profileUrl: X_URL,
+    // 将来: X (Twitter) の埋め込みウィジェット URL を embedUrl に設定
+  },
+  {
+    platform: "tiktok",
+    handle: "@para_sonho",
+    profileUrl: TIKTOK_URL,
+    // 将来: TikTok oEmbed の iframe URL を embedUrl に設定
+  },
+];
 
 export default function Home() {
   const plans = [
@@ -118,44 +142,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#fafaf7] py-20">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <p className="eyebrow">SNS</p>
-            <h2 className="section-title mt-2">現地の様子をSNSで発信中</h2>
-            <p className="section-subtitle">ブラジルでの日常・練習・街の空気感を、リアルタイムでお届けしています。</p>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {[
-                { title: "現地クラブ練習", tag: "TRAINING" },
-                { title: "ブラジル生活", tag: "LIFE" },
-                { title: "サントスの様子", tag: "SANTOS" },
-              ].map((item) => (
-                <article key={item.title} className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#0a4f2a] hover:shadow-md">
-                  <div className="flex items-center justify-between border-b border-[#e5e7eb] px-4 py-3">
-                    <p className="text-[10px] font-bold tracking-[0.2em] text-[#0a4f2a]">{item.tag}</p>
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
-                  </div>
-                  <div className="flex h-44 items-center justify-center bg-gradient-to-br from-[#0b0f0d] to-[#0a4f2a] px-4 text-center">
-                    <p className="text-base font-bold text-white">{item.title}</p>
-                  </div>
-                  <div className="px-4 py-3">
-                    <p className="text-xs text-[#6b7280]">Instagram投稿イメージ</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="mt-12 text-center">
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0a4f2a] px-8 py-3 text-sm font-bold text-[#0a4f2a] transition hover:bg-[#0a4f2a] hover:text-white"
-              >
-                Instagramを見る
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        <SocialFeed items={socialItems} />
 
         <section id="plans" className="bg-white py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
