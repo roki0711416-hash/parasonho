@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "サービス内容 | Para Sonho / パラソーニョ",
   description:
-    "ブラジルサッカー留学に必要な練習先調整、現地生活、通訳、移動、緊急時対応まで。選手と保護者が安心できるワンストップサポート。",
+    "海外サッカー留学に必要な練習先調整、現地生活、通訳、移動、緊急時対応まで。選手と保護者が安心できるワンストップサポート。",
 };
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
@@ -38,7 +38,7 @@ export default function ServicePage() {
     {
       title: "現地生活立ち上げ支援",
       description:
-        "初めてのブラジル生活でも安心できるよう、滞在開始時の生活面をサポートします。",
+        "初めての海外生活でも安心できるよう、滞在開始時の生活面をサポートします。",
       points: [
         "宿泊先の案内",
         "生活ルールの説明",
@@ -111,7 +111,7 @@ export default function ServicePage() {
             </h1>
             <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
               Para Sonhoでは、<br className="md:hidden" />
-              ブラジルサッカー留学に必要な<br />
+              サッカー留学に必要な<br />
               練習先調整・生活サポート・通訳・移動・緊急時対応まで、<br />
               選手と保護者が安心して挑戦できる環境を整えます。
             </p>
@@ -196,7 +196,7 @@ export default function ServicePage() {
               保護者の方にも安心していただけるサポート体制
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#4b5563]">
-              お子さんがブラジルで活動している間、保護者の皆様の不安を軽減するための体制を整えています。
+              お子さんが海外で活動している間、保護者の皆様の不安を軽減するための体制を整えています。
               以下のサポートにより、遠く離れていても状況把握と緊急時対応が可能です。
             </p>
             <ul className="mt-6 grid gap-4 sm:grid-cols-2">
