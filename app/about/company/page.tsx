@@ -11,8 +11,9 @@ export default function CompanyPage() {
       <dl className="mt-6 divide-y divide-[#e7f2dd] border-y border-[#e7f2dd] text-sm">
         {[
           ["サービス名", "Para Sonho / パラソーニョ"],
-          ["事業内容", "ブラジルのサッカー留学サポート"],
-          ["所在地", "（準備中）"],
+          ["事業内容", "サッカー留学サポート"],
+          ["運営会社", "株式会社セグランサ"],
+          ["所在地", "静岡県静岡市"],
           ["お問い合わせ", "parasonho.info@gmail.com"],
         ].map(([k, v]) => (
           <div key={k} className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[160px_1fr]">
@@ -21,8 +22,6 @@ export default function CompanyPage() {
           </div>
         ))}
       </dl>
-
-      <p className="mt-6 text-xs text-[#4f735f]">※ 仮コンテンツです。確定後に更新します。</p>
     </>
   );
 }
