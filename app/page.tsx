@@ -4,8 +4,8 @@ import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
-const X_URL = "https://x.com/para_sonho";
-const TIKTOK_URL = "https://www.tiktok.com/@para_sonho";
+const X_URL = "https://x.com/Para_Sonho";
+const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
 
 const socialItems: SocialFeedItem[] = [
   {
@@ -16,13 +16,13 @@ const socialItems: SocialFeedItem[] = [
   },
   {
     platform: "x",
-    handle: "@para_sonho",
+    handle: "@Para_Sonho",
     profileUrl: X_URL,
     // 将来: X (Twitter) の埋め込みウィジェット URL を embedUrl に設定
   },
   {
     platform: "tiktok",
-    handle: "@para_sonho",
+    handle: "@para.sonho",
     profileUrl: TIKTOK_URL,
     // 将来: TikTok oEmbed の iframe URL を embedUrl に設定
   },
