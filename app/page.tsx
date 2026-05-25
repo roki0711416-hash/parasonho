@@ -60,9 +60,9 @@ export default function Home() {
               GLOBAL FOOTBALL CHALLENGE
             </span>
             <h1 className="mt-7 text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-6xl md:text-7xl">
-              世界に挑む、
+              海外サッカー留学で、
               <br />
-              <span className="text-[#ffcd00]">次の一歩へ。</span>
+              <span className="text-[#ffcd00]">次のステージへ。</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
               Para Sonho / パラソーニョは、本場ブラジルを舅に、<br className="hidden sm:block" />
