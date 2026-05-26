@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     absolute: "Para Sonho｜ブラジルサッカー留学・海外サッカー挑戦サポート",
   },
   description:
-    "Para Sonho（パラソーニョ）は、本場ブラジル・サントスでサッカー留学に挑戦する選手をサポートします。現地クラブ練習、生活サポート、通訳、チーム遠征まで対応。",
+    "Para Sonho（パラソーニョ）は、本場ブラジルでサッカー留学に挑戦する選手をサポートします。現地クラブ練習、生活サポート、通訳、チーム遠征まで対応。",
   alternates: { canonical: "/" },
 };
 
@@ -86,7 +86,7 @@ export default function Home() {
       url: SITE_URL,
       logo: `${SITE_URL}/parasonho-logo.png`,
       description:
-        "本場ブラジル・サントスを舞台に、サッカー留学・海外サッカー挑戦をサポートするブランド。",
+        "本場ブラジルを舞台に、サッカー留学・海外サッカー挑戦をサポートするブランド。",
       sameAs: [
         "https://www.instagram.com/para_sonho/",
         "https://x.com/Para_Sonho",
@@ -109,7 +109,7 @@ export default function Home() {
       areaServed: [{ "@type": "Country", name: "Brazil" }, { "@type": "Country", name: "Japan" }],
       audience: { "@type": "Audience", audienceType: "サッカー選手・保護者・チーム" },
       description:
-        "本場ブラジル・サントスでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、チーム遠征までワンストップでご提供。",
+        "本場ブラジルでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、チーム遠征までワンストップでご提供。",
     },
     {
       "@context": "https://schema.org",
@@ -150,7 +150,7 @@ export default function Home() {
               <span className="text-[#ffcd00]">次のステージへ。</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
-              Para Sonho / パラソーニョは、本場ブラジル・サントスを舞台に、<br className="hidden sm:block" />
+              Para Sonho / パラソーニョは、本場ブラジルを舞台に、<br className="hidden sm:block" />
               日本から世界へ挑戦する選手の成長を現地からサポートするサッカー留学ブランドです。
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

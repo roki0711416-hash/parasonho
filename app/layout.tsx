@@ -19,15 +19,13 @@ export const metadata: Metadata = {
     template: "%s｜Para Sonho / パラソーニョ",
   },
   description:
-    "Para Sonho（パラソーニョ）は、本場ブラジル・サントスでサッカー留学に挑戦する選手をサポートします。現地クラブ練習、生活サポート、通訳、チーム遠征まで対応。",
+    "Para Sonho（パラソーニョ）は、本場ブラジルでサッカー留学に挑戦する選手をサポートします。現地クラブ練習、生活サポート、通訳、チーム遠征まで対応。",
   keywords: [
     "パラソーニョ",
     "Para Sonho",
     "ブラジルサッカー留学",
     "サッカー留学",
     "海外サッカー留学",
-    "サントス サッカー留学",
-    "サントスサッカー留学",
     "ブラジル 留学 サッカー",
     "ブラジル留学",
     "サッカー海外挑戦",
@@ -45,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Para Sonho / パラソーニョ",
     title: "Para Sonho｜ブラジルサッカー留学・海外サッカー挑戦サポート",
     description:
-      "Para Sonho（パラソーニョ）は、本場ブラジル・サントスでサッカー留学に挑戦する選手をサポートします。",
+      "Para Sonho（パラソーニョ）は、本場ブラジルでサッカー留学に挑戦する選手をサポートします。",
     images: [
       {
         url: "/parasonho-logo.png",
@@ -59,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Para Sonho｜ブラジルサッカー留学・海外サッカー挑戦サポート",
     description:
-      "本場ブラジル・サントスでのサッカー留学・海外サッカー挑戦をサポート。現地クラブ練習・生活・通訳・チーム遠征まで対応。",
+      "本場ブラジルでのサッカー留学・海外サッカー挑戦をサポート。現地クラブ練習・生活・通訳・チーム遠征まで対応。",
     site: "@Para_Sonho",
     creator: "@Para_Sonho",
     images: ["/parasonho-logo.png"],

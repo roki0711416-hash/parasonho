@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "サービス内容｜ブラジルサッカー留学のサポート一覧",
   description:
-    "Para Sonho（パラソーニョ）のサービス内容。ブラジル・サントスでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、送迎、緊急時対応までワンストップでご提供。",
+    "Para Sonho（パラソーニョ）のサービス内容。ブラジルでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、送迎、緊急時対応までワンストップでご提供。",
   alternates: { canonical: "/service" },
   openGraph: {
     title: "サービス内容｜ブラジルサッカー留学のサポート一覧 | Para Sonho",
