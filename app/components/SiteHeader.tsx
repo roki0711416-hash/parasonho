@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -43,12 +44,16 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#e5e7eb] bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="flex items-baseline">
-            <span className="text-xl font-bold tracking-wide text-[#0a4f2a]">Para Sonho</span>
-            <span className="ml-2 text-xs font-medium text-[#6b7280]">/ パラソーニョ</span>
-          </span>
-          <span className="mt-0.5 hidden text-[10px] font-semibold tracking-[0.25em] text-[#9ca3af] sm:inline">GLOBAL FOOTBALL CHALLENGE</span>
+        <Link href="/" aria-label="Para Sonho パラソーニョ" className="inline-flex items-center">
+          <Image
+            src="/parasonho-logo.png"
+            alt="Para Sonho パラソーニョ"
+            width={440}
+            height={176}
+            priority
+            sizes="(max-width: 768px) 160px, 200px"
+            className="h-auto w-[150px] sm:w-[180px] md:w-[200px] lg:w-[210px]"
+          />
         </Link>
 
         {/* PCナビ */}
