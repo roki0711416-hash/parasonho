@@ -26,7 +26,7 @@ const staff: Staff[] = [
     yearsPlayed: 13,
     career: [
       "神奈川県トレセン",
-      "U-18ソサイチ日本代表選出",
+      "U-18ソサイチ日本選抜選出",
       "Santos FC U-17",
       "Lajeadense",
       "C.E.União",
