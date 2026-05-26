@@ -4,9 +4,16 @@ import SiteFooter from "../../components/SiteFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "チーム遠征プログラム | Para Sonho / パラソーニョ",
+  title: "チーム遠征プログラム｜ブラジルサッカー遠征・交流試合",
   description:
-    "小学生チームから社会人クラブまで、ブラジル現地大会への参加・現地クラブとの交流・渡航サポートを一括でご提供します。",
+    "Para Sonho（パラソーニョ）のチーム遠征プログラム。ジュニアから社会人クラブまで、ブラジル現地大会への参加・現地クラブとの交流試合・渡航サポートを一括でご提供します。",
+  alternates: { canonical: "/plans/team" },
+  openGraph: {
+    title: "チーム遠征プログラム｜ブラジルサッカー遠征・交流試合 | Para Sonho",
+    description:
+      "ブラジル現地大会参加・クラブ交流試合・渡航サポートをワンストップで。",
+    url: "/plans/team",
+  },
 };
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";

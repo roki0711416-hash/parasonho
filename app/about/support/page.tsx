@@ -1,4 +1,9 @@
-export const metadata = { title: "サポート内容 | Para Sonho" };
+export const metadata = {
+  title: "サポート内容",
+  description:
+    "Para Sonho（パラソーニョ）のサッカー留学サポート内容。現地生活・練習参加・通訳・緊急時対応まで、選手と保護者が安心できる体制をご紹介します。",
+  alternates: { canonical: "/about/support" },
+};
 
 export default function SupportPage() {
   const items = [

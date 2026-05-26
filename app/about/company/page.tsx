@@ -1,4 +1,9 @@
-export const metadata = { title: "会社概要 | Para Sonho" };
+export const metadata = {
+  title: "会社概要",
+  description:
+    "Para Sonho（パラソーニョ）を運営する株式会社セグランサの会社概要。ブラジルサッカー留学・海外サッカー挑戦サポート事業を展開しています。",
+  alternates: { canonical: "/about/company" },
+};
 
 export default function CompanyPage() {
   return (

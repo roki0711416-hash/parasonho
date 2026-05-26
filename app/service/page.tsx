@@ -4,9 +4,16 @@ import SiteFooter from "../components/SiteFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "サービス内容 | Para Sonho / パラソーニョ",
+  title: "サービス内容｜ブラジルサッカー留学のサポート一覧",
   description:
-    "海外サッカー留学に必要な練習先調整、現地生活、通訳、移動、緊急時対応まで。選手と保護者が安心できるワンストップサポート。",
+    "Para Sonho（パラソーニョ）のサービス内容。ブラジル・サントスでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、送迎、緊急時対応までワンストップでご提供。",
+  alternates: { canonical: "/service" },
+  openGraph: {
+    title: "サービス内容｜ブラジルサッカー留学のサポート一覧 | Para Sonho",
+    description:
+      "現地クラブ練習・生活サポート・通訳・送迎・緊急時対応まで、サッカー留学に必要なすべてをワンストップでご提供。",
+    url: "/service",
+  },
 };
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";

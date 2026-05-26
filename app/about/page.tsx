@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Para Sonhoとは",
+  description:
+    "Para Sonho（パラソーニョ）は、本場ブラジルを舞台にしたサッカー留学・海外サッカー挑戦サポートブランドです。会社概要・サポート内容・スタッフをご紹介します。",
+  alternates: { canonical: "/about" },
+};
+
 export default function AboutIndex() {
   const sections = [
     { href: "/about/company", label: "会社概要", desc: "事業者情報と所在地。" },

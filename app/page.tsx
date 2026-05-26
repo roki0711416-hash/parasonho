@@ -1,6 +1,16 @@
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Para Sonho｜ブラジルサッカー留学・海外サッカー挑戦サポート",
+  },
+  description:
+    "Para Sonho（パラソーニョ）は、本場ブラジル・サントスでサッカー留学に挑戦する選手をサポートします。現地クラブ練習、生活サポート、通訳、チーム遠征まで対応。",
+  alternates: { canonical: "/" },
+};
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
@@ -66,8 +76,59 @@ export default function Home() {
     },
   ];
 
+  const SITE_URL = "https://parasonho.com";
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Para Sonho / パラソーニョ",
+      alternateName: ["Para Sonho", "パラソーニョ"],
+      url: SITE_URL,
+      logo: `${SITE_URL}/parasonho-logo.png`,
+      description:
+        "本場ブラジル・サントスを舞台に、サッカー留学・海外サッカー挑戦をサポートするブランド。",
+      sameAs: [
+        "https://www.instagram.com/para_sonho/",
+        "https://x.com/Para_Sonho",
+        "https://www.tiktok.com/@para.sonho",
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Para Sonho / パラソーニョ",
+      url: SITE_URL,
+      inLanguage: "ja",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "ブラジルサッカー留学・海外サッカー挑戦サポート",
+      serviceType: "サッカー留学サポート",
+      provider: { "@type": "Organization", name: "Para Sonho / パラソーニョ", url: SITE_URL },
+      areaServed: [{ "@type": "Country", name: "Brazil" }, { "@type": "Country", name: "Japan" }],
+      audience: { "@type": "Audience", audienceType: "サッカー選手・保護者・チーム" },
+      description:
+        "本場ブラジル・サントスでのサッカー留学に必要な現地クラブ練習調整、生活サポート、通訳、チーム遠征までワンストップでご提供。",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white text-[#0b0f0d]">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
 
       <main id="top">
@@ -89,7 +150,7 @@ export default function Home() {
               <span className="text-[#ffcd00]">次のステージへ。</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
-              Para Sonho / パラソーニョは、本場ブラジルを舞台に、<br className="hidden sm:block" />
+              Para Sonho / パラソーニョは、本場ブラジル・サントスを舞台に、<br className="hidden sm:block" />
               日本から世界へ挑戦する選手の成長を現地からサポートするサッカー留学ブランドです。
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

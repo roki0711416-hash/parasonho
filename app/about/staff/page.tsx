@@ -1,4 +1,9 @@
-export const metadata = { title: "スタッフ紹介 | Para Sonho" };
+export const metadata = {
+  title: "スタッフ紹介",
+  description:
+    "Para Sonho（パラソーニョ）のスタッフ紹介。ブラジル現地・日本の両拠点でサッカー留学をサポートするメンバーをご紹介します。",
+  alternates: { canonical: "/about/staff" },
+};
 
 export default function StaffPage() {
   const staff = [
