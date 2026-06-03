@@ -38,7 +38,6 @@ const socialItems: SocialFeedItem[] = [
  */
 const experiencePhotos: { src?: string; label: string }[] = [
   { src: undefined, label: "現地クラブの練習" },
-  { src: undefined, label: "公式戦・試合" },
   { src: undefined, label: "遠征・スタジアム" },
 ];
 
@@ -72,7 +71,6 @@ const reasons: { no: string; title: string; desc: string; src?: string }[] = [
 const lifeItems: { title: string; desc: string; src?: string }[] = [
   { title: "寮・滞在", desc: "安全で快適な滞在先を手配。", src: undefined },
   { title: "食事", desc: "コンディションを支える食環境。", src: undefined },
-  { title: "学校・語学", desc: "学びと語学のサポート。", src: undefined },
   { title: "移動", desc: "練習・試合への送迎・移動を支援。", src: undefined },
   { title: "日常生活", desc: "現地での暮らしに寄り添う。", src: undefined },
 ];
