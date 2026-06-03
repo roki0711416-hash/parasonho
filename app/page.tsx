@@ -64,14 +64,14 @@ const reasons: { no: string; title: string; desc: string; src?: string }[] = [
     no: "04",
     title: "安心のサポート体制",
     desc: "渡航前から現地生活・通訳・緊急時まで、日本語で伴走します。",
-    src: undefined,
+    src: "/images/support.png",
   },
 ];
 
 const lifeItems: { title: string; desc: string; src?: string }[] = [
   { title: "寮・滞在", desc: "安全で快適な滞在先を手配。", src: undefined },
-  { title: "食事", desc: "コンディションを支える食環境。", src: undefined },
-  { title: "移動", desc: "練習・試合への送迎・移動を支援。", src: undefined },
+  { title: "食事", desc: "ブラジルの伝統料理シュラスコをはじめ、コンディションを支える食環境。", src: "/images/IMG_0595.JPG" },
+  { title: "移動", desc: "練習・試合への送迎・移動を支援。", src: "/images/IMG_1030.JPG" },
   { title: "日常生活", desc: "現地での暮らしに寄り添う。", src: undefined },
 ];
 
