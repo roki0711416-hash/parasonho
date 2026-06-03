@@ -17,9 +17,8 @@ import { NextResponse, type NextRequest } from "next/server";
 function isComingSoon(): boolean {
   const explicit = process.env.COMING_SOON;
   if (explicit === "true") return true;
-  if (explicit === "false") return false;
-  // 環境変数が未設定なら、本番環境だけ準備中にする
-  return process.env.VERCEL_ENV === "production";
+  // それ以外（未設定 / "false" など）はすべて公開状態にする
+  return false;
 }
 
 export function middleware(request: NextRequest) {
