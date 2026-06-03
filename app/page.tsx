@@ -241,9 +241,9 @@ export default function Home() {
               ブラジルで本物のサッカーを体験し、世界への可能性を広げる。
             </p>
             <div className="br-animate br-animate-delay-3 mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="br-btn-yellow w-full text-base sm:w-auto">
+              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="br-btn-green w-full text-base sm:w-auto">
                 <LineIcon className="h-5 w-5" />
-                無料で相談する
+                LINEで無料相談する
               </a>
               <a
                 href="#reasons"
@@ -344,9 +344,6 @@ export default function Home() {
             <p className="br-eyebrow" style={{ color: "#ffdf00" }}>
               DAILY LIFE
             </p>
-            <h2 className="br-heading br-heading-light mt-3 max-w-2xl">
-              挑戦を支える、<span className="text-[#ffdf00]">毎日の安心。</span>
-            </h2>
             <p className="mt-4 max-w-xl text-sm leading-8 text-white/80">
               寮・食事・移動・日常まで。サッカーに集中できる環境を整えます。
             </p>
@@ -478,7 +475,7 @@ export default function Home() {
                     href={LINE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="br-btn-yellow mt-2 w-full text-sm"
+                    className="br-btn-green mt-2 w-full text-sm"
                   >
                     <LineIcon className="h-4 w-4" />
                     プロテストについて相談する
@@ -607,10 +604,6 @@ export default function Home() {
               年齢・レベルは問いません。まずは気軽に、夢への一歩を相談してください。
             </p>
             <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="br-btn-yellow w-full text-base sm:w-auto sm:min-w-[240px]">
-                <LineIcon className="h-5 w-5" />
-                無料で相談する
-              </a>
               <a
                 href={LINE_URL}
                 target="_blank"
