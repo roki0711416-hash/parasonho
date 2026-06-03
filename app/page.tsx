@@ -37,8 +37,8 @@ const socialItems: SocialFeedItem[] = [
  * 未指定（undefined）の場合はブラジルカラーの上品なプレースホルダーが表示されます。
  */
 const experiencePhotos: { src?: string; label: string }[] = [
-  { src: undefined, label: "現地クラブの練習" },
-  { src: undefined, label: "遠征・スタジアム" },
+  { src: "/images/IMG_1165.JPG", label: "現地クラブの練習" },
+  { src: "/images/IMG_0009.JPG", label: "遠征・スタジアム" },
 ];
 
 const reasons: { no: string; title: string; desc: string; src?: string }[] = [
