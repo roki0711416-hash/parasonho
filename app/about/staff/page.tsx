@@ -38,9 +38,15 @@ const staff: Staff[] = [
     name: "松永 ケビン",
     furigana: "マツナガ ケビン",
     role: "現地サポート / 通訳",
+    image: "/images/staff/kevin-matsunaga.jpg",
     yearsPlayed: 15,
     yearsLabel: "サッカー・フットサル歴",
-    career: ["マリオフットサル"],
+    career: [
+      "マリオフットサル",
+      "Santos Academy JAPAN",
+      "全日本ユース(U-18)フットサル大会出場",
+      "Atibaia",
+    ],
     bio: "高いレベルの日本語・ポルトガル語に対応し、現地での生活や手続きを安全・安心にサポート。サッカー・フットサルで培った経験を活かし、選手目線で寄り添います。",
   },
 ];
