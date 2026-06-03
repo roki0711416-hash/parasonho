@@ -16,6 +16,7 @@ const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
+const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 
 const socialItems: SocialFeedItem[] = [
   {
@@ -35,6 +36,12 @@ const socialItems: SocialFeedItem[] = [
     handle: "@para.sonho",
     profileUrl: TIKTOK_URL,
     // 将来: TikTok oEmbed の iframe URL を embedUrl に設定
+  },
+  {
+    platform: "youtube",
+    handle: "Para Sonho / パラソーニョ",
+    profileUrl: YOUTUBE_URL,
+    // 将来: YouTube の埋め込み iframe URL を embedUrl に設定
   },
 ];
 
@@ -91,6 +98,7 @@ export default function Home() {
         "https://www.instagram.com/para_sonho/",
         "https://x.com/Para_Sonho",
         "https://www.tiktok.com/@para.sonho",
+        "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q",
       ],
     },
     {

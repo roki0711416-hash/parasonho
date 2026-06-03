@@ -11,7 +11,7 @@ import type { ReactNode } from "react";
  * 埋め込み iframe / クライアントコンポーネントに置き換える想定。
  */
 
-export type SocialPlatform = "instagram" | "x" | "tiktok";
+export type SocialPlatform = "instagram" | "x" | "tiktok" | "youtube";
 
 export interface SocialFeedItem {
   platform: SocialPlatform;
@@ -69,6 +69,18 @@ const PLATFORM_META: Record<
     gradient: "from-[#25F4EE] via-[#0b0f0d] to-[#FE2C55]",
     icon: <Music2 className="h-7 w-7" strokeWidth={1.8} />,
     description: "ピッチ上のプレーや現地の日常をショート動画で公開。",
+  },
+  youtube: {
+    label: "YouTube",
+    tag: "YOUTUBE",
+    cta: "YouTubeを見る",
+    gradient: "from-[#ff0000] via-[#c4302b] to-[#0b0f0d]",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden="true">
+        <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
+      </svg>
+    ),
+    description: "現地の練習・試合・密着映像を動画でじ覧いただけます。",
   },
 };
 
@@ -137,7 +149,7 @@ export default function SocialFeed({ items }: SocialFeedProps) {
         <p className="section-subtitle">
           現地の日常・練習・選手の取り組みを、それぞれのSNSでリアルタイムにお届けしています。
         </p>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
             <SocialCard key={item.platform} item={item} />
           ))}
