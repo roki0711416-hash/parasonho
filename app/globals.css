@@ -8,6 +8,13 @@
   --brand-accent: #ffcd00;
   --brand-border: #e5e7eb;
   --brand-muted: #4b5563;
+
+  /* Brazil theme */
+  --br-green: #009c3b;
+  --br-green-dark: #00702a;
+  --br-yellow: #ffdf00;
+  --br-navy: #002776;
+  --br-white: #ffffff;
 }
 
 @theme inline {
@@ -93,5 +100,157 @@ body {
 @media (max-width: 640px) {
   .section-title {
     font-size: 1.5rem;
+  }
+}
+
+/* =========================================================
+   Brazil theme – photo-centric top page
+   ========================================================= */
+
+/* セクション見出し（ブラジル仕様） */
+.br-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--br-green);
+}
+
+.br-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--br-yellow);
+  border-radius: 2px;
+}
+
+.br-heading {
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #0b1a10;
+}
+
+.br-heading-light {
+  color: #ffffff;
+}
+
+/* ブラジルイエローのCTAボタン */
+.br-btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  background: var(--br-yellow);
+  color: #0b1a10;
+  font-weight: 900;
+  padding: 1rem 2.25rem;
+  box-shadow: 0 14px 30px -10px rgba(255, 223, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.br-btn-yellow:hover {
+  transform: translateY(-2px);
+  background: #ffe838;
+  box-shadow: 0 18px 38px -10px rgba(255, 223, 0, 0.75);
+}
+
+.br-btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  background: var(--br-green);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1rem 2.25rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.br-btn-green:hover {
+  transform: translateY(-2px);
+  background: var(--br-green-dark);
+}
+
+/* 写真プレースホルダーのブランドグラデーション */
+.br-photo-fallback {
+  background:
+    linear-gradient(135deg, rgba(0, 156, 59, 0.92) 0%, rgba(0, 112, 42, 0.92) 55%, rgba(0, 39, 118, 0.92) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.br-photo-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0);
+  background-size: 26px 26px;
+  opacity: 0.5;
+}
+
+/* オーバーレイ */
+.br-overlay-dark {
+  background: linear-gradient(to top, rgba(7, 18, 11, 0.85) 0%, rgba(7, 18, 11, 0.25) 55%, rgba(7, 18, 11, 0.1) 100%);
+}
+
+.br-overlay-green {
+  background: linear-gradient(to top, rgba(0, 112, 42, 0.78) 0%, rgba(0, 156, 59, 0.25) 60%, transparent 100%);
+}
+
+.br-overlay-navy {
+  background: linear-gradient(to top, rgba(0, 39, 118, 0.82) 0%, rgba(0, 39, 118, 0.25) 60%, transparent 100%);
+}
+
+/* 上品なフェードイン */
+@keyframes brFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.br-animate {
+  animation: brFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.br-animate-delay-1 {
+  animation-delay: 0.12s;
+}
+.br-animate-delay-2 {
+  animation-delay: 0.24s;
+}
+.br-animate-delay-3 {
+  animation-delay: 0.36s;
+}
+
+/* ゆっくりズーム（ヒーロー写真用） */
+@keyframes brSlowZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.br-slow-zoom {
+  animation: brSlowZoom 12s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .br-animate,
+  .br-slow-zoom {
+    animation: none;
   }
 }
