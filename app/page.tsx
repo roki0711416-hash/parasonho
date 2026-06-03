@@ -68,13 +68,6 @@ const reasons: { no: string; title: string; desc: string; src?: string }[] = [
   },
 ];
 
-const lifeItems: { title: string; desc: string; src?: string }[] = [
-  { title: "寮・滞在", desc: "安全で快適な滞在先を手配。", src: undefined },
-  { title: "食事", desc: "ブラジルの伝統料理シュラスコをはじめ、コンディションを支える食環境。", src: "/images/IMG_0595.JPG" },
-  { title: "移動", desc: "練習・試合への送迎・移動を支援。", src: "/images/IMG_1030.JPG" },
-  { title: "日常生活", desc: "現地での暮らしに寄り添う。", src: undefined },
-];
-
 const players: { name: string; meta: string; comment: string; src?: string }[] = [
   {
     name: "参加選手 A",
@@ -331,42 +324,6 @@ export default function Home() {
                     <p className="text-sm leading-7 text-[#3f5147]">{r.desc}</p>
                   </div>
                 </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. 留学生活 --------------------------------------------------- */}
-        <section className="relative overflow-hidden bg-[#002776] py-20 text-white sm:py-24">
-          <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#009c3b]/30 blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-[#ffdf00]/20 blur-3xl" />
-          <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow" style={{ color: "#ffdf00" }}>
-              DAILY LIFE
-            </p>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-white/80">
-              寮・食事・移動・日常まで。サッカーに集中できる環境を整えます。
-            </p>
-
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-              {lifeItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="relative aspect-[4/5] overflow-hidden rounded-2xl"
-                >
-                  <Photo
-                    src={item.src}
-                    alt={item.title}
-                    overlay="dark"
-                    placeholderLabel={item.title}
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  >
-                    <div className="flex h-full flex-col justify-end p-4">
-                      <p className="text-base font-extrabold text-white drop-shadow">{item.title}</p>
-                      <p className="mt-1 text-[11px] leading-5 text-white/75">{item.desc}</p>
-                    </div>
-                  </Photo>
-                </div>
               ))}
             </div>
           </div>
