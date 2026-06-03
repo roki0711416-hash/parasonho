@@ -348,16 +348,14 @@ export default function Home() {
               挑戦を支える、<span className="text-[#ffdf00]">毎日の安心。</span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-8 text-white/80">
-              寮・食事・学校・移動・日常まで。サッカーに集中できる環境を整えます。
+              寮・食事・移動・日常まで。サッカーに集中できる環境を整えます。
             </p>
 
             <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-              {lifeItems.map((item, i) => (
+              {lifeItems.map((item) => (
                 <div
                   key={item.title}
-                  className={`relative overflow-hidden rounded-2xl ${
-                    i === 0 ? "col-span-2 aspect-[16/10] lg:col-span-2 lg:row-span-2 lg:aspect-auto" : "aspect-square"
-                  }`}
+                  className="relative aspect-[4/5] overflow-hidden rounded-2xl"
                 >
                   <Photo
                     src={item.src}
