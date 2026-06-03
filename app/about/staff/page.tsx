@@ -13,6 +13,7 @@ type Staff = {
   role: string;
   image?: string;
   yearsPlayed?: number;
+  yearsLabel?: string;
   career?: string[];
   bio?: string;
 };
@@ -32,6 +33,15 @@ const staff: Staff[] = [
       "C.E.União",
     ],
     bio: "日本での競技経験とブラジル現地クラブでのプレー経験を活かし、選手一人ひとりに合った留学プランをコーディネートします。",
+  },
+  {
+    name: "松永 ケビン",
+    furigana: "マツナガ ケビン",
+    role: "現地サポート / 通訳",
+    yearsPlayed: 15,
+    yearsLabel: "サッカー・フットサル歴",
+    career: ["マリオフットサル"],
+    bio: "高いレベルの日本語・ポルトガル語に対応し、現地での生活や手続きを安全・安心にサポート。サッカー・フットサルで培った経験を活かし、選手目線で寄り添います。",
   },
 ];
 
@@ -77,7 +87,7 @@ export default function StaffPage() {
               {typeof s.yearsPlayed === "number" && (
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#fff7d6] px-3 py-1 text-xs font-bold text-[#8a6a00] ring-1 ring-[#ffcd00]/40">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
-                  サッカー歴 {s.yearsPlayed}年
+                  {s.yearsLabel ?? "サッカー歴"} {s.yearsPlayed}年
                 </div>
               )}
 
