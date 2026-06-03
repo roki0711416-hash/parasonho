@@ -213,7 +213,7 @@ export default function Home() {
         <section className="relative min-h-[88vh] w-full overflow-hidden">
           <div className="absolute inset-0 br-slow-zoom">
             <Photo
-              src={undefined}
+              src="/images/IMG_5800.jpg"
               alt="ブラジルでサッカーに挑戦する選手"
               priority
               sizes="100vw"
