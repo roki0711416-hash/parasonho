@@ -46,19 +46,19 @@ const reasons: { no: string; title: string; desc: string; src?: string }[] = [
     no: "01",
     title: "世界レベルの環境",
     desc: "本場ブラジルのピッチで、世界基準のスピードと技術を肌で感じる毎日。",
-    src: undefined,
+    src: "/images/IMG_0007.JPG",
   },
   {
     no: "02",
     title: "現地クラブとのネットワーク",
     desc: "現地に根ざしたつながりで、選手に合ったクラブ・練習環境へ。",
-    src: undefined,
+    src: "/images/IMG_2590.JPG",
   },
   {
     no: "03",
     title: "挑戦する機会",
     desc: "練習参加から入団テストまで、評価される舞台を用意します。",
-    src: undefined,
+    src: "/images/IMG_5800.jpg",
   },
   {
     no: "04",
