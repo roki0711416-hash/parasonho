@@ -493,7 +493,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. 参加選手・卒業生 ------------------------------------------- */}
+        {/* 7. 参加選手・卒業生（参加選手がまだいないため一旦非表示） -------
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
             <p className="br-eyebrow">PLAYERS</p>
@@ -530,8 +530,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
-        {/* 8. ギャラリー ------------------------------------------------- */}
+        {/* 8. ギャラリー（写真が揃うまで一旦非表示） ---------------------
         <section className="bg-[#f7faf8] py-20 sm:py-24">
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
             <p className="br-eyebrow">GALLERY</p>
@@ -561,6 +562,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
         {/* SNS */}
         <SocialFeed items={socialItems} />
