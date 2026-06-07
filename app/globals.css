@@ -47,9 +47,10 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-saira), sans-serif;
   font-size: 1.875rem;
   font-weight: 800;
-  color: #0b0f0d;
+  color: #e9e1d1;
   letter-spacing: 0.01em;
   position: relative;
   display: inline-block;
@@ -63,39 +64,40 @@ body {
   bottom: 0;
   width: 2.5rem;
   height: 3px;
-  background: #0a4f2a;
+  background: #f5b041;
   border-radius: 2px;
 }
 
 .section-subtitle {
   margin-top: 1rem;
   max-width: 48rem;
-  color: #4b5563;
+  color: rgba(233, 225, 209, 0.62);
   line-height: 1.85;
   font-size: 0.95rem;
 }
 
 .card {
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  border-radius: 1rem;
+  border: 1px solid rgba(245, 176, 65, 0.2);
+  background: linear-gradient(180deg, #1b2338 0%, #161d30 100%);
+  border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 16px -8px rgba(11, 15, 13, 0.08);
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  border-color: #0a4f2a;
-  box-shadow: 0 10px 28px -12px rgba(10, 79, 42, 0.18);
+  border-color: rgba(245, 176, 65, 0.38);
+  box-shadow: 0 10px 28px -12px rgba(245, 176, 65, 0.2);
   transform: translateY(-2px);
 }
 
 .eyebrow {
+  font-family: var(--font-saira), sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #0a4f2a;
+  color: #f5b041;
 }
 
 @media (max-width: 640px) {

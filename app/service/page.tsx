@@ -19,12 +19,7 @@ export const metadata: Metadata = {
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 
 const LINE_ICON = (
-  <svg
-    viewBox="0 0 24 24"
-    className="h-5 w-5"
-    fill="currentColor"
-    aria-hidden="true"
-  >
+  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
     <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
   </svg>
 );
@@ -33,8 +28,7 @@ export default function ServicePage() {
   const services = [
     {
       title: "現地クラブ・練習先マッチング",
-      description:
-        "選手の年齢・レベル・目的に合わせて、現地クラブや練習環境を調整します。",
+      description: "選手の年齢・レベル・目的に合わせて、現地クラブや練習環境を調整します。",
       points: [
         "現地クラブ練習参加の調整",
         "トレーニング環境の案内",
@@ -44,19 +38,12 @@ export default function ServicePage() {
     },
     {
       title: "現地生活立ち上げ支援",
-      description:
-        "初めての海外生活でも安心できるよう、滞在開始時の生活面をサポートします。",
-      points: [
-        "宿泊先の案内",
-        "生活ルールの説明",
-        "周辺環境の案内",
-        "買い物や日常生活のサポート",
-      ],
+      description: "初めての海外生活でも安心できるよう、滞在開始時の生活面をサポートします。",
+      points: ["宿泊先の案内", "生活ルールの説明", "周辺環境の案内", "買い物や日常生活のサポート"],
     },
     {
       title: "通訳/コミュニケーション補助",
-      description:
-        "言語面の不安を減らし、現地での活動に集中できるようサポートします。",
+      description: "言語面の不安を減らし、現地での活動に集中できるようサポートします。",
       points: [
         "ポルトガル語コミュニケーション補助",
         "クラブ関係者とのやり取り補助",
@@ -66,14 +53,8 @@ export default function ServicePage() {
     },
     {
       title: "滞在中の相談・緊急時対応",
-      description:
-        "現地滞在中の不安やトラブルに対応できるよう、相談体制を整えます。",
-      points: [
-        "LINEでの相談対応",
-        "体調不良時のサポート",
-        "緊急時の現地対応",
-        "保護者への状況共有",
-      ],
+      description: "現地滞在中の不安やトラブルに対応できるよう、相談体制を整えます。",
+      points: ["LINEでの相談対応", "体調不良時のサポート", "緊急時の現地対応", "保護者への状況共有"],
     },
   ];
 
@@ -94,39 +75,35 @@ export default function ServicePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-[#0b0f0d]">
+    <div className="ps-dark min-h-screen">
       <SiteHeader />
 
       <main>
-        {/* ヒーローセクション */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white md:py-40">
-          <div className="absolute inset-0 opacity-[0.06]" style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }} />
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#0b6a37]/30 blur-3xl" />
-          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#0a4f2a]/40 blur-3xl" />
+        <section className="relative overflow-hidden bg-[#0E1322] py-24 md:py-40">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: "radial-gradient(circle at 1px 1px, #F5B041 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#F5B041]/10 blur-3xl" />
           <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-1.5 text-[10px] font-bold tracking-[0.25em] text-white/80 uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
-              Support Service
-            </p>
-            <h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
+            <p className="ps-eyebrow">Support Service</p>
+            <h1 className="ps-heading mt-4 text-3xl sm:text-5xl md:text-6xl">
               世界への挑戦を、
               <br />
-              <span className="text-[#ffcd00]">現地サポートで支える。</span>
+              <span className="text-[#F5B041]">現地サポートで支える。</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/75 sm:text-base md:text-lg">
-              Para Sonhoでは、<br className="md:hidden" />
-              サッカー留学に必要な<br />
-              練習先調整・生活サポート・通訳・移動・緊急時対応まで、<br />
+            <p className="ps-lead mx-auto mt-8 max-w-3xl text-sm sm:text-base md:text-lg">
+              Para Sonhoでは、サッカー留学に必要な練習先調整・生活サポート・通訳・移動・緊急時対応まで、
               選手と保護者が安心して挑戦できる環境を整えます。
             </p>
             <a
               href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#06C755] px-9 py-5 text-base font-extrabold text-white shadow-lg transition hover:bg-[#05b34c] sm:w-auto sm:min-w-[300px]"
+              className="ps-btn-line mt-12 inline-flex w-full items-center justify-center gap-3 sm:w-auto sm:min-w-[300px]"
             >
               {LINE_ICON}
               LINEで無料相談
@@ -134,27 +111,21 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* サービス一覧 */}
-        <section className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
-          <p className="eyebrow">MAIN SERVICE</p>
-          <h2 className="section-title mt-2">主要サービス</h2>
-          <p className="section-subtitle">
+        <section className="ps-section ps-container">
+          <p className="ps-eyebrow">MAIN SERVICE</p>
+          <h2 className="ps-heading mt-4">主要サービス</h2>
+          <p className="ps-lead mt-4 max-w-2xl text-sm sm:text-base">
             選手に必要なサポートを、総合的にご提供します。
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <article
-                key={service.title}
-                className="card flex flex-col border-l-4 border-[#0a4f2a]"
-              >
-                <h3 className="text-lg font-bold text-[#0b0f0d]">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#4b5563]">
-                  {service.description}
-                </p>
-                <ul className="mt-4 space-y-2 border-t border-[#e5e7eb] pt-4 text-sm">
+              <article key={service.title} className="ps-card border-l-4 border-[#F5B041] p-6">
+                <h3 className="text-lg font-bold text-[#E9E1D1]">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#E9E1D1]/70">{service.description}</p>
+                <ul className="mt-4 space-y-2 border-t border-[rgba(245,176,65,0.15)] pt-4 text-sm">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-[#1f2937]">
-                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0a4f2a] text-xs font-bold text-white">
+                    <li key={point} className="flex items-start gap-2 text-[#E9E1D1]/85">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#F5B041] text-xs font-bold text-[#0E1322]">
                         ✓
                       </span>
                       {point}
@@ -166,43 +137,34 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* サポートの流れ */}
-        <section className="bg-[#fafaf7] py-20">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-            <p className="eyebrow">FLOW</p>
-            <h2 className="section-title mt-2">サポートの流れ</h2>
-            <p className="section-subtitle">
+        <section className="ps-section bg-[#161D30]">
+          <div className="ps-container">
+            <p className="ps-eyebrow">FLOW</p>
+            <h2 className="ps-heading mt-4">サポートの流れ</h2>
+            <p className="ps-lead mt-4 max-w-2xl text-sm sm:text-base">
               相談から帰国後まで、一連のサポートプロセスをご説明します。
             </p>
             <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-              {steps.map((step, idx) => (
+              {steps.map((step) => (
                 <div key={step.number} className="flex flex-col items-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0a4f2a] bg-white font-extrabold text-[#0a4f2a]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#F5B041] bg-[#1B2338] font-extrabold text-[#F5B041]">
                     {step.number}
                   </div>
-                  <h4 className="mt-4 text-center text-sm font-bold text-[#0b0f0d]">
-                    {step.title}
-                  </h4>
-                  <p className="mt-2 text-center text-xs leading-6 text-[#4b5563]">
+                  <h4 className="mt-4 text-center text-sm font-bold text-[#E9E1D1]">{step.title}</h4>
+                  <p className="mt-2 text-center text-xs leading-6 text-[#E9E1D1]/60">
                     {step.description}
                   </p>
-                  {idx < steps.length - 1 && (
-                    <div className="mt-4 hidden h-8 w-0.5 bg-[#e5e7eb] lg:block" />
-                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 保護者向け安心サポート */}
-        <section className="mx-auto w-full max-w-4xl px-4 py-20 sm:px-6">
-          <div className="rounded-3xl border border-[#e5e7eb] bg-white p-8 shadow-sm sm:p-10">
-            <p className="eyebrow">FOR PARENTS</p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0b0f0d]">
-              保護者の方にも安心していただけるサポート体制
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[#4b5563]">
+        <section className="ps-section ps-container">
+          <div className="ps-card p-8 sm:p-10">
+            <p className="ps-eyebrow">FOR PARENTS</p>
+            <h2 className="ps-heading mt-4 text-2xl">保護者の方にも安心していただけるサポート体制</h2>
+            <p className="ps-lead mt-4 text-sm sm:text-base">
               お子さんが海外で活動している間、保護者の皆様の不安を軽減するための体制を整えています。
               以下のサポートにより、遠く離れていても状況把握と緊急時対応が可能です。
             </p>
@@ -210,9 +172,9 @@ export default function ServicePage() {
               {parentSupports.map((support) => (
                 <li
                   key={support}
-                  className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-[#fafaf7] px-4 py-3 text-sm font-semibold text-[#0b0f0d]"
+                  className="flex items-center gap-3 rounded-xl border border-[rgba(245,176,65,0.2)] bg-[#1B2338] px-4 py-3 text-sm font-semibold text-[#E9E1D1]"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0a4f2a] text-xs font-extrabold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F5B041] text-xs font-extrabold text-[#0E1322]">
                     ✓
                   </span>
                   {support}
@@ -222,35 +184,25 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b0f0d] via-[#0a3a1f] to-[#0a4f2a] py-24 text-white">
-          <div className="absolute inset-0 opacity-[0.06]" style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }} />
+        <section className="relative overflow-hidden bg-[#0E1322] py-24">
           <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
-            <h2 className="text-2xl font-extrabold sm:text-3xl">
-              まずはLINEでお気軽にご相談ください。
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-              期間・レベル・目的に応じたプランを、無料でご提案いたします。<br />
+            <h2 className="ps-heading text-2xl sm:text-3xl">まずはLINEでお気軽にご相談ください。</h2>
+            <p className="ps-lead mx-auto mt-4 max-w-xl text-sm sm:text-base">
+              期間・レベル・目的に応じたプランを、無料でご提案いたします。
               不安なことやご質問があれば、お気軽にお問い合わせください。
             </p>
             <a
               href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#06C755] px-8 py-5 text-lg font-extrabold text-white shadow-lg transition hover:bg-[#05b34c] sm:w-auto sm:min-w-[320px]"
+              className="ps-btn-line mt-10 inline-flex w-full items-center justify-center gap-3 sm:w-auto sm:min-w-[320px]"
             >
               {LINE_ICON}
               LINEで無料相談
             </a>
-            <p className="mt-4 text-xs text-white/60">LINE ID：@593loohp</p>
+            <p className="mt-4 text-xs text-[#E9E1D1]/50">LINE ID：@593loohp</p>
             <p className="mt-6">
-              <Link
-                href="/"
-                className="text-sm text-white/70 underline underline-offset-4 hover:text-white"
-              >
+              <Link href="/" className="text-sm text-[#E9E1D1]/60 underline underline-offset-4 hover:text-[#F5B041]">
                 ← TOPページへ戻る
               </Link>
             </p>

@@ -22,7 +22,6 @@ const aboutLinks = [
 ];
 
 const siteLinks = [
-  { href: "/#programs", label: "提携校プログラム" },
   { href: "/#journey", label: "留学までの流れ" },
   { href: "/#plans", label: "留学プラン" },
   { href: "/#protest", label: "プロテスト" },

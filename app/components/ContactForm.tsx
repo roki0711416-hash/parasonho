@@ -119,7 +119,7 @@ export default function ContactForm() {
             id="soccerHistory"
             name="soccerHistory"
             type="text"
-            placeholder="例：小学校1年生から / 9年"
+            placeholder="例：6歳から / 9年"
             className={inputClass}
           />
         </div>

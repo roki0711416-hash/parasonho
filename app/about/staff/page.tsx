@@ -54,8 +54,8 @@ const staff: Staff[] = [
 export default function StaffPage() {
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">スタッフ紹介</h1>
-      <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
+      <h1 className="ps-heading text-2xl sm:text-3xl">スタッフ紹介</h1>
+      <p className="ps-lead mt-3 text-sm sm:text-base">
         日本と現地、両側からあなたの挑戦を支えるメンバーです。
       </p>
 
@@ -63,9 +63,9 @@ export default function StaffPage() {
         {staff.map((s) => (
           <article
             key={s.name}
-            className="flex flex-col overflow-hidden rounded-2xl border border-[#d8eacb] bg-white shadow-sm transition hover:shadow-md"
+            className="ps-card flex flex-col overflow-hidden p-0"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-br from-[#0a4f2a] to-[#0b6a37]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#1B2338]">
               {s.image ? (
                 <Image
                   src={s.image}
@@ -75,7 +75,7 @@ export default function StaffPage() {
                   className="object-cover object-center"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center text-3xl font-extrabold text-white/70">
+                <div className="flex h-full w-full items-center justify-center text-3xl font-extrabold text-[#E9E1D1]/40">
                   {s.name.charAt(0)}
                 </div>
               )}
@@ -83,33 +83,33 @@ export default function StaffPage() {
 
             <div className="flex flex-1 flex-col gap-3 p-5">
               <div>
-                <p className="text-[10px] font-semibold tracking-[0.18em] text-[#6b8a76]">
+                <p className="text-[10px] font-semibold tracking-[0.18em] text-[#E9E1D1]/50">
                   {s.furigana}
                 </p>
-                <h2 className="mt-1 text-lg font-extrabold text-[#0b0f0d]">{s.name}</h2>
-                <p className="mt-1 text-xs font-semibold text-[#0a4f2a]">{s.role}</p>
+                <h2 className="mt-1 text-lg font-extrabold text-[#E9E1D1]">{s.name}</h2>
+                <p className="mt-1 text-xs font-semibold text-[#F5B041]">{s.role}</p>
               </div>
 
               {typeof s.yearsPlayed === "number" && (
-                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#fff7d6] px-3 py-1 text-xs font-bold text-[#8a6a00] ring-1 ring-[#ffcd00]/40">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ffcd00]" />
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(245,176,65,0.3)] bg-[rgba(245,176,65,0.1)] px-3 py-1 text-xs font-bold text-[#F5B041]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
                   {s.yearsLabel ?? "サッカー歴"} {s.yearsPlayed}年
                 </div>
               )}
 
               {s.career && s.career.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-bold tracking-[0.15em] text-[#0a4f2a]">
+                  <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">
                     MAIN CAREER
                   </p>
-                  <p className="mt-1 text-xs font-semibold text-[#4f735f]">主な経歴</p>
+                  <p className="mt-1 text-xs font-semibold text-[#E9E1D1]/60">主な経歴</p>
                   <ul className="mt-2 space-y-1.5">
                     {s.career.map((c) => (
                       <li
                         key={c}
-                        className="flex items-start gap-2 text-sm leading-snug text-[#2d5d43]"
+                        className="flex items-start gap-2 text-sm leading-snug text-[#E9E1D1]/75"
                       >
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0a4f2a]" />
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F5B041]" />
                         <span>{c}</span>
                       </li>
                     ))}
@@ -118,7 +118,7 @@ export default function StaffPage() {
               )}
 
               {s.bio && (
-                <p className="mt-1 text-xs leading-6 text-[#4f735f]">{s.bio}</p>
+                <p className="mt-1 text-xs leading-6 text-[#E9E1D1]/60">{s.bio}</p>
               )}
             </div>
           </article>

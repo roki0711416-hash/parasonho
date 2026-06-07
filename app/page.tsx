@@ -4,7 +4,6 @@ import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
 import Photo from "./components/Photo";
 import FloatingLineButton from "./components/FloatingLineButton";
 import Reveal from "./components/Reveal";
-import ProgramGallery, { type ProgramItem } from "./components/ProgramGallery";
 import JourneyTimeline, { type JourneyStep } from "./components/JourneyTimeline";
 import type { Metadata } from "next";
 
@@ -38,56 +37,10 @@ const socialItems: SocialFeedItem[] = [
   { platform: "youtube", handle: "Para Sonho / パラソーニョ", profileUrl: YOUTUBE_URL },
 ];
 
-// ※ プログラム名・地域・写真は差し替え可能なプレースホルダーです。
-const programs: ProgramItem[] = [
-  {
-    name: "サンパウロ 育成アカデミー",
-    region: "SÃO PAULO",
-    tag: "ACADEMY",
-    desc: "州都の育成環境で、世界基準のトレーニングメソッドを体験。",
-    src: "/images/IMG_0007.JPG",
-  },
-  {
-    name: "リオ 提携クラブ",
-    region: "RIO DE JANEIRO",
-    tag: "CLUB",
-    desc: "現地クラブの練習に帯同し、実戦的な強度を肌で感じる。",
-    src: "/images/IMG_2590.JPG",
-  },
-  {
-    name: "ミナス ユースプログラム",
-    region: "MINAS GERAIS",
-    tag: "YOUTH",
-    desc: "若年層向けの育成プログラム。基礎技術から戦術理解まで。",
-    src: "/images/IMG_1165.JPG",
-  },
-  {
-    name: "サントス系 育成スクール",
-    region: "SANTOS",
-    tag: "SCHOOL",
-    desc: "伝統あるスタイルを受け継ぐ育成環境で技術を磨く。",
-    src: "/images/IMG_0595.JPG",
-  },
-  {
-    name: "地方クラブ 実戦プログラム",
-    region: "INTERIOR",
-    tag: "MATCH",
-    desc: "公式戦・練習試合を通じて、評価される場数を踏む。",
-    src: "/images/IMG_1030.JPG",
-  },
-  {
-    name: "プロテスト特化プログラム",
-    region: "PRO TEST",
-    tag: "SELECTION",
-    desc: "入団テスト（セレクション）への挑戦に特化したサポート。",
-    src: "/images/IMG_5800.jpg",
-  },
-];
-
 const journey: JourneyStep[] = [
   { no: "01", title: "相談", desc: "LINEまたはフォームから無料相談。目標や不安をヒアリングします。" },
   { no: "02", title: "面談", desc: "現状のレベルや希望をもとに、最適なプランをご提案します。" },
-  { no: "03", title: "学校・クラブ選定", desc: "選手に合った提携クラブ・スクールを現地ネットワークから選定。" },
+  { no: "03", title: "クラブ選定", desc: "選手に合った現地クラブをネットワークから選定。" },
   { no: "04", title: "渡航", desc: "渡航準備から空港送迎まで、日本語で安心サポート。" },
   { no: "05", title: "ブラジル生活開始", desc: "練習・生活・語学を現地スタッフが伴走。挑戦の日々がスタート。" },
   { no: "06", title: "プロ挑戦", desc: "入団テスト・上位カテゴリへの挑戦まで、次のステップを後押し。" },
@@ -233,8 +186,8 @@ export default function Home() {
                 <LineIcon className="h-5 w-5" />
                 LINEで無料相談する
               </a>
-              <a href="#programs" className="ps-btn-ghost w-full text-sm sm:w-auto">
-                プログラムを見る
+              <a href="#journey" className="ps-btn-ghost w-full text-sm sm:w-auto">
+                留学の流れを見る
               </a>
             </div>
           </div>
@@ -248,23 +201,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. 提携校プログラム ------------------------------------------- */}
-        <section id="programs" className="ps-dark ps-section">
-          <div className="ps-container">
-            <Reveal>
-              <p className="ps-eyebrow">PROGRAMS</p>
-              <h2 className="ps-heading mt-4 max-w-2xl">提携校・クラブプログラム</h2>
-              <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
-                選手のレベルと目標に合わせて、本場の育成環境を選定。横にスワイプして見る。
-              </p>
-            </Reveal>
-          </div>
-          <div className="ps-container mt-12">
-            <ProgramGallery items={programs} />
-          </div>
-        </section>
-
-        {/* 4. プレイヤージャーニー --------------------------------------- */}
+        {/* 2. プレイヤージャーニー --------------------------------------- */}
         <section id="journey" className="ps-bg-aurora ps-grain ps-section relative">
           <div className="ps-container relative z-10">
             <Reveal>

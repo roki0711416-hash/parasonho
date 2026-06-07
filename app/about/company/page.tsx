@@ -8,12 +8,12 @@ export const metadata = {
 export default function CompanyPage() {
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">会社概要</h1>
-      <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
+      <h1 className="ps-heading text-2xl sm:text-3xl">会社概要</h1>
+      <p className="ps-lead mt-3 text-sm sm:text-base">
         Para Sonho（パラソーニョ）の事業者情報です。
       </p>
 
-      <dl className="mt-6 divide-y divide-[#e7f2dd] border-y border-[#e7f2dd] text-sm">
+      <dl className="mt-6 divide-y divide-[rgba(245,176,65,0.15)] border-y border-[rgba(245,176,65,0.15)] text-sm">
         {[
           ["サービス名", "Para Sonho / パラソーニョ"],
           ["事業内容", "サッカー留学サポート"],
@@ -22,8 +22,8 @@ export default function CompanyPage() {
           ["お問い合わせ", "parasonho.info@gmail.com"],
         ].map(([k, v]) => (
           <div key={k} className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[160px_1fr]">
-            <dt className="font-semibold text-[#0b6a37]">{k}</dt>
-            <dd className="text-[#123524]">{v}</dd>
+            <dt className="font-semibold text-[#F5B041]">{k}</dt>
+            <dd className="text-[#E9E1D1]/85">{v}</dd>
           </div>
         ))}
       </dl>

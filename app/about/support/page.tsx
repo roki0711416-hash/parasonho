@@ -17,16 +17,16 @@ export default function SupportPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">サポート内容</h1>
-      <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
+      <h1 className="ps-heading text-2xl sm:text-3xl">サポート内容</h1>
+      <p className="ps-lead mt-3 text-sm sm:text-base">
         渡航前から帰国後まで、選手とご家族に伴走する体制を整えています。
       </p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {items.map((i) => (
-          <div key={i.t} className="rounded-2xl border border-[#d8eacb] bg-[#f8fff6] p-5">
-            <p className="font-bold text-[#0b6a37]">{i.t}</p>
-            <p className="mt-2 text-sm text-[#2d5d43]">{i.d}</p>
+          <div key={i.t} className="ps-card p-5">
+            <p className="font-bold text-[#F5B041]">{i.t}</p>
+            <p className="mt-2 text-sm text-[#E9E1D1]/75">{i.d}</p>
           </div>
         ))}
       </div>

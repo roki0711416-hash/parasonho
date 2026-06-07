@@ -16,8 +16,8 @@ export default function AboutIndex() {
 
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">Para Sonhoについて</h1>
-      <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
+      <h1 className="ps-heading text-2xl sm:text-3xl">Para Sonhoについて</h1>
+      <p className="ps-lead mt-3 text-sm sm:text-base">
         Para Sonho（パラソーニョ）は、ブラジルでのサッカー留学を支援するサービスです。
       </p>
 
@@ -26,10 +26,10 @@ export default function AboutIndex() {
           <Link
             key={s.href}
             href={s.href}
-            className="rounded-2xl border border-[#d8eacb] bg-[#f8fff6] p-4 transition hover:border-[#0b6a37] hover:bg-white"
+            className="ps-card block p-4 transition hover:border-[rgba(245,176,65,0.38)]"
           >
-            <p className="text-sm font-bold text-[#0b6a37]">{s.label}</p>
-            <p className="mt-1 text-xs text-[#2d5d43]">{s.desc}</p>
+            <p className="text-sm font-bold text-[#F5B041]">{s.label}</p>
+            <p className="mt-1 text-xs text-[#E9E1D1]/60">{s.desc}</p>
           </Link>
         ))}
       </div>
