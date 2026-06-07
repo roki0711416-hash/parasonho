@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
@@ -36,13 +37,14 @@ const socialItems: SocialFeedItem[] = [
   { platform: "youtube", handle: "Para Sonho / パラソーニョ", profileUrl: YOUTUBE_URL },
 ];
 
-const journey: JourneyStep[] = [
-  { no: "01", title: "相談", desc: "LINEまたはフォームから無料相談。目標や不安をヒアリングします。" },
-  { no: "02", title: "面談", desc: "現状のレベルや希望をもとに、最適なプランをご提案します。" },
-  { no: "03", title: "クラブ選定", desc: "選手に合った現地クラブをネットワークから選定。" },
-  { no: "04", title: "渡航", desc: "渡航準備をサポートします。" },
-  { no: "05", title: "ブラジル生活開始", desc: "練習・生活・語学を現地スタッフがサポート。挑戦の日々がスタート。" },
-  { no: "06", title: "プロ挑戦", desc: "入団テストまでの手続きをサポートします。" },
+const studyAbroadJourney: JourneyStep[] = [
+  { no: "01", title: "相談", desc: "LINEまたはフォームから無料相談。お子さまの目標やご家庭の不安をお伺いします。" },
+  { no: "02", title: "面談", desc: "レベル・期間・目的をもとに、最適な留学プランをご提案します。" },
+  { no: "03", title: "クラブ選定", desc: "選手に合った現地クラブをネットワークから選定します。" },
+  { no: "04", title: "渡航準備", desc: "ビザ・航空券・持ち物など、渡航準備をサポートします。" },
+  { no: "05", title: "ブラジル生活", desc: "現地スタッフが生活立ち上げをサポート。安心してスタート。" },
+  { no: "06", title: "練習開始", desc: "現地クラブの練習に参加。本場の環境でプレーが始まります。" },
+  { no: "07", title: "成長", desc: "サッカーだけでなく、人としての成長を支えます。" },
 ];
 
 export default function Home() {
@@ -182,7 +184,7 @@ export default function Home() {
                 <LineIcon className="h-5 w-5" />
                 LINEで無料相談する
               </a>
-              <a href="#journey" className="ps-btn-ghost-light w-full text-sm sm:w-auto">
+              <a href="#plans" className="ps-btn-ghost-light w-full text-sm sm:w-auto">
                 留学の流れを見る
               </a>
             </div>
@@ -191,32 +193,29 @@ export default function Home() {
 
         <TickerBar />
 
-        {/* 2. プレイヤージャーニー --------------------------------------- */}
-        <section id="journey" className="ps-bg-subtle ps-section">
-          <div className="ps-container relative z-10">
-            <Reveal>
-              <p className="ps-eyebrow">PLAYER JOURNEY</p>
-              <h2 className="ps-heading mt-4 max-w-2xl">
-                相談から<span className="ps-gold-text">プロ挑戦</span>まで
-              </h2>
-              <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
-                はじめての方も安心。挑戦までの流れを、ステップでご案内します。
-              </p>
-            </Reveal>
-            <JourneyTimeline steps={journey} />
-          </div>
-        </section>
-
-        {/* 5. 留学プラン ------------------------------------------------- */}
+        {/* 2. 留学プラン ------------------------------------------------- */}
         <section id="plans" className="ps-section bg-white">
           <div className="ps-container">
             <Reveal>
               <p className="ps-eyebrow">PLANS</p>
               <h2 className="ps-heading mt-4">留学プラン</h2>
               <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
-                短期〜長期まで、目標とスケジュールに合わせて設計します。
+                短期〜長期まで、目標とスケジュールに合わせて設計します。保護者の方にも安心いただける流れをご案内します。
               </p>
             </Reveal>
+
+            <div id="journey" className="mt-14">
+              <Reveal>
+                <p className="ps-eyebrow">STUDY ABROAD FLOW</p>
+                <h3 className="mt-4 text-xl font-black text-[#14213D] sm:text-2xl">
+                  相談から<span className="ps-gold-text">成長</span>まで
+                </h3>
+                <p className="ps-lead mt-3 max-w-xl text-sm">
+                  はじめての方も安心。留学までの流れを、ステップでご案内します。
+                </p>
+              </Reveal>
+              <JourneyTimeline steps={studyAbroadJourney} />
+            </div>
 
             <div className="mt-14 grid gap-6 md:grid-cols-3">
               {plans.map((plan, i) => (
@@ -275,85 +274,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. プロテスト ------------------------------------------------- */}
+        {/* 3. プロテスト（案内） ----------------------------------------- */}
         <section id="protest" className="ps-bg-subtle ps-section">
-          <div className="ps-container relative z-10">
+          <div className="ps-container">
             <Reveal>
               <p className="ps-eyebrow">NEW SERVICE</p>
               <h2 className="ps-heading mt-4 max-w-2xl">プロテスト（入団テスト）サポート</h2>
               <p className="ps-lead mt-5 max-w-2xl text-sm sm:text-base">
-                現地クラブの入団テスト（プロテスト／セレクション）への挑戦をサポート。プロ契約・上位カテゴリ昇格を本気でめざす選手向けの新サービスです。
+                プロ契約・上位カテゴリ昇格をめざす選手向け。無料相談からプロ契約まで、挑戦の流れを可視化したサポート体制です。
               </p>
             </Reveal>
-
             <Reveal delay={80}>
-              <div className="ps-card mt-12 overflow-hidden">
-                <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
-                  <div className="flex flex-col justify-center">
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#F5B041]/30 bg-[#F5B041]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-[#C4842A]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
-                      PRO TEST / SELECTION
-                    </span>
-                    <h3 className="mt-5 text-2xl font-black leading-snug text-[#14213D] sm:text-3xl">
-                      現地クラブの入団テストへ、
-                      <br />
-                      <span className="ps-gold-text">本気の挑戦を。</span>
-                    </h3>
-                    <p className="ps-lead mt-4 text-sm sm:text-base">
-                      選手のレベルや希望に合わせて受験するクラブを選定。テスト同行・通訳・現地サポートまで一括で対応し、評価される環境づくりを支えます。
-                    </p>
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <div className="rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4">
-                        <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">期間</p>
-                        <p className="mt-1 text-base font-bold text-[#14213D]">2週間〜</p>
-                      </div>
-                      <div className="rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4">
-                        <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">
-                          受験クラブ数
-                        </p>
-                        <p className="mt-1 text-base font-bold text-[#14213D]">ご希望に応じて調整</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-xs leading-6 text-[#111111]/50">
-                      ※ 受験するチーム数や現地の状況によって、期間・費用は変動します。詳細はお気軽にご相談ください。
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-4">
-                    <p className="text-[10px] font-bold tracking-[0.2em] text-[#111111]/40">SUPPORT</p>
-                    <ul className="space-y-3 text-sm">
-                      {[
-                        "選手のレベル・希望に合った受験クラブの選定",
-                        "入団テスト（プロテスト）への帯同・申込サポート",
-                        "現地での通訳・移動・生活サポート",
-                        "テスト結果を踏まえた次のステップのご提案",
-                      ].map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-3 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4"
-                        >
-                          <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F5B041]" />
-                          <span className="leading-6 text-[#111111]/80">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      href={LINE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ps-btn-line mt-2 w-full text-sm"
-                    >
-                      <LineIcon className="h-4 w-4" />
-                      プロテストについて相談する
-                    </a>
-                  </div>
+              <div className="ps-card mt-10 flex flex-col items-start gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+                <div>
+                  <p className="text-lg font-black text-[#14213D]">
+                    相談から<span className="ps-gold-text">プロ契約</span>まで伴走
+                  </p>
+                  <p className="ps-lead mt-2 max-w-lg text-sm">
+                    入団テストの流れ・サポート内容・費用の目安など、詳しくは専用ページをご覧ください。
+                  </p>
                 </div>
+                <Link
+                  href="/plans/pro-test"
+                  className="ps-btn-gold inline-flex w-full shrink-0 items-center justify-center gap-2 sm:w-auto"
+                >
+                  プロテストページを見る
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </Reveal>
           </div>
         </section>
 
-        {/* 7. SNS ------------------------------------------------------- */}
+        {/* 4. SNS ------------------------------------------------------- */}
         <SocialFeed items={socialItems} />
 
         {/* 8. FAQ ------------------------------------------------------- */}

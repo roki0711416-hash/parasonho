@@ -3,6 +3,7 @@ const SITE_URL = "https://parasonho.com";
 const routes: Array<{ path: string; priority: string; changeFrequency: string }> = [
   { path: "/", priority: "1.0", changeFrequency: "weekly" },
   { path: "/service", priority: "0.9", changeFrequency: "monthly" },
+  { path: "/plans/pro-test", priority: "0.9", changeFrequency: "monthly" },
   { path: "/plans/team", priority: "0.9", changeFrequency: "monthly" },
   { path: "/about", priority: "0.6", changeFrequency: "monthly" },
   { path: "/about/company", priority: "0.5", changeFrequency: "monthly" },

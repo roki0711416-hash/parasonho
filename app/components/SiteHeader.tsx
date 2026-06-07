@@ -20,7 +20,7 @@ const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/#service", label: "サービス内容" },
   { href: "/#plans", label: "留学プラン" },
-  { href: "/#protest", label: "プロテスト" },
+  { href: "/plans/pro-test", label: "プロテスト" },
   { href: "/plans/team", label: "チーム遠征" },
   { href: "/#faq", label: "よくある質問" },
 ];

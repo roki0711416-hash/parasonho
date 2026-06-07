@@ -22,9 +22,8 @@ const aboutLinks = [
 ];
 
 const siteLinks = [
-  { href: "/#journey", label: "留学までの流れ" },
   { href: "/#plans", label: "留学プラン" },
-  { href: "/#protest", label: "プロテスト" },
+  { href: "/plans/pro-test", label: "プロテスト" },
   { href: "/#faq", label: "よくある質問" },
 ];
 
