@@ -144,7 +144,7 @@ export default function Home() {
 
       <main id="top">
         {/* 1. ヒーロー --------------------------------------------------- */}
-        <section className="relative min-h-[92svh] w-full overflow-hidden bg-[#14213D]">
+        <section className="relative min-h-[78svh] w-full overflow-hidden bg-[#14213D] sm:min-h-[92svh]">
           <div className="absolute inset-0 br-slow-zoom">
             <Photo
               src="/images/ヒーロー画像.png"
@@ -153,38 +153,42 @@ export default function Home() {
               sizes="100vw"
               placeholderLabel="HERO"
               className="h-full w-full"
+              imageClassName="object-cover object-[center_42%] sm:object-center"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#14213D] via-[#14213D]/70 to-[#14213D]/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#14213D]/85 via-[#14213D]/30 to-transparent" />
 
-          <div className="relative z-10 mx-auto flex min-h-[92svh] w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:justify-center sm:px-6 sm:py-32 lg:px-8">
-            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold tracking-[0.28em] text-white/90 backdrop-blur-md">
+          <div className="relative z-10 mx-auto flex min-h-[78svh] w-full max-w-7xl flex-col justify-start px-5 pb-10 pt-[4.75rem] sm:min-h-[92svh] sm:justify-center sm:px-6 sm:py-32 lg:px-8">
+            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[9px] font-bold tracking-[0.26em] text-white/90 backdrop-blur-md sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.28em]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
               BRAZIL FOOTBALL CHALLENGE
             </span>
 
-            <h1 className="br-animate br-animate-delay-1 mt-6 max-w-3xl text-[clamp(1.75rem,6.5vw,3.5rem)] font-extrabold leading-[1.15] tracking-tight text-white sm:mt-8">
+            <h1 className="br-animate br-animate-delay-1 mt-4 max-w-3xl text-[clamp(1.5rem,5.5vw,3.5rem)] font-extrabold leading-[1.18] tracking-tight text-white sm:mt-8">
               人として成長する留学から
               <br />
               <span className="text-[#F5B041]">プロを目指す挑戦まで。</span>
             </h1>
 
-            <p className="br-animate br-animate-delay-2 mt-5 max-w-lg text-base leading-8 text-white/80 sm:mt-7 sm:text-lg">
+            <p className="br-animate br-animate-delay-2 mt-3 max-w-lg text-sm leading-7 text-white/80 sm:mt-7 sm:text-lg sm:leading-8">
               ブラジルでしか得られない経験が、人生とサッカーを変える。
             </p>
 
-            <div className="br-animate br-animate-delay-3 mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
+            <div className="br-animate br-animate-delay-3 mt-5 flex flex-col gap-2 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ps-btn-line w-full text-base sm:w-auto"
+                className="ps-btn-line w-full py-3.5 text-sm sm:w-auto sm:py-[1.05rem] sm:text-base"
               >
                 <LineIcon className="h-5 w-5" />
                 LINEで無料相談する
               </a>
-              <a href="#plans" className="ps-btn-ghost-light w-full text-sm sm:w-auto">
+              <a
+                href="#plans"
+                className="ps-btn-ghost-light w-full py-3.5 text-sm sm:w-auto sm:py-[1.05rem]"
+              >
                 留学の流れを見る
               </a>
             </div>

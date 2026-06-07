@@ -20,6 +20,8 @@ interface PhotoProps {
   sizes?: string;
   /** 追加クラス（aspect比などは親で指定） */
   className?: string;
+  /** next/image に渡す追加クラス（object-position 等） */
+  imageClassName?: string;
   /** 画像の上に重ねるコンテンツ（キャプションなど） */
   children?: ReactNode;
 }
@@ -45,6 +47,7 @@ export default function Photo({
   priority = false,
   sizes = "100vw",
   className = "",
+  imageClassName = "object-cover object-center",
   children,
 }: PhotoProps) {
   return (
@@ -56,7 +59,7 @@ export default function Photo({
           fill
           priority={priority}
           sizes={sizes}
-          className="object-cover object-center"
+          className={imageClassName}
         />
       ) : (
         <div className="br-photo-fallback absolute inset-0 flex items-center justify-center">
