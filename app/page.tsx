@@ -191,22 +191,6 @@ export default function Home() {
 
         <TickerBar />
 
-        {/* 信頼バー ------------------------------------------------------ */}
-        <section className="border-b border-[rgba(20,33,61,0.08)] bg-white py-8 sm:py-10">
-          <div className="ps-container">
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-              {["無料相談受付中", "日本語サポート完備", "保護者への定期報告", "渡航前〜帰国後まで伴走"].map(
-                (label) => (
-                  <span key={label} className="ps-trust-pill">
-                    <span className="ps-trust-pill-dot" />
-                    {label}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-        </section>
-
         {/* 2. プレイヤージャーニー --------------------------------------- */}
         <section id="journey" className="ps-bg-subtle ps-section">
           <div className="ps-container relative z-10">
