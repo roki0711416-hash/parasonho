@@ -42,7 +42,7 @@ const journey: JourneyStep[] = [
   { no: "03", title: "クラブ選定", desc: "選手に合った現地クラブをネットワークから選定。" },
   { no: "04", title: "渡航", desc: "渡航準備をサポートします。" },
   { no: "05", title: "ブラジル生活開始", desc: "練習・生活・語学を現地スタッフがサポート。挑戦の日々がスタート。" },
-  { no: "06", title: "プロ挑戦", desc: "入団テスト・上位カテゴリへの挑戦まで、次のステップを後押し。" },
+  { no: "06", title: "プロ挑戦", desc: "入団テストまでの手続きをサポートします。" },
 ];
 
 export default function Home() {
@@ -247,23 +247,31 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-auto border-t border-[rgba(20,33,61,0.08)] pt-6">
-                        <p className="ps-lead text-sm">費用はLINEでお気軽にご相談ください。</p>
-                        <a
-                          href={LINE_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ps-btn-line mt-4 w-full text-sm"
-                        >
-                          <LineIcon className="h-4 w-4" />
-                          LINEで相談する
-                        </a>
-                      </div>
                     </div>
                   </article>
                 </Reveal>
               ))}
             </div>
+
+            <Reveal delay={120}>
+              <div className="mt-12 overflow-hidden rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-6 py-10 text-center sm:px-10 sm:py-12">
+                <p className="text-sm font-semibold text-[#14213D] sm:text-base">
+                  期間・費用はプランに合わせてご提案します
+                </p>
+                <p className="ps-lead mx-auto mt-2 max-w-md text-sm">
+                  どのプランが合うかわからなくても大丈夫。無料でご相談いただけます。
+                </p>
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ps-btn-line mt-7 inline-flex w-full max-w-sm text-base sm:w-auto"
+                >
+                  <LineIcon className="h-5 w-5" />
+                  LINEで相談する
+                </a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
