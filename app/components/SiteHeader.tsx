@@ -24,6 +24,29 @@ const sectionItems: Array<{ href: string; label: string; external?: boolean }> =
   { href: "/#faq", label: "よくある質問" },
 ];
 
+const socialLinks = [
+  { href: INSTAGRAM_URL, label: "Instagram", icon: <Camera className="h-4 w-4" /> },
+  {
+    href: X_URL,
+    label: "X",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  { href: TIKTOK_URL, label: "TikTok", icon: <Music2 className="h-4 w-4" /> },
+  {
+    href: YOUTUBE_URL,
+    label: "YouTube",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+        <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
+      </svg>
+    ),
+  },
+] as const;
+
 export default function SiteHeader() {
   const [openDesktop, setOpenDesktop] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
@@ -249,16 +272,21 @@ export default function SiteHeader() {
             LINEで無料相談
           </a>
 
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpenMobile(false)}
-            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-[rgba(20,33,61,0.12)] px-4 py-3 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
-          >
-            <Camera className="h-4 w-4" />
-            Instagram
-          </a>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            {socialLinks.map(({ href, label, icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenMobile(false)}
+                className="flex items-center justify-center gap-2 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-3 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
+              >
+                {icon}
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </header>
