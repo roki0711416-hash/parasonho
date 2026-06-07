@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -48,16 +47,17 @@ export default function SiteHeader() {
         <Link
           href="/"
           aria-label="Para Sonho / パラソーニョ"
-          className="inline-flex items-center bg-transparent"
+          className="inline-flex shrink-0 items-center bg-transparent"
         >
-          <Image
-            src="/parasonho-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/parasonho-logo.png?v=2"
             alt="Para Sonho / パラソーニョ"
-            width={440}
-            height={176}
-            priority
-            sizes="(max-width: 768px) 160px, 200px"
-            className="h-auto w-[150px] bg-transparent sm:w-[180px] md:w-[200px] lg:w-[210px]"
+            width={1851}
+            height={452}
+            fetchPriority="high"
+            decoding="async"
+            className="block h-auto w-[150px] max-w-[60vw] bg-transparent sm:w-[180px] md:w-[200px] lg:w-[210px]"
           />
         </Link>
 
