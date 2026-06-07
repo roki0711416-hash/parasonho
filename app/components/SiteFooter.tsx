@@ -28,50 +28,57 @@ const siteLinks = [
   { href: "/#faq", label: "よくある質問" },
 ];
 
-export default function SiteFooter() {
+interface SiteFooterProps {
+  /** TOPページのみ true。フッター上部のCTAバナーを表示する */
+  showChallengeCta?: boolean;
+}
+
+export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps) {
   return (
     <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
-      <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
-        <Image
-          src="/images/75b4a5130_generated_599a3079.png"
-          alt="夕暮れのサッカー場"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/95 via-[#14213D]/75 to-[#14213D]/55" />
-        <div className="ps-container relative z-10 py-20 text-center sm:py-24">
-          <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
-          <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
-            世界への挑戦は、
-            <br className="sm:hidden" />
-            <span className="ps-gold-text">ここから始まる。</span>
-          </h2>
-          <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">
-            年齢・レベルは問いません。まずは気軽に、あなたの挑戦を聞かせてください。
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ps-btn-line w-full text-base sm:w-auto sm:min-w-[260px]"
-            >
-              <LineIcon className="h-5 w-5" />
-              LINEで無料相談する
-            </a>
-            <a
-              href={GFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ps-btn-ghost-light w-full text-base sm:w-auto"
-            >
-              相談フォームから問い合わせる
-            </a>
+      {showChallengeCta && (
+        <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
+          <Image
+            src="/images/75b4a5130_generated_599a3079.png"
+            alt="夕暮れのサッカー場"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/95 via-[#14213D]/75 to-[#14213D]/55" />
+          <div className="ps-container relative z-10 py-20 text-center sm:py-24">
+            <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
+            <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
+              世界への挑戦は、
+              <br className="sm:hidden" />
+              <span className="ps-gold-text">ここから始まる。</span>
+            </h2>
+            <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">
+              年齢・レベルは問いません。まずは気軽に、あなたの挑戦を聞かせてください。
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ps-btn-line w-full text-base sm:w-auto sm:min-w-[260px]"
+              >
+                <LineIcon className="h-5 w-5" />
+                LINEで無料相談する
+              </a>
+              <a
+                href={GFORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ps-btn-ghost-light w-full text-base sm:w-auto"
+              >
+                相談フォームから問い合わせる
+              </a>
+            </div>
+            <p className="mt-5 text-xs text-white/50">LINE ID：@593loohp</p>
           </div>
-          <p className="mt-5 text-xs text-white/50">LINE ID：@593loohp</p>
         </div>
-      </div>
+      )}
 
       <div className="ps-container py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">

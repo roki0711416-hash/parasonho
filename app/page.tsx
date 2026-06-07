@@ -339,7 +339,7 @@ export default function Home() {
         </section>
       </main>
 
-      <SiteFooter />
+      <SiteFooter showChallengeCta />
     </div>
   );
 }
