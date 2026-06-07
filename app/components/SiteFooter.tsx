@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Camera, Music2 } from "lucide-react";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
@@ -30,13 +31,21 @@ const siteLinks = [
 export default function SiteFooter() {
   return (
     <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
-      <div className="ps-bg-navy relative overflow-hidden">
+      <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
+        <Image
+          src="/images/75b4a5130_generated_599a3079.png"
+          alt="夕暮れのサッカー場"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/95 via-[#14213D]/75 to-[#14213D]/55" />
         <div className="ps-container relative z-10 py-20 text-center sm:py-24">
           <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
           <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
-            夢への第一歩は、
+            世界への挑戦は、
             <br className="sm:hidden" />
-            <span className="ps-gold-text">たった一通の相談</span>から。
+            <span className="ps-gold-text">ここから始まる。</span>
           </h2>
           <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">
             年齢・レベルは問いません。まずは気軽に、あなたの挑戦を聞かせてください。
