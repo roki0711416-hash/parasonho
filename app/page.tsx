@@ -146,8 +146,8 @@ export default function Home() {
         <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#0E1322]">
           <div className="absolute inset-0 br-slow-zoom">
             <Photo
-              src="/images/IMG_5800.jpg"
-              alt="ブラジルでサッカーに挑戦する選手"
+              src="/images/ヒーロー画像.png"
+              alt="スタジアムへ向かうサッカー選手"
               priority
               sizes="100vw"
               placeholderLabel="HERO"
@@ -165,15 +165,13 @@ export default function Home() {
             </span>
 
             <h1 className="ps-display br-animate br-animate-delay-1 mt-8 max-w-4xl">
-              世界へ、
+              人として成長する留学から
               <br />
-              <span className="ps-gold-text">本気で挑む。</span>
+              <span className="ps-gold-text">プロを目指す挑戦まで。</span>
             </h1>
 
             <p className="br-animate br-animate-delay-2 mt-7 max-w-xl text-base leading-9 text-white/85 sm:text-lg">
-              本場ブラジルで、本物のサッカーを。
-              <br className="hidden sm:block" />
-              その一歩が、あなたの可能性を世界へ広げる。
+              ブラジルでしか得られない経験が、人生とサッカーを変える。
             </p>
 
             <div className="br-animate br-animate-delay-3 mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
