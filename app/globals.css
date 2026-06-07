@@ -753,4 +753,64 @@ body {
   .ps-scroll-dot {
     animation: none;
   }
+  .ps-ticker-track {
+    animation: none;
+  }
+}
+
+/* Hero直下 Ticker Bar */
+.ps-ticker {
+  overflow: hidden;
+  user-select: none;
+}
+
+.ps-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: psTickerScroll 28s linear infinite;
+}
+
+.ps-ticker:hover .ps-ticker-track,
+.ps-ticker:focus-within .ps-ticker-track {
+  animation-play-state: paused;
+}
+
+.ps-ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.85rem 1.25rem;
+}
+
+.ps-ticker-item {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-saira), sans-serif;
+  font-size: clamp(0.72rem, 2.8vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5b041;
+  white-space: nowrap;
+}
+
+.ps-ticker-dot {
+  height: 0.35rem;
+  width: 0.35rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: #f5b041;
+  box-shadow: 0 0 8px rgba(245, 176, 65, 0.55);
+}
+
+@keyframes psTickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

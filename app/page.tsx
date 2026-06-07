@@ -5,6 +5,7 @@ import Photo from "./components/Photo";
 import FloatingLineButton from "./components/FloatingLineButton";
 import Reveal from "./components/Reveal";
 import JourneyTimeline, { type JourneyStep } from "./components/JourneyTimeline";
+import TickerBar from "./components/TickerBar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,8 +18,6 @@ export const metadata: Metadata = {
 };
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
-const GFORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLScwxBEWIxBWeQpoHuQi-BV0OaWao-pDAPg9AhhzIr1sEPcsmA/viewform?usp=dialog";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
@@ -189,6 +188,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <TickerBar />
 
         {/* 信頼バー ------------------------------------------------------ */}
         <section className="border-b border-[rgba(20,33,61,0.08)] bg-white py-8 sm:py-10">
@@ -385,44 +386,6 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* 9. 相談フォーム ------------------------------------------------- */}
-        <section id="contact" className="ps-bg-navy ps-section">
-          <div className="ps-container">
-            <Reveal>
-              <div className="mx-auto max-w-2xl text-center">
-                <p className="ps-eyebrow justify-center">CONTACT</p>
-                <h2 className="ps-heading mt-5 text-white">
-                  まずは、<span className="ps-gold-text">無料相談</span>から。
-                </h2>
-                <p className="ps-lead mx-auto mt-5 max-w-md text-sm sm:text-base">
-                  目的や不安をヒアリングし、あなたに最適な留学プランをご案内します。お気軽にどうぞ。
-                </p>
-
-                <div className="mt-9 flex flex-col gap-4">
-                  <a
-                    href={LINE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ps-btn-line w-full text-base"
-                  >
-                    <LineIcon className="h-5 w-5" />
-                    LINEで無料相談する
-                  </a>
-                  <a
-                    href={GFORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ps-btn-ghost-light w-full text-base"
-                  >
-                    相談フォームに進む
-                  </a>
-                </div>
-                <p className="mt-5 text-xs text-white/50">LINE ID：@593loohp ／ 24時間受付</p>
-              </div>
-            </Reveal>
           </div>
         </section>
       </main>
