@@ -2,6 +2,7 @@ import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ConsultCtaButtons from "../components/ConsultCtaButtons";
+import PagePhotoSection from "../components/PagePhotoSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -72,16 +73,8 @@ export default function ServicePage() {
       <SiteHeader />
 
       <main>
-        <section className="relative overflow-hidden bg-[#14213D] py-24 md:py-40">
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, #F5B041 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#F5B041]/10 blur-3xl" />
-          <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
+        <PagePhotoSection variant="hero" className="py-24 md:py-40">
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
             <p className="ps-eyebrow">Support Service</p>
             <h1 className="ps-heading mt-4 text-3xl sm:text-5xl md:text-6xl">
               世界への挑戦を、
@@ -93,13 +86,13 @@ export default function ServicePage() {
               選手と保護者が安心して挑戦できる環境を整えます。
             </p>
             <ConsultCtaButtons
-              variant="onLight"
+              variant="onDark"
               align="center"
               lineLabel="LINEで無料相談"
               className="mx-auto mt-12 max-w-sm sm:max-w-none"
             />
           </div>
-        </section>
+        </PagePhotoSection>
 
         <section className="ps-section ps-container">
           <p className="ps-eyebrow">MAIN SERVICE</p>
@@ -174,8 +167,8 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#14213D] py-24">
-          <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
+        <PagePhotoSection variant="cta" className="py-24">
+          <div className="mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
             <h2 className="ps-heading text-2xl sm:text-3xl">まずはお気軽にご相談ください。</h2>
             <p className="ps-lead mx-auto mt-4 max-w-xl text-sm sm:text-base">
               期間・レベル・目的に応じたプランを、無料でご提案いたします。
@@ -194,7 +187,7 @@ export default function ServicePage() {
               </Link>
             </p>
           </div>
-        </section>
+        </PagePhotoSection>
       </main>
 
       <SiteFooter />

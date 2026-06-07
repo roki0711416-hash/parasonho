@@ -2,7 +2,8 @@ import Link from "next/link";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
-import Photo from "./components/Photo";
+import PhotoBackdrop from "./components/PhotoBackdrop";
+import { HERO_IMAGE } from "./lib/images";
 import FloatingLineButton from "./components/FloatingLineButton";
 import Reveal from "./components/Reveal";
 import JourneyTimeline, { type JourneyStep } from "./components/JourneyTimeline";
@@ -138,22 +139,16 @@ export default function Home() {
 
       <main id="top">
         {/* 1. ヒーロー --------------------------------------------------- */}
-        <section className="relative min-h-[78svh] w-full overflow-hidden bg-[#14213D] sm:min-h-[92svh]">
-          <div className="absolute inset-0 br-slow-zoom">
-            <Photo
-              src="/images/ヒーロー画像.png"
-              alt="スタジアムへ向かうサッカー選手"
-              priority
-              sizes="100vw"
-              placeholderLabel="HERO"
-              className="h-full w-full"
-              imageClassName="object-cover object-[center_42%] sm:object-center"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#14213D] via-[#14213D]/70 to-[#14213D]/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#14213D]/85 via-[#14213D]/30 to-transparent" />
+        <section className="relative min-h-[78svh] w-full overflow-hidden sm:min-h-[92svh]">
+          <PhotoBackdrop
+            src={HERO_IMAGE}
+            alt="スタジアムへ向かうサッカー選手"
+            variant="hero"
+            priority
+            className="br-slow-zoom"
+          />
 
-          <div className="relative z-10 mx-auto flex min-h-[78svh] w-full max-w-7xl flex-col justify-start px-5 pb-10 pt-[4.75rem] sm:min-h-[92svh] sm:justify-center sm:px-6 sm:py-32 lg:px-8">
+          <div className="relative z-10 mx-auto flex min-h-[78svh] w-full max-w-7xl flex-col justify-start px-5 pb-10 pt-[4.75rem] ps-on-photo sm:min-h-[92svh] sm:justify-center sm:px-6 sm:py-32 lg:px-8">
             <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[9px] font-bold tracking-[0.26em] text-white/90 backdrop-blur-md sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.28em]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
               BRAZIL FOOTBALL CHALLENGE

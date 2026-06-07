@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Camera, Music2 } from "lucide-react";
 import ConsultCtaButtons from "./ConsultCtaButtons";
+import PhotoBackdrop from "./PhotoBackdrop";
+import { FIELD_IMAGE } from "../lib/images";
 
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
@@ -30,15 +31,13 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
     <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
       {showChallengeCta && (
         <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
-          <Image
-            src="/images/75b4a5130_generated_599a3079.png"
+          <PhotoBackdrop
+            src={FIELD_IMAGE}
             alt="夕暮れのサッカー場"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
+            variant="footer"
+            imageClassName="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/95 via-[#14213D]/75 to-[#14213D]/55" />
-          <div className="ps-container relative z-10 py-20 text-center sm:py-24">
+          <div className="ps-container relative z-10 py-20 text-center ps-on-photo sm:py-24">
             <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
             <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
               世界への挑戦は、

@@ -4,6 +4,7 @@ import SiteFooter from "../../components/SiteFooter";
 import JourneyTimeline, { type JourneyStep } from "../../components/JourneyTimeline";
 import Reveal from "../../components/Reveal";
 import ConsultCtaButtons from "../../components/ConsultCtaButtons";
+import PagePhotoSection from "../../components/PagePhotoSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,18 +36,10 @@ export default function ProTestPage() {
       <SiteHeader />
 
       <main>
-        <section className="relative overflow-hidden bg-[#14213D] py-20 md:py-32">
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, #F5B041 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#F5B041]/10 blur-3xl" />
-          <div className="relative mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
+        <PagePhotoSection variant="hero" className="py-20 md:py-32">
+          <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
             <p className="ps-eyebrow">PRO TEST / SELECTION</p>
-            <h1 className="ps-heading mt-6 text-3xl text-white sm:text-5xl">
+            <h1 className="ps-heading mt-6 text-3xl sm:text-5xl">
               プロテスト（入団テスト）サポート
             </h1>
             <p className="mt-4 text-lg font-bold text-[#F5B041] sm:text-xl">
@@ -63,7 +56,7 @@ export default function ProTestPage() {
               className="mx-auto mt-9 max-w-sm sm:max-w-none"
             />
           </div>
-        </section>
+        </PagePhotoSection>
 
         <section id="journey" className="ps-bg-subtle ps-section">
           <div className="ps-container">
@@ -144,12 +137,12 @@ export default function ProTestPage() {
           </div>
         </section>
 
-        <section className="ps-bg-navy ps-section">
+        <PagePhotoSection variant="cta" className="ps-section">
           <div className="ps-container">
             <Reveal>
               <div className="mx-auto max-w-2xl text-center">
                 <p className="ps-eyebrow justify-center">CONTACT</p>
-                <h2 className="ps-heading mt-5 text-white">
+                <h2 className="ps-heading mt-5">
                   プロテストの相談は<span className="ps-gold-text">無料</span>です
                 </h2>
                 <p className="ps-lead mx-auto mt-5 max-w-md text-sm sm:text-base">
@@ -173,7 +166,7 @@ export default function ProTestPage() {
               </div>
             </Reveal>
           </div>
-        </section>
+        </PagePhotoSection>
       </main>
 
       <SiteFooter />

@@ -208,7 +208,7 @@ body {
 }
 
 .br-overlay-navy {
-  background: linear-gradient(to top, rgba(0, 39, 118, 0.82) 0%, rgba(0, 39, 118, 0.25) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(20, 33, 61, 0.72) 0%, rgba(20, 33, 61, 0.22) 55%, transparent 100%);
 }
 
 /* 上品なフェードイン */
@@ -813,4 +813,77 @@ body {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Photo scrims – keep imagery visible, text readable */
+.ps-photo-scrim-bottom {
+  background: linear-gradient(
+    to top,
+    rgba(20, 33, 61, 0.78) 0%,
+    rgba(20, 33, 61, 0.32) 38%,
+    rgba(20, 33, 61, 0.06) 100%
+  );
+}
+
+.ps-photo-scrim-side {
+  background: linear-gradient(
+    to right,
+    rgba(20, 33, 61, 0.52) 0%,
+    rgba(20, 33, 61, 0.16) 42%,
+    transparent 68%
+  );
+}
+
+@media (max-width: 639px) {
+  .ps-photo-scrim-side {
+    background: linear-gradient(
+      to right,
+      rgba(20, 33, 61, 0.28) 0%,
+      transparent 52%
+    );
+  }
+}
+
+.ps-photo-scrim-side-soft {
+  background: linear-gradient(
+    to right,
+    rgba(20, 33, 61, 0.38) 0%,
+    rgba(20, 33, 61, 0.1) 45%,
+    transparent 70%
+  );
+}
+
+.ps-photo-scrim-footer {
+  background: linear-gradient(
+    to top,
+    rgba(20, 33, 61, 0.72) 0%,
+    rgba(20, 33, 61, 0.38) 48%,
+    rgba(20, 33, 61, 0.18) 100%
+  );
+}
+
+.ps-photo-scrim-cta {
+  background: linear-gradient(
+    to top,
+    rgba(20, 33, 61, 0.75) 0%,
+    rgba(20, 33, 61, 0.4) 55%,
+    rgba(20, 33, 61, 0.2) 100%
+  );
+}
+
+.ps-on-photo .ps-heading,
+.ps-on-photo .ps-display {
+  color: #ffffff;
+}
+
+.ps-on-photo .ps-lead {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ps-on-photo h1,
+.ps-on-photo h2,
+.ps-on-photo p {
+  text-shadow:
+    0 2px 18px rgba(20, 33, 61, 0.45),
+    0 1px 3px rgba(0, 0, 0, 0.28);
 }
