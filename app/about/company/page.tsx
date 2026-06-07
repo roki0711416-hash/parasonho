@@ -13,7 +13,7 @@ export default function CompanyPage() {
         Para Sonho（パラソーニョ）の事業者情報です。
       </p>
 
-      <dl className="mt-6 divide-y divide-[rgba(245,176,65,0.15)] border-y border-[rgba(245,176,65,0.15)] text-sm">
+      <dl className="mt-6 divide-y divide-[rgba(20,33,61,0.08)] border-y border-[rgba(20,33,61,0.08)] text-sm">
         {[
           ["サービス名", "Para Sonho / パラソーニョ"],
           ["事業内容", "サッカー留学サポート"],
@@ -22,8 +22,8 @@ export default function CompanyPage() {
           ["お問い合わせ", "parasonho.info@gmail.com"],
         ].map(([k, v]) => (
           <div key={k} className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[160px_1fr]">
-            <dt className="font-semibold text-[#F5B041]">{k}</dt>
-            <dd className="text-[#E9E1D1]/85">{v}</dd>
+            <dt className="font-semibold text-[#14213D]">{k}</dt>
+            <dd className="text-[#111111]/80">{v}</dd>
           </div>
         ))}
       </dl>

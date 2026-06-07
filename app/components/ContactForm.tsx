@@ -43,13 +43,13 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-3xl bg-white p-8 text-center shadow-xl sm:p-12">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#0d6938] text-2xl text-white">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#22C55E] text-2xl text-white">
           ✓
         </div>
-        <h3 className="text-xl font-extrabold text-[#0d6938] sm:text-2xl">
+        <h3 className="text-xl font-extrabold text-[#14213D] sm:text-2xl">
           送信ありがとうございます。
         </h3>
-        <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
+        <p className="mt-3 text-sm leading-7 text-[#111111]/65 sm:text-base">
           内容を確認後、担当者よりご連絡いたします。
         </p>
       </div>
@@ -57,10 +57,10 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-[#d4e7c8] bg-white px-4 py-3 text-sm text-[#123524] placeholder:text-[#9ab59f] focus:border-[#0d6938] focus:outline-none focus:ring-2 focus:ring-[#0d6938]/30";
-  const labelClass = "mb-2 block text-sm font-semibold text-[#123524]";
+    "w-full rounded-xl border border-[rgba(20,33,61,0.12)] bg-white px-4 py-3 text-sm text-[#111111] placeholder:text-[#111111]/35 focus:border-[#14213D] focus:outline-none focus:ring-2 focus:ring-[#14213D]/15";
+  const labelClass = "mb-2 block text-sm font-semibold text-[#14213D]";
   const requiredBadge = (
-    <span className="ml-1 rounded bg-[#0d6938] px-1.5 py-0.5 text-[10px] font-bold text-white align-middle">
+    <span className="ml-1 rounded bg-[#14213D] px-1.5 py-0.5 text-[10px] font-bold text-white align-middle">
       必須
     </span>
   );
@@ -184,17 +184,17 @@ export default function ContactForm() {
           <label className={labelClass} htmlFor="passport">
             パスポート所持
           </label>
-          <div className="flex gap-6 pt-1 text-sm text-[#123524]">
+          <div className="flex gap-6 pt-1 text-sm text-[#111111]/80">
             <label className="inline-flex items-center gap-2">
-              <input type="radio" name="passport" value="所持している" className="accent-[#0d6938]" />
+              <input type="radio" name="passport" value="所持している" className="accent-[#14213D]" />
               所持している
             </label>
             <label className="inline-flex items-center gap-2">
-              <input type="radio" name="passport" value="所持していない" className="accent-[#0d6938]" />
+              <input type="radio" name="passport" value="所持していない" className="accent-[#14213D]" />
               所持していない
             </label>
             <label className="inline-flex items-center gap-2">
-              <input type="radio" name="passport" value="申請中" className="accent-[#0d6938]" />
+              <input type="radio" name="passport" value="申請中" className="accent-[#14213D]" />
               申請中
             </label>
           </div>
@@ -225,11 +225,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full rounded-full bg-[#ffcd00] px-8 py-4 text-base font-extrabold text-[#0e512e] shadow-md transition hover:bg-[#ffd735] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[280px]"
+          className="ps-btn-line w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[280px]"
         >
           {status === "submitting" ? "送信中..." : "無料相談する"}
         </button>
-        <p className="text-xs text-[#4f735f]">
+        <p className="text-xs text-[#111111]/50">
           ご入力いただいた内容は、ご相談対応のみに使用いたします。
         </p>
       </div>

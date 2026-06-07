@@ -75,11 +75,11 @@ export default function ServicePage() {
   ];
 
   return (
-    <div className="ps-dark min-h-screen">
+    <div className="ps-page min-h-screen">
       <SiteHeader />
 
       <main>
-        <section className="relative overflow-hidden bg-[#0E1322] py-24 md:py-40">
+        <section className="relative overflow-hidden bg-[#14213D] py-24 md:py-40">
           <div
             className="absolute inset-0 opacity-[0.04]"
             style={{
@@ -120,12 +120,12 @@ export default function ServicePage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {services.map((service) => (
               <article key={service.title} className="ps-card border-l-4 border-[#F5B041] p-6">
-                <h3 className="text-lg font-bold text-[#E9E1D1]">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#E9E1D1]/70">{service.description}</p>
-                <ul className="mt-4 space-y-2 border-t border-[rgba(245,176,65,0.15)] pt-4 text-sm">
+                <h3 className="text-lg font-bold text-[#14213D]">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#111111]/65">{service.description}</p>
+                <ul className="mt-4 space-y-2 border-t border-[rgba(20,33,61,0.08)] pt-4 text-sm">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-[#E9E1D1]/85">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#F5B041] text-xs font-bold text-[#0E1322]">
+                    <li key={point} className="flex items-start gap-2 text-[#111111]/85">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#22C55E] text-xs font-bold text-white">
                         ✓
                       </span>
                       {point}
@@ -137,7 +137,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <section className="ps-section bg-[#161D30]">
+        <section className="ps-section ps-bg-subtle">
           <div className="ps-container">
             <p className="ps-eyebrow">FLOW</p>
             <h2 className="ps-heading mt-4">サポートの流れ</h2>
@@ -147,11 +147,11 @@ export default function ServicePage() {
             <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
               {steps.map((step) => (
                 <div key={step.number} className="flex flex-col items-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#F5B041] bg-[#1B2338] font-extrabold text-[#F5B041]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#F5B041] bg-white font-extrabold text-[#14213D]">
                     {step.number}
                   </div>
-                  <h4 className="mt-4 text-center text-sm font-bold text-[#E9E1D1]">{step.title}</h4>
-                  <p className="mt-2 text-center text-xs leading-6 text-[#E9E1D1]/60">
+                  <h4 className="mt-4 text-center text-sm font-bold text-[#14213D]">{step.title}</h4>
+                  <p className="mt-2 text-center text-xs leading-6 text-[#111111]/55">
                     {step.description}
                   </p>
                 </div>
@@ -172,9 +172,9 @@ export default function ServicePage() {
               {parentSupports.map((support) => (
                 <li
                   key={support}
-                  className="flex items-center gap-3 rounded-xl border border-[rgba(245,176,65,0.2)] bg-[#1B2338] px-4 py-3 text-sm font-semibold text-[#E9E1D1]"
+                  className="flex items-center gap-3 rounded-xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-4 py-3 text-sm font-semibold text-[#14213D]"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F5B041] text-xs font-extrabold text-[#0E1322]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#22C55E] text-xs font-extrabold text-white">
                     ✓
                   </span>
                   {support}
@@ -184,7 +184,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#0E1322] py-24">
+        <section className="relative overflow-hidden bg-[#14213D] py-24">
           <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
             <h2 className="ps-heading text-2xl sm:text-3xl">まずはLINEでお気軽にご相談ください。</h2>
             <p className="ps-lead mx-auto mt-4 max-w-xl text-sm sm:text-base">
@@ -200,9 +200,9 @@ export default function ServicePage() {
               {LINE_ICON}
               LINEで無料相談
             </a>
-            <p className="mt-4 text-xs text-[#E9E1D1]/50">LINE ID：@593loohp</p>
+            <p className="mt-4 text-xs text-white/50">LINE ID：@593loohp</p>
             <p className="mt-6">
-              <Link href="/" className="text-sm text-[#E9E1D1]/60 underline underline-offset-4 hover:text-[#F5B041]">
+              <Link href="/" className="text-sm text-white/60 underline underline-offset-4 hover:text-[#F5B041]">
                 ← TOPページへ戻る
               </Link>
             </p>

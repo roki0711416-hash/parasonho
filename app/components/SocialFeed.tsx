@@ -78,7 +78,7 @@ function SocialCard({ item }: { item: SocialFeedItem }) {
 
   return (
     <article className="ps-card flex flex-col overflow-hidden">
-      <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
+      <div className="flex items-center justify-between border-b border-[rgba(20,33,61,0.08)] px-5 py-3.5">
         <p className="text-[10px] font-bold tracking-[0.2em] text-[#F5B041]">{meta.tag}</p>
         <span className="h-2 w-2 rounded-full bg-[#F5B041]" />
       </div>
@@ -107,12 +107,12 @@ function SocialCard({ item }: { item: SocialFeedItem }) {
       </div>
 
       <div className="flex flex-1 flex-col justify-between gap-4 px-6 py-6">
-        <p className="text-xs leading-6 text-[#E9E1D1]/60 sm:text-sm">{meta.description}</p>
+        <p className="text-xs leading-6 text-[#111111]/60 sm:text-sm">{meta.description}</p>
         <a
           href={item.profileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F5B041]/60 px-5 py-3 text-sm font-bold text-[#F5B041] transition hover:bg-[#F5B041] hover:text-[#0E1322]"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14213D]/15 px-5 py-3 text-sm font-bold text-[#14213D] transition hover:border-[#F5B041] hover:bg-[#F5B041] hover:text-white"
         >
           {meta.cta}
           <span aria-hidden="true">→</span>
@@ -128,7 +128,7 @@ interface SocialFeedProps {
 
 export default function SocialFeed({ items }: SocialFeedProps) {
   return (
-    <section id="sns" className="ps-section ps-dark">
+    <section id="sns" className="ps-section bg-white">
       <div className="ps-container">
         <p className="ps-eyebrow">SNS</p>
         <h2 className="ps-heading mt-4">

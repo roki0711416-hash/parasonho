@@ -26,10 +26,10 @@ export default function AboutIndex() {
           <Link
             key={s.href}
             href={s.href}
-            className="ps-card block p-4 transition hover:border-[rgba(245,176,65,0.38)]"
+            className="ps-card block p-4 transition hover:border-[rgba(245,176,65,0.35)]"
           >
-            <p className="text-sm font-bold text-[#F5B041]">{s.label}</p>
-            <p className="mt-1 text-xs text-[#E9E1D1]/60">{s.desc}</p>
+            <p className="text-sm font-bold text-[#14213D]">{s.label}</p>
+            <p className="mt-1 text-xs text-[#111111]/50">{s.desc}</p>
           </Link>
         ))}
       </div>

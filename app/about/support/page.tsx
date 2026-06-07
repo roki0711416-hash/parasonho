@@ -25,8 +25,8 @@ export default function SupportPage() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {items.map((i) => (
           <div key={i.t} className="ps-card p-5">
-            <p className="font-bold text-[#F5B041]">{i.t}</p>
-            <p className="mt-2 text-sm text-[#E9E1D1]/75">{i.d}</p>
+            <p className="font-bold text-[#14213D]">{i.t}</p>
+            <p className="mt-2 text-sm text-[#111111]/65">{i.d}</p>
           </div>
         ))}
       </div>

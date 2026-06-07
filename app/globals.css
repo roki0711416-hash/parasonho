@@ -50,7 +50,7 @@ body {
   font-family: var(--font-saira), sans-serif;
   font-size: 1.875rem;
   font-weight: 800;
-  color: #e9e1d1;
+  color: #14213d;
   letter-spacing: 0.01em;
   position: relative;
   display: inline-block;
@@ -71,23 +71,23 @@ body {
 .section-subtitle {
   margin-top: 1rem;
   max-width: 48rem;
-  color: rgba(233, 225, 209, 0.62);
+  color: rgba(17, 17, 17, 0.62);
   line-height: 1.85;
   font-size: 0.95rem;
 }
 
 .card {
-  border: 1px solid rgba(245, 176, 65, 0.2);
-  background: linear-gradient(180deg, #1b2338 0%, #161d30 100%);
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  background: #ffffff;
   border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 24px -12px rgba(20, 33, 61, 0.08);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  border-color: rgba(245, 176, 65, 0.38);
-  box-shadow: 0 10px 28px -12px rgba(245, 176, 65, 0.2);
+  border-color: rgba(245, 176, 65, 0.35);
+  box-shadow: 0 16px 40px -16px rgba(20, 33, 61, 0.12);
   transform: translateY(-2px);
 }
 
@@ -325,11 +325,11 @@ body {
   justify-content: center;
   gap: 0.6rem;
   border-radius: 9999px;
-  background: #06c755;
+  background: #22c55e;
   color: #ffffff;
   font-weight: 800;
   padding: 1rem 2rem;
-  box-shadow: 0 14px 32px -10px rgba(6, 199, 85, 0.55);
+  box-shadow: 0 14px 32px -10px rgba(34, 197, 94, 0.45);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -338,8 +338,8 @@ body {
 
 .br-btn-line:hover {
   transform: translateY(-2px);
-  background: #05b34c;
-  box-shadow: 0 18px 40px -10px rgba(6, 199, 85, 0.65);
+  background: #16a34a;
+  box-shadow: 0 18px 40px -10px rgba(34, 197, 94, 0.55);
 }
 
 .br-btn-outline {
@@ -405,16 +405,16 @@ body {
 @keyframes brPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.45);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(6, 199, 85, 0);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
   }
 }
 
 .br-line-fab {
   box-shadow:
-    0 8px 32px -4px rgba(6, 199, 85, 0.5),
+    0 8px 32px -4px rgba(34, 197, 94, 0.45),
     0 0 0 1px rgba(255, 255, 255, 0.2) inset;
   animation: brPulse 2.5s ease-in-out infinite;
 }
@@ -426,34 +426,46 @@ body {
 }
 
 /* =========================================================
-   Para Sonho – Cinematic Navy Theme (Premium Football Academy)
+   Para Sonho – Premium Light Theme (Navy × Gold × White)
    ========================================================= */
 
 :root {
-  --ps-bg: #0e1322;
-  --ps-bg-2: #1b2338;
-  --ps-bg-3: #161d30;
-  --ps-line: rgba(245, 176, 65, 0.2);
-  --ps-line-strong: rgba(245, 176, 65, 0.38);
-  --ps-text: #e9e1d1;
-  --ps-text-dim: rgba(233, 225, 209, 0.62);
+  --ps-bg: #ffffff;
+  --ps-bg-subtle: #f8f9fb;
+  --ps-bg-navy: #14213d;
+  --ps-primary: #14213d;
+  --ps-text: #111111;
+  --ps-text-muted: rgba(17, 17, 17, 0.62);
+  --ps-line: rgba(20, 33, 61, 0.08);
+  --ps-line-strong: rgba(20, 33, 61, 0.16);
   --ps-gold: #f5b041;
   --ps-gold-hover: #ffc766;
   --ps-gold-soft: #ffd98a;
   --ps-gold-deep: #c4842a;
+  --ps-cta: #22c55e;
+  --ps-cta-hover: #16a34a;
 }
 
+.ps-page,
 .ps-dark {
   background: var(--ps-bg);
   color: var(--ps-text);
 }
 
-/* 背景の繊細なグラデーション */
+.ps-bg-subtle {
+  background: var(--ps-bg-subtle);
+}
+
+.ps-bg-navy {
+  background: var(--ps-bg-navy);
+  color: #ffffff;
+}
+
 .ps-bg-aurora {
   position: relative;
   background:
-    radial-gradient(ellipse 72% 55% at 12% 8%, rgba(245, 176, 65, 0.1) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 88% 92%, rgba(27, 35, 56, 0.9) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(245, 176, 65, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 45% at 92% 100%, rgba(20, 33, 61, 0.04) 0%, transparent 55%),
     var(--ps-bg);
 }
 
@@ -462,33 +474,31 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
-  background-image: radial-gradient(circle at 1px 1px, #f5b041 1px, transparent 0);
-  background-size: 3px 3px;
-  mix-blend-mode: overlay;
+  opacity: 0.025;
+  background-image: radial-gradient(circle at 1px 1px, #14213d 1px, transparent 0);
+  background-size: 4px 4px;
 }
 
 .ps-section {
   position: relative;
-  padding-block: clamp(5rem, 12vw, 9rem);
+  padding-block: clamp(5rem, 14vw, 10rem);
 }
 
 .ps-container {
   margin-inline: auto;
   width: 100%;
-  max-width: 76rem;
+  max-width: 72rem;
   padding-inline: clamp(1.25rem, 5vw, 2rem);
 }
 
-/* 英語ラベル（ゴールド） */
 .ps-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-saira), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ps-gold);
 }
@@ -500,24 +510,27 @@ body {
   background: linear-gradient(90deg, var(--ps-gold), transparent);
 }
 
-/* 巨大見出し（Saira Condensed） */
 .ps-display {
   font-family: var(--font-saira), sans-serif;
-  font-size: clamp(3rem, 11vw, 7.5rem);
+  font-size: clamp(2rem, 7.5vw, 4.25rem);
   font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: 0.005em;
-  text-transform: uppercase;
-  color: var(--ps-text);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ps-primary);
 }
 
 .ps-heading {
   font-family: var(--font-saira), sans-serif;
-  font-size: clamp(2.1rem, 6vw, 3.8rem);
+  font-size: clamp(1.85rem, 5vw, 3.25rem);
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: 0.01em;
-  color: var(--ps-text);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ps-primary);
+}
+
+.ps-bg-navy .ps-heading,
+.ps-bg-navy .ps-display {
+  color: #ffffff;
 }
 
 .ps-gold-text {
@@ -527,7 +540,6 @@ body {
   color: transparent;
 }
 
-/* （旧グリーン強調）→ ゴールドへ統一 */
 .ps-green-text {
   background: linear-gradient(120deg, var(--ps-gold-soft) 0%, var(--ps-gold) 60%, var(--ps-gold-deep) 100%);
   -webkit-background-clip: text;
@@ -536,24 +548,28 @@ body {
 }
 
 .ps-lead {
-  color: var(--ps-text-dim);
+  color: var(--ps-text-muted);
   line-height: 1.9;
 }
 
-/* ガラスカード（控えめなガラス感） */
+.ps-bg-navy .ps-lead {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .ps-glass {
   border-radius: 1.5rem;
   border: 1px solid var(--ps-line);
-  background: linear-gradient(180deg, rgba(27, 35, 56, 0.7) 0%, rgba(27, 35, 56, 0.5) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 18px 44px -28px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 48px -28px rgba(20, 33, 61, 0.12);
 }
 
 .ps-card {
   border-radius: 1.25rem;
   border: 1px solid var(--ps-line);
-  background: linear-gradient(180deg, var(--ps-bg-2) 0%, var(--ps-bg-3) 100%);
+  background: #ffffff;
+  box-shadow: 0 4px 24px -12px rgba(20, 33, 61, 0.08);
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.4s ease,
@@ -562,11 +578,10 @@ body {
 
 .ps-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ps-line-strong);
-  box-shadow: 0 20px 44px -30px rgba(245, 176, 65, 0.3);
+  border-color: rgba(245, 176, 65, 0.35);
+  box-shadow: 0 20px 44px -24px rgba(20, 33, 61, 0.14);
 }
 
-/* ボタン群 */
 .ps-btn-gold {
   display: inline-flex;
   align-items: center;
@@ -574,18 +589,18 @@ body {
   gap: 0.6rem;
   border-radius: 9999px;
   background: var(--ps-gold);
-  color: #0e1322;
+  color: var(--ps-primary);
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 1.05rem 2.25rem;
-  box-shadow: 0 10px 28px -14px rgba(245, 176, 65, 0.5);
+  box-shadow: 0 10px 28px -14px rgba(245, 176, 65, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .ps-btn-gold:hover {
   transform: translateY(-2px);
   background: var(--ps-gold-hover);
-  box-shadow: 0 14px 32px -14px rgba(255, 199, 102, 0.6);
+  box-shadow: 0 14px 32px -14px rgba(245, 176, 65, 0.55);
 }
 
 .ps-btn-line {
@@ -594,18 +609,18 @@ body {
   justify-content: center;
   gap: 0.6rem;
   border-radius: 9999px;
-  background: #06c755;
+  background: var(--ps-cta);
   color: #ffffff;
   font-weight: 700;
   padding: 1.05rem 2.25rem;
-  box-shadow: 0 10px 28px -14px rgba(6, 199, 85, 0.5);
+  box-shadow: 0 10px 28px -14px rgba(34, 197, 94, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .ps-btn-line:hover {
   transform: translateY(-2px);
-  background: #05b34c;
-  box-shadow: 0 14px 32px -14px rgba(6, 199, 85, 0.6);
+  background: var(--ps-cta-hover);
+  box-shadow: 0 14px 32px -14px rgba(34, 197, 94, 0.55);
 }
 
 .ps-btn-ghost {
@@ -614,22 +629,63 @@ body {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  border: 1px solid var(--ps-line-strong);
-  background: rgba(245, 176, 65, 0.04);
-  color: var(--ps-text);
+  border: 1.5px solid var(--ps-line-strong);
+  background: #ffffff;
+  color: var(--ps-primary);
+  font-weight: 600;
+  padding: 1.05rem 2.25rem;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.ps-btn-ghost:hover {
+  transform: translateY(-2px);
+  background: var(--ps-bg-subtle);
+  border-color: var(--ps-primary);
+}
+
+.ps-btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   font-weight: 600;
   padding: 1.05rem 2.25rem;
   backdrop-filter: blur(8px);
   transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
-.ps-btn-ghost:hover {
+.ps-btn-ghost-light:hover {
   transform: translateY(-2px);
-  background: rgba(245, 176, 65, 0.1);
-  border-color: var(--ps-gold);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
-/* スクロール連動リビール */
+.ps-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--ps-line);
+  background: #ffffff;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ps-primary);
+  box-shadow: 0 2px 12px -4px rgba(20, 33, 61, 0.06);
+}
+
+.ps-trust-pill-dot {
+  height: 0.4rem;
+  width: 0.4rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--ps-gold);
+}
+
 .ps-reveal {
   opacity: 0;
   transform: translateY(32px);
@@ -644,7 +700,6 @@ body {
   transform: none;
 }
 
-/* 横スクロールギャラリー */
 .ps-scroller {
   display: flex;
   gap: 1.25rem;
@@ -664,12 +719,10 @@ body {
   flex: 0 0 auto;
 }
 
-/* タイムライン */
 .ps-timeline-line {
-  background: linear-gradient(180deg, var(--ps-gold) 0%, rgba(245, 176, 65, 0.15) 100%);
+  background: linear-gradient(180deg, var(--ps-gold) 0%, rgba(245, 176, 65, 0.12) 100%);
 }
 
-/* スクロール誘導 */
 @keyframes psScrollDot {
   0% {
     opacity: 0;

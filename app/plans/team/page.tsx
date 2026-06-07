@@ -25,11 +25,11 @@ const LINE_ICON = (
 
 export default function TeamPage() {
   return (
-    <div className="ps-dark min-h-screen">
+    <div className="ps-page min-h-screen">
       <SiteHeader />
 
       <main>
-        <section className="relative overflow-hidden bg-[#0E1322] py-20 md:py-32">
+        <section className="relative overflow-hidden bg-[#14213D] py-20 md:py-32">
           <div
             className="absolute inset-0 opacity-[0.04]"
             style={{
@@ -68,16 +68,16 @@ export default function TeamPage() {
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <article className="ps-card border-t-4 border-[#F5B041] p-6">
-              <h3 className="text-lg font-extrabold text-[#E9E1D1]">大会参加</h3>
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#E9E1D1]/75">
+              <h3 className="text-lg font-extrabold text-[#14213D]">大会参加</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#111111]/70">
                 <li>・ブラジル現地大会への出場</li>
                 <li>・本場ブラジルクラブとの対戦</li>
                 <li>・年代別カテゴリーに応じた大会相談</li>
               </ul>
             </article>
             <article className="ps-card border-t-4 border-[#F5B041] p-6">
-              <h3 className="text-lg font-extrabold text-[#E9E1D1]">渡航・生活サポート</h3>
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#E9E1D1]/75">
+              <h3 className="text-lg font-extrabold text-[#14213D]">渡航・生活サポート</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-[#111111]/70">
                 <li>・宿泊先の手配</li>
                 <li>・空港送迎</li>
                 <li>・現地移動サポート</li>
@@ -88,7 +88,7 @@ export default function TeamPage() {
           </div>
         </section>
 
-        <section className="ps-section bg-[#161D30]">
+        <section className="ps-section ps-bg-subtle">
           <div className="ps-container">
             <p className="ps-eyebrow">TARGET</p>
             <h2 className="ps-heading mt-4">対象</h2>
@@ -97,9 +97,9 @@ export default function TeamPage() {
                 (item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 rounded-xl border border-[rgba(245,176,65,0.2)] bg-[#1B2338] px-5 py-4 text-sm font-semibold text-[#E9E1D1]"
+                    className="flex items-center gap-3 rounded-xl border border-[rgba(20,33,61,0.08)] bg-white px-5 py-4 text-sm font-semibold text-[#14213D]"
                   >
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F5B041] text-xs font-extrabold text-[#0E1322]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#22C55E] text-xs font-extrabold text-white">
                       ✓
                     </span>
                     {item}
@@ -110,7 +110,7 @@ export default function TeamPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#0E1322] py-24">
+        <section className="relative overflow-hidden bg-[#14213D] py-24">
           <div className="relative mx-auto w-full max-w-2xl px-4 text-center sm:px-6">
             <h2 className="ps-heading text-2xl sm:text-3xl">チーム遠征の相談はこちら</h2>
             <p className="ps-lead mx-auto mt-4 max-w-xl text-sm sm:text-base">
@@ -126,9 +126,9 @@ export default function TeamPage() {
               {LINE_ICON}
               LINEで遠征相談する
             </a>
-            <p className="mt-4 text-xs text-[#E9E1D1]/50">LINE ID：@593loohp</p>
+            <p className="mt-4 text-xs text-white/50">LINE ID：@593loohp</p>
             <p className="mt-6">
-              <Link href="/" className="text-sm text-[#E9E1D1]/60 underline underline-offset-4 hover:text-[#F5B041]">
+              <Link href="/" className="text-sm text-white/60 underline underline-offset-4 hover:text-[#F5B041]">
                 ← TOPページへ戻る
               </Link>
             </p>

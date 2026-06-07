@@ -9,8 +9,7 @@ export interface JourneyStep {
 export default function JourneyTimeline({ steps }: { steps: JourneyStep[] }) {
   return (
     <div className="relative mt-14">
-      {/* 縦ライン */}
-      <div className="ps-timeline-line absolute left-[1.35rem] top-2 bottom-2 w-px sm:left-1/2 sm:-translate-x-1/2" />
+      <div className="ps-timeline-line absolute bottom-2 left-[1.35rem] top-2 w-px sm:left-1/2 sm:-translate-x-1/2" />
 
       <ol className="space-y-8 sm:space-y-0">
         {steps.map((step, i) => {
@@ -20,10 +19,9 @@ export default function JourneyTimeline({ steps }: { steps: JourneyStep[] }) {
               key={step.no}
               className="relative sm:grid sm:grid-cols-2 sm:items-center sm:gap-10"
             >
-              {/* ノード */}
               <span className="absolute left-[1.35rem] top-1 z-10 -translate-x-1/2 sm:left-1/2">
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#0E1322] ring-2 ring-[#F5B041]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#FFC766]" />
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white ring-2 ring-[#F5B041]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
                 </span>
               </span>
 
@@ -39,14 +37,13 @@ export default function JourneyTimeline({ steps }: { steps: JourneyStep[] }) {
                   <div
                     className={`flex items-center gap-3 ${isRight ? "" : "sm:flex-row-reverse"}`}
                   >
-                    <span className="text-3xl font-black text-[#F5B041]/30">{step.no}</span>
-                    <h3 className="text-xl font-black text-white sm:text-2xl">{step.title}</h3>
+                    <span className="text-3xl font-black text-[#F5B041]/25">{step.no}</span>
+                    <h3 className="text-xl font-black text-[#14213D] sm:text-2xl">{step.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm leading-7 text-[#E9E1D1]/60">{step.desc}</p>
+                  <p className="mt-3 text-sm leading-7 text-[#111111]/60">{step.desc}</p>
                 </div>
               </Reveal>
 
-              {/* もう半分の余白（PC） */}
               <span className={isRight ? "hidden sm:block sm:order-1" : "hidden sm:block sm:order-2"} />
             </li>
           );

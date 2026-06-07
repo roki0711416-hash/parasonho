@@ -30,12 +30,11 @@ const siteLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="ps-dark border-t border-white/10">
-      {/* 大型CTA帯 */}
-      <div className="ps-bg-aurora ps-grain relative overflow-hidden">
+    <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
+      <div className="ps-bg-navy relative overflow-hidden">
         <div className="ps-container relative z-10 py-20 text-center sm:py-24">
           <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
-          <h2 className="ps-heading mx-auto mt-5 max-w-3xl">
+          <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
             夢への第一歩は、
             <br className="sm:hidden" />
             <span className="ps-gold-text">たった一通の相談</span>から。
@@ -57,64 +56,56 @@ export default function SiteFooter() {
               href={GFORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="ps-btn-ghost w-full text-base sm:w-auto"
+              className="ps-btn-ghost-light w-full text-base sm:w-auto"
             >
               相談フォームから問い合わせる
             </a>
           </div>
-          <p className="mt-5 text-xs text-[#E9E1D1]/60">LINE ID：@593loohp</p>
+          <p className="mt-5 text-xs text-white/50">LINE ID：@593loohp</p>
         </div>
       </div>
 
-      {/* リンク・SNS */}
       <div className="ps-container py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="text-lg font-black tracking-tight text-white">Para Sonho / パラソーニョ</p>
+            <p className="text-lg font-black tracking-tight text-[#14213D]">Para Sonho / パラソーニョ</p>
             <p className="ps-lead mt-3 max-w-sm text-sm">
               本場ブラジルを舞台に、サッカー留学・海外サッカー挑戦をサポート。現地クラブ練習・生活・通訳・遠征までワンストップで。
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-[#F5B041]/60 hover:text-[#F5B041]"
-              >
-                <Camera className="h-5 w-5" />
-              </a>
-              <a
-                href={X_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-[#F5B041]/60 hover:text-[#F5B041]"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href={TIKTOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-[#F5B041]/60 hover:text-[#F5B041]"
-              >
-                <Music2 className="h-5 w-5" />
-              </a>
-              <a
-                href={YOUTUBE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-[#F5B041]/60 hover:text-[#F5B041]"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
-                  <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
-                </svg>
-              </a>
+              {[
+                { href: INSTAGRAM_URL, label: "Instagram", icon: <Camera className="h-5 w-5" /> },
+                {
+                  href: X_URL,
+                  label: "X",
+                  icon: (
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  ),
+                },
+                { href: TIKTOK_URL, label: "TikTok", icon: <Music2 className="h-5 w-5" /> },
+                {
+                  href: YOUTUBE_URL,
+                  label: "YouTube",
+                  icon: (
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
+                      <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
+                    </svg>
+                  ),
+                },
+              ].map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(20,33,61,0.12)] text-[#14213D]/70 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
+                >
+                  {icon}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -123,7 +114,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-3 text-sm">
               {siteLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-white/75 transition hover:text-[#F5B041]">
+                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#14213D]">
                     {link.label}
                   </Link>
                 </li>
@@ -136,7 +127,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-3 text-sm">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-white/75 transition hover:text-[#F5B041]">
+                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#14213D]">
                     {link.label}
                   </Link>
                 </li>
@@ -145,11 +136,11 @@ export default function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-[10px] font-semibold tracking-[0.25em] text-white/40">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[rgba(20,33,61,0.08)] pt-8 sm:flex-row">
+          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#111111]/35">
             GLOBAL FOOTBALL CHALLENGE
           </p>
-          <p className="text-xs text-white/50" suppressHydrationWarning>
+          <p className="text-xs text-[#111111]/50" suppressHydrationWarning>
             © {new Date().getFullYear()} Para Sonho / パラソーニョ
           </p>
         </div>

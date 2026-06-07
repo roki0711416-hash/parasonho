@@ -61,11 +61,8 @@ export default function StaffPage() {
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {staff.map((s) => (
-          <article
-            key={s.name}
-            className="ps-card flex flex-col overflow-hidden p-0"
-          >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#1B2338]">
+          <article key={s.name} className="ps-card flex flex-col overflow-hidden p-0">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F8F9FB]">
               {s.image ? (
                 <Image
                   src={s.image}
@@ -75,7 +72,7 @@ export default function StaffPage() {
                   className="object-cover object-center"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center text-3xl font-extrabold text-[#E9E1D1]/40">
+                <div className="flex h-full w-full items-center justify-center text-3xl font-extrabold text-[#14213D]/20">
                   {s.name.charAt(0)}
                 </div>
               )}
@@ -83,15 +80,15 @@ export default function StaffPage() {
 
             <div className="flex flex-1 flex-col gap-3 p-5">
               <div>
-                <p className="text-[10px] font-semibold tracking-[0.18em] text-[#E9E1D1]/50">
+                <p className="text-[10px] font-semibold tracking-[0.18em] text-[#111111]/40">
                   {s.furigana}
                 </p>
-                <h2 className="mt-1 text-lg font-extrabold text-[#E9E1D1]">{s.name}</h2>
+                <h2 className="mt-1 text-lg font-extrabold text-[#14213D]">{s.name}</h2>
                 <p className="mt-1 text-xs font-semibold text-[#F5B041]">{s.role}</p>
               </div>
 
               {typeof s.yearsPlayed === "number" && (
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(245,176,65,0.3)] bg-[rgba(245,176,65,0.1)] px-3 py-1 text-xs font-bold text-[#F5B041]">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(245,176,65,0.3)] bg-[rgba(245,176,65,0.08)] px-3 py-1 text-xs font-bold text-[#C4842A]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
                   {s.yearsLabel ?? "サッカー歴"} {s.yearsPlayed}年
                 </div>
@@ -102,12 +99,12 @@ export default function StaffPage() {
                   <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">
                     MAIN CAREER
                   </p>
-                  <p className="mt-1 text-xs font-semibold text-[#E9E1D1]/60">主な経歴</p>
+                  <p className="mt-1 text-xs font-semibold text-[#111111]/50">主な経歴</p>
                   <ul className="mt-2 space-y-1.5">
                     {s.career.map((c) => (
                       <li
                         key={c}
-                        className="flex items-start gap-2 text-sm leading-snug text-[#E9E1D1]/75"
+                        className="flex items-start gap-2 text-sm leading-snug text-[#111111]/70"
                       >
                         <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F5B041]" />
                         <span>{c}</span>
@@ -118,7 +115,7 @@ export default function StaffPage() {
               )}
 
               {s.bio && (
-                <p className="mt-1 text-xs leading-6 text-[#E9E1D1]/60">{s.bio}</p>
+                <p className="mt-1 text-xs leading-6 text-[#111111]/55">{s.bio}</p>
               )}
             </div>
           </article>

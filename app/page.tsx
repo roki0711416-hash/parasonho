@@ -132,7 +132,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="ps-dark min-h-screen">
+    <div className="ps-page min-h-screen">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -143,7 +143,7 @@ export default function Home() {
 
       <main id="top">
         {/* 1. ヒーロー --------------------------------------------------- */}
-        <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#0E1322]">
+        <section className="relative min-h-[92svh] w-full overflow-hidden bg-[#14213D]">
           <div className="absolute inset-0 br-slow-zoom">
             <Photo
               src="/images/ヒーロー画像.png"
@@ -154,27 +154,26 @@ export default function Home() {
               className="h-full w-full"
             />
           </div>
-          {/* シネマティックなオーバーレイ */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-[#080B16]/55 to-[#080B16]/35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080B16]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#14213D] via-[#14213D]/70 to-[#14213D]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#14213D]/85 via-[#14213D]/30 to-transparent" />
 
-          <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-5 py-32 sm:px-6 lg:px-8">
-            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] font-bold tracking-[0.3em] text-white backdrop-blur-md">
+          <div className="relative z-10 mx-auto flex min-h-[92svh] w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:justify-center sm:px-6 sm:py-32 lg:px-8">
+            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold tracking-[0.28em] text-white/90 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
               BRAZIL FOOTBALL CHALLENGE
             </span>
 
-            <h1 className="ps-display br-animate br-animate-delay-1 mt-8 max-w-4xl">
+            <h1 className="br-animate br-animate-delay-1 mt-6 max-w-3xl text-[clamp(1.75rem,6.5vw,3.5rem)] font-extrabold leading-[1.15] tracking-tight text-white sm:mt-8">
               人として成長する留学から
               <br />
-              <span className="ps-gold-text">プロを目指す挑戦まで。</span>
+              <span className="text-[#F5B041]">プロを目指す挑戦まで。</span>
             </h1>
 
-            <p className="br-animate br-animate-delay-2 mt-7 max-w-xl text-base leading-9 text-white/85 sm:text-lg">
+            <p className="br-animate br-animate-delay-2 mt-5 max-w-lg text-base leading-8 text-white/80 sm:mt-7 sm:text-lg">
               ブラジルでしか得られない経験が、人生とサッカーを変える。
             </p>
 
-            <div className="br-animate br-animate-delay-3 mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="br-animate br-animate-delay-3 mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
               <a
                 href={LINE_URL}
                 target="_blank"
@@ -184,23 +183,31 @@ export default function Home() {
                 <LineIcon className="h-5 w-5" />
                 LINEで無料相談する
               </a>
-              <a href="#journey" className="ps-btn-ghost w-full text-sm sm:w-auto">
+              <a href="#journey" className="ps-btn-ghost-light w-full text-sm sm:w-auto">
                 留学の流れを見る
               </a>
             </div>
           </div>
+        </section>
 
-          {/* スクロール誘導 */}
-          <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/50">
-            <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/30 p-1.5">
-              <span className="ps-scroll-dot h-2 w-1 rounded-full bg-white/80" />
+        {/* 信頼バー ------------------------------------------------------ */}
+        <section className="border-b border-[rgba(20,33,61,0.08)] bg-white py-8 sm:py-10">
+          <div className="ps-container">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              {["無料相談受付中", "日本語サポート完備", "保護者への定期報告", "渡航前〜帰国後まで伴走"].map(
+                (label) => (
+                  <span key={label} className="ps-trust-pill">
+                    <span className="ps-trust-pill-dot" />
+                    {label}
+                  </span>
+                ),
+              )}
             </div>
-            <span className="text-[9px] font-bold tracking-[0.3em]">SCROLL</span>
           </div>
         </section>
 
         {/* 2. プレイヤージャーニー --------------------------------------- */}
-        <section id="journey" className="ps-bg-aurora ps-grain ps-section relative">
+        <section id="journey" className="ps-bg-subtle ps-section">
           <div className="ps-container relative z-10">
             <Reveal>
               <p className="ps-eyebrow">PLAYER JOURNEY</p>
@@ -216,7 +223,7 @@ export default function Home() {
         </section>
 
         {/* 5. 留学プラン ------------------------------------------------- */}
-        <section id="plans" className="ps-dark ps-section">
+        <section id="plans" className="ps-section bg-white">
           <div className="ps-container">
             <Reveal>
               <p className="ps-eyebrow">PLANS</p>
@@ -231,11 +238,11 @@ export default function Home() {
                 <Reveal key={plan.title} delay={i * 80}>
                   <article
                     className={`ps-card flex h-full flex-col overflow-hidden ${
-                      plan.highlight ? "border-[#F5B041]/40 md:-translate-y-3" : ""
+                      plan.highlight ? "border-[#F5B041]/40 ring-1 ring-[#F5B041]/20 md:-translate-y-2" : ""
                     }`}
                   >
                     {plan.highlight && (
-                      <div className="bg-gradient-to-r from-[#FFD98A] to-[#F5B041] px-4 py-2 text-center text-[10px] font-black tracking-[0.2em] text-[#0E1322]">
+                      <div className="bg-[#14213D] px-4 py-2 text-center text-[10px] font-black tracking-[0.2em] text-[#F5B041]">
                         MOST POPULAR
                       </div>
                     )}
@@ -243,19 +250,19 @@ export default function Home() {
                       <p className="text-[11px] font-bold tracking-[0.2em] text-[#F5B041]">
                         {plan.period}
                       </p>
-                      <h3 className="mt-2 text-xl font-black text-white sm:text-2xl">{plan.title}</h3>
+                      <h3 className="mt-2 text-xl font-black text-[#14213D] sm:text-2xl">{plan.title}</h3>
                       <p className="ps-lead mt-3 text-sm">{plan.target}</p>
-                      <ul className="mt-6 space-y-3 text-sm text-white/85">
+                      <ul className="mt-6 space-y-3 text-sm text-[#111111]/85">
                         {plan.points.map((point) => (
                           <li key={point} className="flex items-start gap-3">
-                            <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#F5B041]/15 text-[10px] font-bold text-[#F5B041]">
+                            <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#F5B041]/15 text-[10px] font-bold text-[#C4842A]">
                               ✓
                             </span>
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-auto border-t border-white/10 pt-6">
+                      <div className="mt-auto border-t border-[rgba(20,33,61,0.08)] pt-6">
                         <p className="ps-lead text-sm">費用はLINEでお気軽にご相談ください。</p>
                         <a
                           href={LINE_URL}
@@ -276,7 +283,7 @@ export default function Home() {
         </section>
 
         {/* 6. プロテスト ------------------------------------------------- */}
-        <section id="protest" className="ps-bg-aurora ps-grain ps-section relative">
+        <section id="protest" className="ps-bg-subtle ps-section">
           <div className="ps-container relative z-10">
             <Reveal>
               <p className="ps-eyebrow">NEW SERVICE</p>
@@ -287,14 +294,14 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={80}>
-              <div className="ps-glass mt-12 overflow-hidden">
+              <div className="ps-card mt-12 overflow-hidden">
                 <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
                   <div className="flex flex-col justify-center">
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#F5B041]/40 bg-[#F5B041]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-[#FFD98A]">
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#F5B041]/30 bg-[#F5B041]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-[#C4842A]">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
                       PRO TEST / SELECTION
                     </span>
-                    <h3 className="mt-5 text-2xl font-black leading-snug text-white sm:text-3xl">
+                    <h3 className="mt-5 text-2xl font-black leading-snug text-[#14213D] sm:text-3xl">
                       現地クラブの入団テストへ、
                       <br />
                       <span className="ps-gold-text">本気の挑戦を。</span>
@@ -303,24 +310,24 @@ export default function Home() {
                       選手のレベルや希望に合わせて受験するクラブを選定。テスト同行・通訳・現地サポートまで一括で対応し、評価される環境づくりを支えます。
                     </p>
                     <div className="mt-6 flex flex-wrap gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                      <div className="rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4">
                         <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">期間</p>
-                        <p className="mt-1 text-base font-bold text-white">2週間〜</p>
+                        <p className="mt-1 text-base font-bold text-[#14213D]">2週間〜</p>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                      <div className="rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4">
                         <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">
                           受験クラブ数
                         </p>
-                        <p className="mt-1 text-base font-bold text-white">ご希望に応じて調整</p>
+                        <p className="mt-1 text-base font-bold text-[#14213D]">ご希望に応じて調整</p>
                       </div>
                     </div>
-                    <p className="mt-4 text-xs leading-6 text-white/60">
+                    <p className="mt-4 text-xs leading-6 text-[#111111]/50">
                       ※ 受験するチーム数や現地の状況によって、期間・費用は変動します。詳細はお気軽にご相談ください。
                     </p>
                   </div>
 
                   <div className="flex flex-col gap-4">
-                    <p className="text-[10px] font-bold tracking-[0.2em] text-white/50">SUPPORT</p>
+                    <p className="text-[10px] font-bold tracking-[0.2em] text-[#111111]/40">SUPPORT</p>
                     <ul className="space-y-3 text-sm">
                       {[
                         "選手のレベル・希望に合った受験クラブの選定",
@@ -330,10 +337,10 @@ export default function Home() {
                       ].map((point) => (
                         <li
                           key={point}
-                          className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
+                          className="flex items-start gap-3 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-5 py-4"
                         >
                           <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F5B041]" />
-                          <span className="leading-6 text-white/85">{point}</span>
+                          <span className="leading-6 text-[#111111]/80">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -357,7 +364,7 @@ export default function Home() {
         <SocialFeed items={socialItems} />
 
         {/* 8. FAQ ------------------------------------------------------- */}
-        <section id="faq" className="ps-bg-aurora ps-grain ps-section relative">
+        <section id="faq" className="ps-section bg-white">
           <div className="ps-container relative z-10 max-w-3xl">
             <Reveal>
               <p className="ps-eyebrow">FAQ</p>
@@ -366,8 +373,8 @@ export default function Home() {
             <div className="mt-10 space-y-4">
               {faqs.map((item, i) => (
                 <Reveal key={item.q} delay={i * 50}>
-                  <details className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition open:border-[#F5B041]/40 sm:p-6">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-white">
+                  <details className="group rounded-2xl border border-[rgba(20,33,61,0.08)] bg-white p-5 shadow-sm transition open:border-[#F5B041]/35 sm:p-6">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-[#14213D]">
                       {item.q}
                       <span className="text-xl font-light text-[#F5B041] transition group-open:rotate-45">
                         +
@@ -381,25 +388,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 9. 相談フォーム（ガラスモーフィズム） ------------------------- */}
-        <section id="contact" className="relative w-full overflow-hidden bg-[#0E1322]">
-          <div className="absolute inset-0">
-            <Photo
-              src="/images/IMG_0009.JPG"
-              alt="スタジアム"
-              placeholderLabel="STADIUM"
-              sizes="100vw"
-              className="h-full w-full"
-            />
-          </div>
-          <div className="absolute inset-0 bg-[#080B16]/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-[#080B16]/60 to-[#080B16]/70" />
-
-          <div className="ps-container relative z-10 py-24 sm:py-28">
+        {/* 9. 相談フォーム ------------------------------------------------- */}
+        <section id="contact" className="ps-bg-navy ps-section">
+          <div className="ps-container">
             <Reveal>
-              <div className="ps-glass mx-auto max-w-2xl p-8 text-center sm:p-12">
+              <div className="mx-auto max-w-2xl text-center">
                 <p className="ps-eyebrow justify-center">CONTACT</p>
-                <h2 className="ps-heading mt-5">
+                <h2 className="ps-heading mt-5 text-white">
                   まずは、<span className="ps-gold-text">無料相談</span>から。
                 </h2>
                 <p className="ps-lead mx-auto mt-5 max-w-md text-sm sm:text-base">
@@ -407,14 +402,6 @@ export default function Home() {
                 </p>
 
                 <div className="mt-9 flex flex-col gap-4">
-                  <a
-                    href={GFORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ps-btn-gold w-full text-base"
-                  >
-                    相談フォームに進む
-                  </a>
                   <a
                     href={LINE_URL}
                     target="_blank"
@@ -424,8 +411,16 @@ export default function Home() {
                     <LineIcon className="h-5 w-5" />
                     LINEで無料相談する
                   </a>
+                  <a
+                    href={GFORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-btn-ghost-light w-full text-base"
+                  >
+                    相談フォームに進む
+                  </a>
                 </div>
-                <p className="mt-5 text-xs text-white/60">LINE ID：@593loohp ／ 24時間受付</p>
+                <p className="mt-5 text-xs text-white/50">LINE ID：@593loohp ／ 24時間受付</p>
               </div>
             </Reveal>
           </div>
