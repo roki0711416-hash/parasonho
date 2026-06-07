@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Para Sonhoとは",
+  title: "Para Sonhoについて",
   description:
     "Para Sonho（パラソーニョ）は、本場ブラジルを舞台にしたサッカー留学・海外サッカー挑戦サポートブランドです。会社概要・サポート内容・スタッフをご紹介します。",
   alternates: { canonical: "/about" },
@@ -16,7 +16,7 @@ export default function AboutIndex() {
 
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">Para Sonhoとは</h1>
+      <h1 className="text-2xl font-extrabold text-[#0d6938] sm:text-3xl">Para Sonhoについて</h1>
       <p className="mt-3 text-sm leading-7 text-[#2d5d43] sm:text-base">
         Para Sonho（パラソーニョ）は、ブラジルでのサッカー留学を支援するサービスです。
       </p>

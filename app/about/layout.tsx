@@ -18,7 +18,7 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
             ホーム
           </Link>
           <span className="mx-2">/</span>
-          <span>Para Sonhoとは</span>
+          <span>Para Sonhoについて</span>
         </nav>
 
         <div className="grid gap-8 md:grid-cols-[220px_1fr]">

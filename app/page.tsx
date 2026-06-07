@@ -2,6 +2,10 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import SocialFeed, { type SocialFeedItem } from "./components/SocialFeed";
 import Photo from "./components/Photo";
+import FloatingLineButton from "./components/FloatingLineButton";
+import Reveal from "./components/Reveal";
+import ProgramGallery, { type ProgramItem } from "./components/ProgramGallery";
+import JourneyTimeline, { type JourneyStep } from "./components/JourneyTimeline";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +18,8 @@ export const metadata: Metadata = {
 };
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
+const GFORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScwxBEWIxBWeQpoHuQi-BV0OaWao-pDAPg9AhhzIr1sEPcsmA/viewform?usp=dialog";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
@@ -32,95 +38,83 @@ const socialItems: SocialFeedItem[] = [
   { platform: "youtube", handle: "Para Sonho / パラソーニョ", profileUrl: YOUTUBE_URL },
 ];
 
-/**
- * 写真パス：public/images 配下に写真を置き、src を埋めるだけで反映されます。
- * 未指定（undefined）の場合はブラジルカラーの上品なプレースホルダーが表示されます。
- */
-const experiencePhotos: { src?: string; label: string }[] = [
-  { src: "/images/IMG_1165.JPG", label: "現地クラブの練習" },
-  { src: "/images/IMG_0009.JPG", label: "遠征・スタジアム" },
-];
-
-const reasons: { no: string; title: string; desc: string; src?: string }[] = [
+// ※ プログラム名・地域・写真は差し替え可能なプレースホルダーです。
+const programs: ProgramItem[] = [
   {
-    no: "01",
-    title: "世界レベルの環境",
-    desc: "本場ブラジルのピッチで、世界基準のスピードと技術を肌で感じる毎日。",
+    name: "サンパウロ 育成アカデミー",
+    region: "SÃO PAULO",
+    tag: "ACADEMY",
+    desc: "州都の育成環境で、世界基準のトレーニングメソッドを体験。",
     src: "/images/IMG_0007.JPG",
   },
   {
-    no: "02",
-    title: "現地クラブとのネットワーク",
-    desc: "現地に根ざしたつながりで、選手に合ったクラブ・練習環境へ。",
+    name: "リオ 提携クラブ",
+    region: "RIO DE JANEIRO",
+    tag: "CLUB",
+    desc: "現地クラブの練習に帯同し、実戦的な強度を肌で感じる。",
     src: "/images/IMG_2590.JPG",
   },
   {
-    no: "03",
-    title: "挑戦する機会",
-    desc: "練習参加から入団テストまで、評価される舞台を用意します。",
+    name: "ミナス ユースプログラム",
+    region: "MINAS GERAIS",
+    tag: "YOUTH",
+    desc: "若年層向けの育成プログラム。基礎技術から戦術理解まで。",
+    src: "/images/IMG_1165.JPG",
+  },
+  {
+    name: "サントス系 育成スクール",
+    region: "SANTOS",
+    tag: "SCHOOL",
+    desc: "伝統あるスタイルを受け継ぐ育成環境で技術を磨く。",
+    src: "/images/IMG_0595.JPG",
+  },
+  {
+    name: "地方クラブ 実戦プログラム",
+    region: "INTERIOR",
+    tag: "MATCH",
+    desc: "公式戦・練習試合を通じて、評価される場数を踏む。",
+    src: "/images/IMG_1030.JPG",
+  },
+  {
+    name: "プロテスト特化プログラム",
+    region: "PRO TEST",
+    tag: "SELECTION",
+    desc: "入団テスト（セレクション）への挑戦に特化したサポート。",
     src: "/images/IMG_5800.jpg",
   },
-  {
-    no: "04",
-    title: "安心のサポート体制",
-    desc: "渡航前から現地生活・通訳・緊急時まで、日本語で伴走します。",
-    src: "/images/support.png",
-  },
 ];
 
-const players: { name: string; meta: string; comment: string; src?: string }[] = [
-  {
-    name: "参加選手 A",
-    meta: "高校生 / 中期留学",
-    comment: "世界との距離を肌で感じ、サッカー観が大きく変わりました。",
-    src: undefined,
-  },
-  {
-    name: "参加選手 B",
-    meta: "大学生 / 長期留学",
-    comment: "現地クラブの練習に参加でき、毎日が刺激の連続でした。",
-    src: undefined,
-  },
-  {
-    name: "参加選手 C",
-    meta: "社会人 / プロテスト",
-    comment: "入団テストへの挑戦をサポートしてもらい、夢に近づけました。",
-    src: undefined,
-  },
-];
-
-// ギャラリー（12枚以上）。src を埋めると写真に差し替わります。
-const galleryPhotos: { src?: string; label: string }[] = [
-  { src: undefined, label: "PITCH" },
-  { src: undefined, label: "MATCH" },
-  { src: undefined, label: "TRAINING" },
-  { src: undefined, label: "STADIUM" },
-  { src: undefined, label: "TEAM" },
-  { src: undefined, label: "CITY" },
-  { src: undefined, label: "BEACH" },
-  { src: undefined, label: "FANS" },
-  { src: undefined, label: "GOAL" },
-  { src: undefined, label: "DAILY" },
-  { src: undefined, label: "TRAVEL" },
-  { src: undefined, label: "DREAM" },
+const journey: JourneyStep[] = [
+  { no: "01", title: "相談", desc: "LINEまたはフォームから無料相談。目標や不安をヒアリングします。" },
+  { no: "02", title: "面談", desc: "現状のレベルや希望をもとに、最適なプランをご提案します。" },
+  { no: "03", title: "学校・クラブ選定", desc: "選手に合った提携クラブ・スクールを現地ネットワークから選定。" },
+  { no: "04", title: "渡航", desc: "渡航準備から空港送迎まで、日本語で安心サポート。" },
+  { no: "05", title: "ブラジル生活開始", desc: "練習・生活・語学を現地スタッフが伴走。挑戦の日々がスタート。" },
+  { no: "06", title: "プロ挑戦", desc: "入団テスト・上位カテゴリへの挑戦まで、次のステップを後押し。" },
 ];
 
 export default function Home() {
   const plans = [
     {
-      title: "短期留学プラン（1〜4週間）",
+      title: "短期留学プラン",
+      period: "1〜4週間",
       target: "長期休みで海外に挑戦したい小中高生・大学生向け",
       points: ["現地クラブ練習参加", "生活サポート", "空港送迎"],
+      highlight: false,
     },
     {
-      title: "中期留学プラン（1〜3ヶ月）",
+      title: "中期留学プラン",
+      period: "1〜3ヶ月",
       target: "本気でレベルアップをめざす選手向け",
       points: ["実戦的トレーニング", "語学サポート", "現地サポート"],
+      highlight: true,
     },
     {
-      title: "長期留学プラン（6ヶ月〜）",
+      title: "長期留学プラン",
+      period: "6ヶ月〜",
       target: "本格的に海外で勝負したい選手向け",
       points: ["継続的な現地サポート", "進路相談", "定期面談"],
+      highlight: false,
     },
   ];
 
@@ -152,14 +146,8 @@ export default function Home() {
       alternateName: ["Para Sonho", "パラソーニョ"],
       url: SITE_URL,
       logo: `${SITE_URL}/parasonho-logo.png`,
-      description:
-        "本場ブラジルを舞台に、サッカー留学・海外サッカー挑戦をサポートするブランド。",
-      sameAs: [
-        "https://www.instagram.com/para_sonho/",
-        "https://x.com/Para_Sonho",
-        "https://www.tiktok.com/@para.sonho",
-        "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q",
-      ],
+      description: "本場ブラジルを舞台に、サッカー留学・海外サッカー挑戦をサポートするブランド。",
+      sameAs: [INSTAGRAM_URL, X_URL, TIKTOK_URL, YOUTUBE_URL],
     },
     {
       "@context": "https://schema.org",
@@ -191,387 +179,320 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-[#0b1a10]">
+    <div className="ps-dark min-h-screen">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <SiteHeader />
+      <FloatingLineButton />
 
       <main id="top">
         {/* 1. ヒーロー --------------------------------------------------- */}
-        <section className="relative min-h-[88vh] w-full overflow-hidden">
+        <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#0E1322]">
           <div className="absolute inset-0 br-slow-zoom">
             <Photo
               src="/images/IMG_5800.jpg"
               alt="ブラジルでサッカーに挑戦する選手"
               priority
               sizes="100vw"
-              placeholderLabel="HERO PHOTO"
+              placeholderLabel="HERO"
               className="h-full w-full"
             />
           </div>
-          <div className="absolute inset-0 br-overlay-dark" />
-          {/* ブラジルカラーのアクセントバー */}
-          <div className="absolute left-0 top-0 z-10 flex h-1.5 w-full">
-            <span className="h-full flex-1 bg-[#009c3b]" />
-            <span className="h-full flex-1 bg-[#ffdf00]" />
-            <span className="h-full flex-1 bg-[#002776]" />
-          </div>
+          {/* シネマティックなオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-[#080B16]/55 to-[#080B16]/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080B16]/80 via-transparent to-transparent" />
 
-          <div className="relative z-10 mx-auto flex min-h-[88vh] w-full max-w-6xl flex-col justify-center px-5 py-28 sm:px-6">
-            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.25em] text-white backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#ffdf00]" />
+          <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-5 py-32 sm:px-6 lg:px-8">
+            <span className="br-animate inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] font-bold tracking-[0.3em] text-white backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
               BRAZIL FOOTBALL CHALLENGE
             </span>
-            <h1 className="br-animate br-animate-delay-1 mt-6 max-w-3xl text-4xl font-black leading-[1.15] tracking-tight text-white sm:text-6xl md:text-7xl">
-              世界への挑戦は、
+
+            <h1 className="ps-display br-animate br-animate-delay-1 mt-8 max-w-4xl">
+              世界へ、
               <br />
-              <span className="text-[#ffdf00]">ここから始まる。</span>
+              <span className="ps-gold-text">本気で挑む。</span>
             </h1>
-            <p className="br-animate br-animate-delay-2 mt-6 max-w-xl text-sm leading-8 text-white/85 sm:text-lg">
-              ブラジルで本物のサッカーを体験し、世界への可能性を広げる。
+
+            <p className="br-animate br-animate-delay-2 mt-7 max-w-xl text-base leading-9 text-white/85 sm:text-lg">
+              本場ブラジルで、本物のサッカーを。
+              <br className="hidden sm:block" />
+              その一歩が、あなたの可能性を世界へ広げる。
             </p>
-            <div className="br-animate br-animate-delay-3 mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="br-btn-green w-full text-base sm:w-auto">
+
+            <div className="br-animate br-animate-delay-3 mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ps-btn-line w-full text-base sm:w-auto"
+              >
                 <LineIcon className="h-5 w-5" />
                 LINEで無料相談する
               </a>
-              <a
-                href="#reasons"
-                className="w-full rounded-full border border-white/40 px-8 py-4 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto"
-              >
-                Para Sonhoを知る
+              <a href="#programs" className="ps-btn-ghost w-full text-sm sm:w-auto">
+                プログラムを見る
               </a>
             </div>
           </div>
 
-          {/* スクロールヒント */}
-          <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-white/60">
-            <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/40 p-1">
-              <span className="h-2 w-1 animate-bounce rounded-full bg-white/70" />
+          {/* スクロール誘導 */}
+          <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/50">
+            <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/30 p-1.5">
+              <span className="ps-scroll-dot h-2 w-1 rounded-full bg-white/80" />
             </div>
+            <span className="text-[9px] font-bold tracking-[0.3em]">SCROLL</span>
           </div>
         </section>
 
-        {/* 2. 世界レベルを体験 ------------------------------------------- */}
-        <section className="bg-[#f7faf8] py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">EXPERIENCE</p>
-            <h2 className="br-heading mt-3 max-w-2xl">
-              世界レベルを、<span className="text-[#009c3b]">体で覚える。</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#3f5147]">
-              練習、試合、遠征。ブラジルの日常そのものが、最高のトレーニングです。
-            </p>
+        {/* 2. 提携校プログラム ------------------------------------------- */}
+        <section id="programs" className="ps-dark ps-section">
+          <div className="ps-container">
+            <Reveal>
+              <p className="ps-eyebrow">PROGRAMS</p>
+              <h2 className="ps-heading mt-4 max-w-2xl">提携校・クラブプログラム</h2>
+              <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
+                選手のレベルと目標に合わせて、本場の育成環境を選定。横にスワイプして見る。
+              </p>
+            </Reveal>
           </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-3 px-3 sm:grid-cols-3 sm:gap-4 sm:px-4">
-            {experiencePhotos.map((p, i) => (
-              <div
-                key={p.label}
-                className={`relative overflow-hidden rounded-2xl ${
-                  i === 0 ? "aspect-[4/5] sm:aspect-[3/4]" : "aspect-[4/5] sm:aspect-[3/4]"
-                }`}
-              >
-                <Photo
-                  src={p.src}
-                  alt={p.label}
-                  overlay="dark"
-                  placeholderLabel={p.label}
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                >
-                  <div className="flex h-full items-end p-5">
-                    <p className="text-lg font-extrabold text-white drop-shadow">{p.label}</p>
-                  </div>
-                </Photo>
-              </div>
-            ))}
+          <div className="ps-container mt-12">
+            <ProgramGallery items={programs} />
           </div>
         </section>
 
-        {/* 3. 選ばれる理由 ----------------------------------------------- */}
-        <section id="reasons" className="bg-white py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">WHY PARA SONHO</p>
-            <h2 className="br-heading mt-3 max-w-2xl">Para Sonhoが選ばれる理由</h2>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#3f5147]">
-              「行ってみたい」を「挑戦できた」に変える、4つの強み。
-            </p>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              {reasons.map((r, i) => (
-                <article
-                  key={r.no}
-                  className="group relative overflow-hidden rounded-3xl border border-[#e7efe9] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className="relative aspect-[16/10] w-full">
-                    <Photo
-                      src={r.src}
-                      alt={r.title}
-                      overlay={i % 2 === 0 ? "green" : "navy"}
-                      placeholderLabel={r.title}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    >
-                      <div className="flex h-full flex-col justify-between p-6">
-                        <span className="text-3xl font-black text-white/90">{r.no}</span>
-                        <h3 className="text-2xl font-black text-white drop-shadow">{r.title}</h3>
-                      </div>
-                    </Photo>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm leading-7 text-[#3f5147]">{r.desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+        {/* 4. プレイヤージャーニー --------------------------------------- */}
+        <section id="journey" className="ps-bg-aurora ps-grain ps-section relative">
+          <div className="ps-container relative z-10">
+            <Reveal>
+              <p className="ps-eyebrow">PLAYER JOURNEY</p>
+              <h2 className="ps-heading mt-4 max-w-2xl">
+                相談から<span className="ps-gold-text">プロ挑戦</span>まで
+              </h2>
+              <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
+                はじめての方も安心。挑戦までの流れを、ステップでご案内します。
+              </p>
+            </Reveal>
+            <JourneyTimeline steps={journey} />
           </div>
         </section>
 
         {/* 5. 留学プラン ------------------------------------------------- */}
-        <section id="plans" className="bg-white py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">PLANS</p>
-            <h2 className="br-heading mt-3">留学プラン</h2>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#3f5147]">
-              短期〜長期まで、目標とスケジュールに合わせて設計します。
-            </p>
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {plans.map((plan) => (
-                <article
-                  key={plan.title}
-                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#e7efe9] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <span className="h-1.5 w-full bg-gradient-to-r from-[#009c3b] via-[#ffdf00] to-[#002776]" />
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-lg font-black text-[#0b1a10]">{plan.title}</h3>
-                    <p className="mt-2 text-sm text-[#3f5147]">{plan.target}</p>
-                    <ul className="mt-4 space-y-2 text-sm text-[#1f2937]">
-                      {plan.points.map((point) => (
-                        <li key={point} className="flex items-start gap-2">
-                          <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#009c3b]" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto border-t border-[#eef3f0] pt-5">
-                      <p className="text-sm leading-6 text-[#3f5147]">費用についてはLINEでお気軽にご相談ください。</p>
-                      <a
-                        href={LINE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#009c3b] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#00702a]"
-                      >
-                        <LineIcon className="h-4 w-4" />
-                        LINEで相談する
-                      </a>
+        <section id="plans" className="ps-dark ps-section">
+          <div className="ps-container">
+            <Reveal>
+              <p className="ps-eyebrow">PLANS</p>
+              <h2 className="ps-heading mt-4">留学プラン</h2>
+              <p className="ps-lead mt-5 max-w-xl text-sm sm:text-base">
+                短期〜長期まで、目標とスケジュールに合わせて設計します。
+              </p>
+            </Reveal>
+
+            <div className="mt-14 grid gap-6 md:grid-cols-3">
+              {plans.map((plan, i) => (
+                <Reveal key={plan.title} delay={i * 80}>
+                  <article
+                    className={`ps-card flex h-full flex-col overflow-hidden ${
+                      plan.highlight ? "border-[#F5B041]/40 md:-translate-y-3" : ""
+                    }`}
+                  >
+                    {plan.highlight && (
+                      <div className="bg-gradient-to-r from-[#FFD98A] to-[#F5B041] px-4 py-2 text-center text-[10px] font-black tracking-[0.2em] text-[#0E1322]">
+                        MOST POPULAR
+                      </div>
+                    )}
+                    <div className="flex flex-1 flex-col p-7 sm:p-8">
+                      <p className="text-[11px] font-bold tracking-[0.2em] text-[#F5B041]">
+                        {plan.period}
+                      </p>
+                      <h3 className="mt-2 text-xl font-black text-white sm:text-2xl">{plan.title}</h3>
+                      <p className="ps-lead mt-3 text-sm">{plan.target}</p>
+                      <ul className="mt-6 space-y-3 text-sm text-white/85">
+                        {plan.points.map((point) => (
+                          <li key={point} className="flex items-start gap-3">
+                            <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#F5B041]/15 text-[10px] font-bold text-[#F5B041]">
+                              ✓
+                            </span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-auto border-t border-white/10 pt-6">
+                        <p className="ps-lead text-sm">費用はLINEでお気軽にご相談ください。</p>
+                        <a
+                          href={LINE_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ps-btn-line mt-4 w-full text-sm"
+                        >
+                          <LineIcon className="h-4 w-4" />
+                          LINEで相談する
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* 6. プロテスト ------------------------------------------------- */}
-        <section id="protest" className="bg-[#f7faf8] py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">NEW SERVICE</p>
-            <h2 className="br-heading mt-3 max-w-2xl">プロテスト（入団テスト）サポート</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-8 text-[#3f5147]">
-              現地クラブの入団テスト（プロテスト／セレクション）への挑戦をサポート。プロ契約・上位カテゴリ昇格を本気でめざす選手向けの新サービスです。
-            </p>
+        <section id="protest" className="ps-bg-aurora ps-grain ps-section relative">
+          <div className="ps-container relative z-10">
+            <Reveal>
+              <p className="ps-eyebrow">NEW SERVICE</p>
+              <h2 className="ps-heading mt-4 max-w-2xl">プロテスト（入団テスト）サポート</h2>
+              <p className="ps-lead mt-5 max-w-2xl text-sm sm:text-base">
+                現地クラブの入団テスト（プロテスト／セレクション）への挑戦をサポート。プロ契約・上位カテゴリ昇格を本気でめざす選手向けの新サービスです。
+              </p>
+            </Reveal>
 
-            <div className="mt-10 overflow-hidden rounded-3xl bg-gradient-to-br from-[#00702a] via-[#009c3b] to-[#002776] text-white shadow-lg">
-              <div className="grid gap-8 p-8 sm:p-10 md:grid-cols-2">
-                <div className="flex flex-col justify-center">
-                  <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-white">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ffdf00]" />
-                    PRO TEST / SELECTION
-                  </span>
-                  <h3 className="mt-5 text-2xl font-black leading-snug sm:text-3xl">
-                    現地クラブの入団テストへ、
-                    <br />
-                    <span className="text-[#ffdf00]">本気の挑戦を。</span>
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-white/85">
-                    選手のレベルや希望に合わせて受験するクラブを選定。テスト同行・通訳・現地サポートまで一括で対応し、評価される環境づくりを支えます。
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <div className="rounded-xl border border-white/20 bg-white/10 px-4 py-3">
-                      <p className="text-[10px] font-bold tracking-[0.15em] text-[#ffdf00]">期間</p>
-                      <p className="mt-1 text-base font-bold">2週間〜</p>
+            <Reveal delay={80}>
+              <div className="ps-glass mt-12 overflow-hidden">
+                <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:gap-12">
+                  <div className="flex flex-col justify-center">
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#F5B041]/40 bg-[#F5B041]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-[#FFD98A]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
+                      PRO TEST / SELECTION
+                    </span>
+                    <h3 className="mt-5 text-2xl font-black leading-snug text-white sm:text-3xl">
+                      現地クラブの入団テストへ、
+                      <br />
+                      <span className="ps-gold-text">本気の挑戦を。</span>
+                    </h3>
+                    <p className="ps-lead mt-4 text-sm sm:text-base">
+                      選手のレベルや希望に合わせて受験するクラブを選定。テスト同行・通訳・現地サポートまで一括で対応し、評価される環境づくりを支えます。
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                        <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">期間</p>
+                        <p className="mt-1 text-base font-bold text-white">2週間〜</p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                        <p className="text-[10px] font-bold tracking-[0.15em] text-[#F5B041]">
+                          受験クラブ数
+                        </p>
+                        <p className="mt-1 text-base font-bold text-white">ご希望に応じて調整</p>
+                      </div>
                     </div>
-                    <div className="rounded-xl border border-white/20 bg-white/10 px-4 py-3">
-                      <p className="text-[10px] font-bold tracking-[0.15em] text-[#ffdf00]">受験クラブ数</p>
-                      <p className="mt-1 text-base font-bold">ご希望に応じて調整</p>
-                    </div>
+                    <p className="mt-4 text-xs leading-6 text-white/60">
+                      ※ 受験するチーム数や現地の状況によって、期間・費用は変動します。詳細はお気軽にご相談ください。
+                    </p>
                   </div>
-                  <p className="mt-3 text-xs leading-6 text-white/70">
-                    ※ 受験するチーム数や現地の状況によって、期間・費用は変動します。詳細はお気軽にご相談ください。
-                  </p>
-                </div>
 
-                <div className="flex flex-col gap-4">
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-white/60">SUPPORT</p>
-                  <ul className="space-y-3 text-sm">
-                    {[
-                      "選手のレベル・希望に合った受験クラブの選定",
-                      "入団テスト（プロテスト）への帯同・申込サポート",
-                      "現地での通訳・移動・生活サポート",
-                      "テスト結果を踏まえた次のステップのご提案",
-                    ].map((point) => (
-                      <li key={point} className="flex items-start gap-3 rounded-xl bg-white/10 px-4 py-3">
-                        <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#ffdf00]" />
-                        <span className="leading-6 text-white/90">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={LINE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="br-btn-green mt-2 w-full text-sm"
-                  >
-                    <LineIcon className="h-4 w-4" />
-                    プロテストについて相談する
-                  </a>
+                  <div className="flex flex-col gap-4">
+                    <p className="text-[10px] font-bold tracking-[0.2em] text-white/50">SUPPORT</p>
+                    <ul className="space-y-3 text-sm">
+                      {[
+                        "選手のレベル・希望に合った受験クラブの選定",
+                        "入団テスト（プロテスト）への帯同・申込サポート",
+                        "現地での通訳・移動・生活サポート",
+                        "テスト結果を踏まえた次のステップのご提案",
+                      ].map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
+                        >
+                          <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F5B041]" />
+                          <span className="leading-6 text-white/85">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={LINE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-btn-line mt-2 w-full text-sm"
+                    >
+                      <LineIcon className="h-4 w-4" />
+                      プロテストについて相談する
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
-        {/* 7. 参加選手・卒業生（参加選手がまだいないため一旦非表示） -------
-        <section className="bg-white py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">PLAYERS</p>
-            <h2 className="br-heading mt-3 max-w-2xl">挑戦した選手たち</h2>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#3f5147]">
-              ブラジルでの日々が、選手を大きく変えていきます。
-            </p>
-
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {players.map((p) => (
-                <article
-                  key={p.name}
-                  className="flex flex-col overflow-hidden rounded-3xl border border-[#e7efe9] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className="relative aspect-[4/5] w-full">
-                    <Photo
-                      src={p.src}
-                      alt={p.name}
-                      overlay="dark"
-                      placeholderLabel={p.name}
-                      sizes="(max-width: 1024px) 50vw, 33vw"
-                    >
-                      <div className="flex h-full flex-col justify-end p-5">
-                        <p className="text-xl font-black text-white drop-shadow">{p.name}</p>
-                        <p className="mt-1 text-xs font-semibold text-[#ffdf00]">{p.meta}</p>
-                      </div>
-                    </Photo>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-sm leading-7 text-[#3f5147]">「{p.comment}」</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-        */}
-
-        {/* 8. ギャラリー（写真が揃うまで一旦非表示） ---------------------
-        <section className="bg-[#f7faf8] py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
-            <p className="br-eyebrow">GALLERY</p>
-            <h2 className="br-heading mt-3">現地の一瞬を、そのままに。</h2>
-            <p className="mt-4 max-w-xl text-sm leading-8 text-[#3f5147]">
-              ピッチも、街も、青空も。ブラジルの空気を写真でお届けします。
-            </p>
-          </div>
-
-          <div className="mx-auto mt-10 w-full max-w-6xl px-3 sm:px-6">
-            <div className="columns-2 gap-3 sm:columns-3 lg:columns-4 [&>*]:mb-3">
-              {galleryPhotos.map((g, i) => {
-                // 高さに変化をつけてPinterest風に
-                const aspect = i % 5 === 0 ? "aspect-[3/4]" : i % 3 === 0 ? "aspect-square" : "aspect-[4/5]";
-                return (
-                  <div key={`${g.label}-${i}`} className={`relative w-full overflow-hidden rounded-xl ${aspect} break-inside-avoid`}>
-                    <Photo
-                      src={g.src}
-                      alt={g.label}
-                      overlay="green"
-                      placeholderLabel={g.label}
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-        */}
-
-        {/* SNS */}
+        {/* 7. SNS ------------------------------------------------------- */}
         <SocialFeed items={socialItems} />
 
-        {/* FAQ */}
-        <section id="faq" className="bg-white py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-4xl px-5 sm:px-6">
-            <p className="br-eyebrow">FAQ</p>
-            <h2 className="br-heading mt-3">よくある質問</h2>
-            <div className="mt-10 space-y-3">
-              {faqs.map((item) => (
-                <details key={item.q} className="group rounded-2xl border border-[#e7efe9] bg-white p-5 shadow-sm">
-                  <summary className="cursor-pointer list-none font-bold text-[#0b1a10]">
-                    {item.q}
-                    <span className="float-right text-[#009c3b] transition group-open:rotate-45">＋</span>
-                  </summary>
-                  <p className="mt-3 text-sm leading-7 text-[#3f5147]">{item.a}</p>
-                </details>
+        {/* 8. FAQ ------------------------------------------------------- */}
+        <section id="faq" className="ps-bg-aurora ps-grain ps-section relative">
+          <div className="ps-container relative z-10 max-w-3xl">
+            <Reveal>
+              <p className="ps-eyebrow">FAQ</p>
+              <h2 className="ps-heading mt-4">よくある質問</h2>
+            </Reveal>
+            <div className="mt-10 space-y-4">
+              {faqs.map((item, i) => (
+                <Reveal key={item.q} delay={i * 50}>
+                  <details className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition open:border-[#F5B041]/40 sm:p-6">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-white">
+                      {item.q}
+                      <span className="text-xl font-light text-[#F5B041] transition group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <p className="ps-lead mt-4 text-sm sm:text-base">{item.a}</p>
+                  </details>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 9. CTA（スタジアム背景） ------------------------------------- */}
-        <section id="contact" className="relative min-h-[60vh] w-full overflow-hidden">
+        {/* 9. 相談フォーム（ガラスモーフィズム） ------------------------- */}
+        <section id="contact" className="relative w-full overflow-hidden bg-[#0E1322]">
           <div className="absolute inset-0">
             <Photo
-              src={undefined}
+              src="/images/IMG_0009.JPG"
               alt="スタジアム"
               placeholderLabel="STADIUM"
               sizes="100vw"
               className="h-full w-full"
             />
           </div>
-          <div className="absolute inset-0 br-overlay-dark" />
-          <div className="absolute inset-0 bg-[#002776]/40" />
+          <div className="absolute inset-0 bg-[#080B16]/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-[#080B16]/60 to-[#080B16]/70" />
 
-          <div className="relative z-10 mx-auto flex min-h-[60vh] w-full max-w-3xl flex-col items-center justify-center px-5 py-24 text-center sm:px-6">
-            <p className="text-[10px] font-bold tracking-[0.3em] text-[#ffdf00]">YOUR TURN</p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-white sm:text-5xl">
-              次に世界へ挑戦するのは、
-              <br />
-              <span className="text-[#ffdf00]">あなたです。</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-sm leading-8 text-white/85 sm:text-base">
-              年齢・レベルは問いません。まずは気軽に、夢への一歩を相談してください。
-            </p>
-            <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-              <a
-                href={LINE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="br-btn-green w-full text-base sm:w-auto sm:min-w-[240px]"
-              >
-                <LineIcon className="h-5 w-5" />
-                LINEで相談する
-              </a>
-            </div>
-            <p className="mt-4 text-xs text-white/70">LINE ID：@593loohp</p>
+          <div className="ps-container relative z-10 py-24 sm:py-28">
+            <Reveal>
+              <div className="ps-glass mx-auto max-w-2xl p-8 text-center sm:p-12">
+                <p className="ps-eyebrow justify-center">CONTACT</p>
+                <h2 className="ps-heading mt-5">
+                  まずは、<span className="ps-gold-text">無料相談</span>から。
+                </h2>
+                <p className="ps-lead mx-auto mt-5 max-w-md text-sm sm:text-base">
+                  目的や不安をヒアリングし、あなたに最適な留学プランをご案内します。お気軽にどうぞ。
+                </p>
+
+                <div className="mt-9 flex flex-col gap-4">
+                  <a
+                    href={GFORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-btn-gold w-full text-base"
+                  >
+                    相談フォームに進む
+                  </a>
+                  <a
+                    href={LINE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ps-btn-line w-full text-base"
+                  >
+                    <LineIcon className="h-5 w-5" />
+                    LINEで無料相談する
+                  </a>
+                </div>
+                <p className="mt-5 text-xs text-white/60">LINE ID：@593loohp ／ 24時間受付</p>
+              </div>
+            </Reveal>
           </div>
         </section>
       </main>
