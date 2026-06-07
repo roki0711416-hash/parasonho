@@ -887,3 +887,16 @@ body {
     0 2px 18px rgba(20, 33, 61, 0.45),
     0 1px 3px rgba(0, 0, 0, 0.28);
 }
+
+/* 写真背景では gradient clip が透けて見えるため、不透明ゴールドに切り替え */
+.ps-on-photo .ps-gold-text,
+.ps-on-photo .ps-green-text {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--ps-gold);
+  -webkit-text-fill-color: var(--ps-gold);
+  text-shadow:
+    0 2px 14px rgba(20, 33, 61, 0.75),
+    0 1px 4px rgba(0, 0, 0, 0.5);
+}
