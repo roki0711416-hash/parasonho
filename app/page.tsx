@@ -9,6 +9,7 @@ import Reveal from "./components/Reveal";
 import JourneyTimeline, { type JourneyStep } from "./components/JourneyTimeline";
 import TickerBar from "./components/TickerBar";
 import ConsultCtaButtons from "./components/ConsultCtaButtons";
+import WhyChooseSection from "./components/WhyChooseSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -178,7 +179,10 @@ export default function Home() {
 
         <TickerBar />
 
-        {/* 2. 留学プラン ------------------------------------------------- */}
+        {/* 2. 選ばれる理由 ------------------------------------------------ */}
+        <WhyChooseSection />
+
+        {/* 3. 留学プラン ------------------------------------------------- */}
         <section id="plans" className="ps-section bg-white">
           <div className="ps-container">
             <Reveal>
@@ -256,7 +260,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. プロテスト（案内） ----------------------------------------- */}
+        {/* 4. プロテスト（案内） ----------------------------------------- */}
         <section id="protest" className="ps-bg-subtle ps-section">
           <div className="ps-container">
             <Reveal>
@@ -288,10 +292,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. SNS ------------------------------------------------------- */}
+        {/* 5. SNS ------------------------------------------------------- */}
         <SocialFeed items={socialItems} />
 
-        {/* 8. FAQ ------------------------------------------------------- */}
+        {/* 6. FAQ ------------------------------------------------------- */}
         <section id="faq" className="ps-section bg-white">
           <div className="ps-container relative z-10 max-w-3xl">
             <Reveal>
