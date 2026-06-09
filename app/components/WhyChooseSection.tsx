@@ -1,7 +1,6 @@
 import { Clock, Languages } from "lucide-react";
 import Reveal from "./Reveal";
-import LineIcon from "./LineIcon";
-import { LINE_URL } from "../lib/contact";
+import ConsultCtaButtons from "./ConsultCtaButtons";
 
 const reasons = [
   {
@@ -68,17 +67,14 @@ export default function WhyChooseSection() {
         </div>
 
         <Reveal delay={120}>
-          <div className="mt-14 text-center">
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ps-btn-line inline-flex w-full items-center justify-center gap-2 text-base sm:w-auto sm:min-w-[320px]"
-            >
-              <LineIcon className="h-5 w-5 shrink-0" />
-              ブラジル留学について無料相談する
-            </a>
-          </div>
+          <ConsultCtaButtons
+            variant="onLight"
+            align="center"
+            stacked
+            lineLabel="ブラジル留学について無料相談する"
+            formLabel="申し込みフォームから問い合わせる"
+            className="mx-auto mt-14 max-w-sm sm:max-w-[360px]"
+          />
         </Reveal>
       </div>
     </section>

@@ -14,6 +14,8 @@ interface ConsultCtaButtonsProps {
   align?: "start" | "center";
   showLineId?: boolean;
   showForm?: boolean;
+  /** true のとき常に縦並び（LINEの下にフォーム） */
+  stacked?: boolean;
 }
 
 const variantStyles = {
@@ -47,6 +49,7 @@ export default function ConsultCtaButtons({
   align = "start",
   showLineId = false,
   showForm = true,
+  stacked = false,
 }: ConsultCtaButtonsProps) {
   const v = variantStyles[variant];
   const s = sizeStyles[size];
@@ -54,10 +57,11 @@ export default function ConsultCtaButtons({
     align === "center"
       ? "items-stretch sm:items-center sm:justify-center"
       : "items-stretch sm:items-center";
+  const layoutClass = stacked ? "flex flex-col gap-3" : `flex flex-col ${s.wrapper}`;
 
   return (
     <div className={className}>
-      <div className={`flex flex-col ${s.wrapper} ${alignClass}`}>
+      <div className={`${layoutClass} ${alignClass}`}>
         <a
           href={LINE_URL}
           target="_blank"
