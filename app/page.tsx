@@ -317,21 +317,6 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-            <Reveal delay={80}>
-              <div className="mt-12 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-6 py-10 text-center sm:px-10">
-                <p className="text-sm font-semibold text-[#14213D] sm:text-base">
-                  まだ疑問が残る方へ
-                </p>
-                <p className="ps-lead mx-auto mt-2 max-w-md text-sm">
-                  LINEでもフォームでも、無料でご相談いただけます。
-                </p>
-                <ConsultCtaButtons
-                  variant="onLight"
-                  align="center"
-                  className="mx-auto mt-6 max-w-sm sm:max-w-none"
-                />
-              </div>
-            </Reveal>
           </div>
         </section>
       </main>
