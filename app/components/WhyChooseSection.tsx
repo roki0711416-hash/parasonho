@@ -4,9 +4,9 @@ import ConsultCtaButtons from "./ConsultCtaButtons";
 
 const reasons = [
   {
-    title: "サントスFCなど名門クラブとのネットワーク",
+    title: "信頼できるブラジル現地クラブとのネットワーク",
     description:
-      "サントスFCをはじめとするブラジル名門クラブとの提携・ネットワークにより、本場ブラジルの高いレベルの環境で挑戦できる機会を提供します。信用度の高い環境で、プロを目指す選手の挑戦をサポートします。",
+      "長年ブラジルで築いてきた現地クラブとの信頼関係とネットワークを活かし、一人ひとりのレベルや目標に合わせた挑戦の場をご提案します。本場ブラジルだからこそ得られる経験と成長の機会を提供します。",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" aria-hidden="true">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
