@@ -1,15 +1,11 @@
-const TICKER_ITEMS = [
-  "⚽️ プロテスト参加者受付中",
-  "無料相談受付中",
-  "🇧🇷 本場ブラジルで挑戦",
-  "日本語サポート完備",
-  "保護者への定期報告",
-];
+"use client";
 
-function TickerContent() {
+import { useI18n } from "../lib/i18n/I18nProvider";
+
+function TickerContent({ items }: { items: string[] }) {
   return (
     <>
-      {TICKER_ITEMS.map((item) => (
+      {items.map((item) => (
         <span key={item} className="ps-ticker-item">
           <span className="ps-ticker-dot" aria-hidden="true" />
           {item}
@@ -20,14 +16,16 @@ function TickerContent() {
 }
 
 export default function TickerBar() {
+  const { dict } = useI18n();
+
   return (
-    <div className="ps-ticker border-y border-[#F5B041]/15 bg-[#14213D]" aria-label="お知らせ">
+    <div className="ps-ticker border-y border-[#F5B041]/15 bg-[#14213D]" aria-label={dict.common.ticker.aria}>
       <div className="ps-ticker-track">
         <div className="ps-ticker-group" aria-hidden="true">
-          <TickerContent />
+          <TickerContent items={dict.common.ticker.items} />
         </div>
         <div className="ps-ticker-group" aria-hidden="true">
-          <TickerContent />
+          <TickerContent items={dict.common.ticker.items} />
         </div>
       </div>
     </div>

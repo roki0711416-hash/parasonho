@@ -3,12 +3,9 @@
 import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-const aboutItems: Array<{ href: string; label: string }> = [
-  { href: "/about/company", label: "会社概要" },
-  { href: "/about/support", label: "サポート内容" },
-  { href: "/about/staff", label: "スタッフ紹介" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "../lib/i18n/I18nProvider";
+import { localePath } from "../lib/i18n/locale-path";
 
 const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
@@ -16,38 +13,48 @@ const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 
-const sectionItems: Array<{ href: string; label: string; external?: boolean }> = [
-  { href: "/#service", label: "サービス内容" },
-  { href: "/#plans", label: "留学プラン" },
-  { href: "/plans/pro-test", label: "プロテスト" },
-  { href: "/plans/team", label: "チーム遠征" },
-  { href: "/#faq", label: "よくある質問" },
-];
-
-const socialLinks = [
-  { href: INSTAGRAM_URL, label: "Instagram", icon: <Camera className="h-4 w-4" /> },
-  {
-    href: X_URL,
-    label: "X",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  { href: TIKTOK_URL, label: "TikTok", icon: <Music2 className="h-4 w-4" /> },
-  {
-    href: YOUTUBE_URL,
-    label: "YouTube",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
-        <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
-      </svg>
-    ),
-  },
-] as const;
-
 export default function SiteHeader() {
+  const { locale, dict } = useI18n();
+  const t = dict.common;
+  const lp = (path = "") => localePath(locale, path);
+
+  const aboutItems = [
+    { href: lp("/about/company"), label: t.nav.company },
+    { href: lp("/about/support"), label: t.nav.support },
+    { href: lp("/about/staff"), label: t.nav.staff },
+  ];
+
+  const sectionItems = [
+    { href: lp("/service"), label: t.nav.service },
+    { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: lp("/plans/pro-test"), label: t.nav.proTest },
+    { href: lp("/plans/team"), label: t.nav.team },
+    { href: `${lp()}#faq`, label: t.nav.faq },
+  ];
+
+  const socialLinks = [
+    { href: INSTAGRAM_URL, label: "Instagram", icon: <Camera className="h-4 w-4" /> },
+    {
+      href: X_URL,
+      label: "X",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      ),
+    },
+    { href: TIKTOK_URL, label: "TikTok", icon: <Music2 className="h-4 w-4" /> },
+    {
+      href: YOUTUBE_URL,
+      label: "YouTube",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+          <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
+        </svg>
+      ),
+    },
+  ] as const;
+
   const [openDesktop, setOpenDesktop] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
   const [openMobileAbout, setOpenMobileAbout] = useState(false);
@@ -67,15 +74,11 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(20,33,61,0.08)] bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
-        <Link
-          href="/"
-          aria-label="Para Sonho / パラソーニョ"
-          className="inline-flex shrink-0 items-center bg-transparent"
-        >
+        <Link href={lp()} aria-label={t.logoAlt} className="inline-flex shrink-0 items-center bg-transparent">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/parasonho-logo.png?v=2"
-            alt="Para Sonho / パラソーニョ"
+            alt={t.logoAlt}
             width={1851}
             height={452}
             fetchPriority="high"
@@ -98,7 +101,7 @@ export default function SiteHeader() {
               onClick={() => setOpenDesktop((v) => !v)}
               className="inline-flex items-center gap-1 text-[#14213D]/85 transition hover:text-[#F5B041]"
             >
-              Para Sonhoについて
+              {t.aboutParaSonho}
               <svg
                 className={`h-3 w-3 transition-transform ${openDesktop ? "rotate-180" : ""}`}
                 viewBox="0 0 20 20"
@@ -121,7 +124,7 @@ export default function SiteHeader() {
             >
               <div className="w-64 overflow-hidden rounded-2xl border border-[rgba(20,33,61,0.08)] bg-white text-[#14213D] shadow-xl">
                 <div className="border-b border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-4 py-3 text-xs tracking-wide text-[#F5B041]">
-                  ABOUT PARA SONHO
+                  {t.aboutMenuTitle}
                 </div>
                 <ul className="py-2">
                   {aboutItems.map((item) => (
@@ -140,36 +143,23 @@ export default function SiteHeader() {
             </div>
           </div>
 
-          {sectionItems.map((item) =>
-            item.external ? (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-semibold text-[#22C55E] transition hover:text-[#16A34A]"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-[#14213D]/85 transition hover:text-[#F5B041]"
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
+          {sectionItems.map((item) => (
+            <Link key={item.href} href={item.href} className="text-[#14213D]/85 transition hover:text-[#F5B041]">
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hidden items-center gap-1 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-2 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041] md:inline-flex"
+            className="hidden items-center gap-1 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-2 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041] lg:inline-flex"
           >
             <Camera className="h-4 w-4" />
             Instagram
@@ -183,12 +173,15 @@ export default function SiteHeader() {
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
               <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
             </svg>
-            LINEで無料相談
+            {t.cta.lineFree}
           </a>
 
+          <div className="md:hidden">
+            <LanguageSwitcher compact />
+          </div>
           <button
             type="button"
-            aria-label="メニューを開く"
+            aria-label={t.openMenu}
             aria-expanded={openMobile}
             onClick={() => setOpenMobile((v) => !v)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(20,33,61,0.12)] bg-[#F8F9FB] text-[#14213D] md:hidden"
@@ -214,7 +207,7 @@ export default function SiteHeader() {
             aria-expanded={openMobileAbout}
             className="flex w-full items-center justify-between rounded-xl bg-[#F8F9FB] px-4 py-3 text-left text-sm font-semibold text-[#14213D]"
           >
-            Para Sonhoについて
+            {t.aboutParaSonho}
             <svg
               className={`h-4 w-4 transition-transform ${openMobileAbout ? "rotate-180" : ""}`}
               viewBox="0 0 20 20"
@@ -269,7 +262,7 @@ export default function SiteHeader() {
             onClick={() => setOpenMobile(false)}
             className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#22C55E] px-4 py-4 text-base font-bold text-white shadow-md transition hover:bg-[#16A34A]"
           >
-            LINEで無料相談
+            {t.cta.lineFree}
           </a>
 
           <div className="mt-3 grid grid-cols-2 gap-2">

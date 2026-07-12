@@ -1,52 +1,48 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { defaultLocale, isLocale, locales } from "./app/lib/i18n/config";
 
-/**
- * 「準備中（Coming Soon）」モードの判定。
- *
- * 切り替え方法:
- *  - Vercel の環境変数 `COMING_SOON` で制御します。
- *      COMING_SOON = "true"  → 強制的に準備中ページを表示
- *      COMING_SOON = "false" → 通常サイトを公開
- *  - 環境変数を設定していない場合は「本番環境のみ準備中」になります。
- *    （ローカル開発・プレビューでは通常サイトが表示されます）
- *
- * ▼ 公開するとき
- *    Vercel のプロジェクト設定 → Environment Variables で
- *    `COMING_SOON` を `false` にして再デプロイしてください。
- */
 function isComingSoon(): boolean {
   const explicit = process.env.COMING_SOON;
   if (explicit === "true") return true;
-  // それ以外（未設定 / "false" など）はすべて公開状態にする
   return false;
 }
 
-export function middleware(request: NextRequest) {
-  if (!isComingSoon()) {
-    return NextResponse.next();
-  }
+function pathnameHasLocale(pathname: string): boolean {
+  const segment = pathname.split("/")[1];
+  return segment ? isLocale(segment) : false;
+}
 
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 準備中でもアクセスを許可するパス
-  //  - /coming-soon 自体
-  //  - 検索エンジン所有権確認用の Google 認証ファイル
-  if (
-    pathname === "/coming-soon" ||
-    pathname.startsWith("/google") // google5c68ac54ffba0d27.html など
-  ) {
-    return NextResponse.next();
+  if (isComingSoon()) {
+    const localeSegment = pathname.split("/")[1];
+    const basePath = isLocale(localeSegment) ? pathname.replace(`/${localeSegment}`, "") || "/" : pathname;
+
+    if (basePath === "/coming-soon" || basePath.startsWith("/google")) {
+      return NextResponse.next();
+    }
+
+    const url = request.nextUrl.clone();
+    if (isLocale(localeSegment)) {
+      url.pathname = `/${localeSegment}/coming-soon`;
+    } else {
+      url.pathname = `/${defaultLocale}/coming-soon`;
+    }
+    return NextResponse.rewrite(url);
   }
 
-  // それ以外はすべて準備中ページを表示（URL は変えずに中身だけ差し替え）
-  const url = request.nextUrl.clone();
-  url.pathname = "/coming-soon";
-  return NextResponse.rewrite(url);
+  if (!pathnameHasLocale(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
+    return NextResponse.redirect(url);
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  // 静的アセット・画像・各種ファイルは対象外にする
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|images/|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|txt|xml|json|html|woff|woff2|ttf)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|images/|parasonho-logo|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|txt|xml|json|html|woff|woff2|ttf)$).*)",
   ],
 };

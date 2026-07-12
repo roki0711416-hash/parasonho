@@ -1,11 +1,13 @@
+"use client";
+
 import { GFORM_URL, LINE_ID, LINE_URL } from "../lib/contact";
 import LineIcon from "./LineIcon";
+import { useI18n } from "../lib/i18n/I18nProvider";
 
 type ConsultCtaVariant = "onDark" | "onLight";
 type ConsultCtaSize = "default" | "compact";
 
 interface ConsultCtaButtonsProps {
-  /** 暗い背景（Hero等）か明るい背景か */
   variant?: ConsultCtaVariant;
   size?: ConsultCtaSize;
   lineLabel?: string;
@@ -14,7 +16,6 @@ interface ConsultCtaButtonsProps {
   align?: "start" | "center";
   showLineId?: boolean;
   showForm?: boolean;
-  /** true のとき常に縦並び（LINEの下にフォーム） */
   stacked?: boolean;
 }
 
@@ -43,14 +44,19 @@ const sizeStyles = {
 export default function ConsultCtaButtons({
   variant = "onLight",
   size = "default",
-  lineLabel = "LINEで無料相談する",
-  formLabel = "相談フォームから問い合わせる",
+  lineLabel,
+  formLabel,
   className = "",
   align = "start",
   showLineId = false,
   showForm = true,
   stacked = false,
 }: ConsultCtaButtonsProps) {
+  const { dict } = useI18n();
+  const cta = dict.common.cta;
+  const resolvedLineLabel = lineLabel ?? cta.lineFreeFull;
+  const resolvedFormLabel = formLabel ?? cta.formInquiry;
+
   const v = variantStyles[variant];
   const s = sizeStyles[size];
   const alignClass =
@@ -69,7 +75,7 @@ export default function ConsultCtaButtons({
           className={`ps-btn-line inline-flex items-center justify-center gap-2 ${s.btn}`}
         >
           <LineIcon className="h-5 w-5 shrink-0" />
-          {lineLabel}
+          {resolvedLineLabel}
         </a>
         {showForm && (
           <a
@@ -78,11 +84,11 @@ export default function ConsultCtaButtons({
             rel="noopener noreferrer"
             className={`${v.form} inline-flex items-center justify-center ${s.btn}`}
           >
-            {formLabel}
+            {resolvedFormLabel}
           </a>
         )}
       </div>
-      {showLineId && <p className={`mt-4 text-center text-xs ${v.lineId}`}>LINE ID：{LINE_ID}</p>}
+      {showLineId && <p className={`mt-4 text-center text-xs ${v.lineId}`}>{cta.lineId}</p>}
     </div>
   );
 }

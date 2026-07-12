@@ -1,52 +1,57 @@
+"use client";
+
 import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
 import ConsultCtaButtons from "./ConsultCtaButtons";
 import PhotoBackdrop from "./PhotoBackdrop";
 import { FIELD_IMAGE } from "../lib/images";
+import { useI18n } from "../lib/i18n/I18nProvider";
+import { localePath } from "../lib/i18n/locale-path";
 
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 
-const aboutLinks = [
-  { href: "/about/company", label: "会社概要" },
-  { href: "/about/support", label: "サポート内容" },
-  { href: "/about/staff", label: "スタッフ紹介" },
-];
-
-const siteLinks = [
-  { href: "/#plans", label: "留学プラン" },
-  { href: "/plans/pro-test", label: "プロテスト" },
-  { href: "/#faq", label: "よくある質問" },
-];
-
 interface SiteFooterProps {
-  /** TOPページのみ true。フッター上部のCTAバナーを表示する */
   showChallengeCta?: boolean;
 }
 
 export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps) {
+  const { locale, dict } = useI18n();
+  const t = dict.common;
+  const lp = (path = "") => localePath(locale, path);
+
+  const aboutLinks = [
+    { href: lp("/about/company"), label: t.nav.company },
+    { href: lp("/about/support"), label: t.nav.support },
+    { href: lp("/about/staff"), label: t.nav.staff },
+  ];
+
+  const siteLinks = [
+    { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: lp("/plans/pro-test"), label: t.nav.proTest },
+    { href: `${lp()}#faq`, label: t.nav.faq },
+  ];
+
   return (
     <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
       {showChallengeCta && (
         <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
           <PhotoBackdrop
             src={FIELD_IMAGE}
-            alt="夕暮れのサッカー場"
+            alt={t.footer.fieldAlt}
             variant="footer"
             imageClassName="object-cover object-center"
           />
           <div className="ps-container relative z-10 py-20 text-center ps-on-photo sm:py-24">
-            <p className="ps-eyebrow justify-center">START YOUR CHALLENGE</p>
+            <p className="ps-eyebrow justify-center">{t.footer.challengeEyebrow}</p>
             <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
-              世界への挑戦は、
+              {t.footer.challengeTitle1}
               <br className="sm:hidden" />
-              <span className="ps-gold-text">ここから始まる。</span>
+              <span className="ps-gold-text">{t.footer.challengeTitle2}</span>
             </h2>
-            <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">
-              年齢・レベルは問いません。まずは気軽に、あなたの挑戦を聞かせてください。
-            </p>
+            <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">{t.footer.challengeLead}</p>
             <ConsultCtaButtons variant="onDark" align="center" showLineId className="mx-auto mt-10 max-w-sm sm:max-w-none" />
           </div>
         </div>
@@ -55,10 +60,8 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
       <div className="ps-container py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="text-lg font-black tracking-tight text-[#14213D]">Para Sonho / パラソーニョ</p>
-            <p className="ps-lead mt-3 max-w-sm text-sm">
-              本場ブラジルを舞台に、サッカー留学・海外サッカー挑戦をサポート。現地クラブ練習・生活・通訳・遠征までワンストップで。
-            </p>
+            <p className="text-lg font-black tracking-tight text-[#14213D]">{t.brand}</p>
+            <p className="ps-lead mt-3 max-w-sm text-sm">{t.footer.description}</p>
             <div className="mt-6 flex items-center gap-3">
               {[
                 { href: INSTAGRAM_URL, label: "Instagram", icon: <Camera className="h-5 w-5" /> },
@@ -97,7 +100,7 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
           </div>
 
           <nav>
-            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">CONTENTS</p>
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">{t.contents}</p>
             <ul className="mt-4 space-y-3 text-sm">
               {siteLinks.map((link) => (
                 <li key={link.href}>
@@ -110,7 +113,7 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
           </nav>
 
           <nav>
-            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">ABOUT</p>
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">{t.about}</p>
             <ul className="mt-4 space-y-3 text-sm">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
@@ -124,11 +127,9 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[rgba(20,33,61,0.08)] pt-8 sm:flex-row">
-          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#111111]/35">
-            GLOBAL FOOTBALL CHALLENGE
-          </p>
+          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#111111]/35">{t.globalTagline}</p>
           <p className="text-xs text-[#111111]/50" suppressHydrationWarning>
-            © {new Date().getFullYear()} Para Sonho / パラソーニョ
+            © {new Date().getFullYear()} {t.brand}
           </p>
         </div>
       </div>
