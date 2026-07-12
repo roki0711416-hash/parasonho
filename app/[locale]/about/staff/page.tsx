@@ -28,7 +28,7 @@ const staff: Staff[] = [
     career: [
       "神奈川県トレセン",
       "U-18ソサイチ日本選抜選出",
-      "Santos FC U-17",
+      "SantosFC U-17練習生",
       "Lajeadense",
       "C.E.União",
     ],
