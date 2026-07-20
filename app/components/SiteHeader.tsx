@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { CLUBS_PUBLISHED } from "../lib/clubs";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
 
@@ -27,7 +28,7 @@ export default function SiteHeader() {
   const sectionItems = [
     { href: lp("/service"), label: t.nav.service },
     { href: `${lp()}#plans`, label: t.nav.plans },
-    { href: lp("/clubs"), label: t.nav.clubs },
+    ...(CLUBS_PUBLISHED ? [{ href: lp("/clubs"), label: t.nav.clubs }] : []),
     { href: lp("/plans/pro-test"), label: t.nav.proTest },
     { href: lp("/plans/team"), label: t.nav.team },
     { href: `${lp()}#faq`, label: t.nav.faq },

@@ -1,5 +1,8 @@
 import { FIELD_IMAGE, HERO_IMAGE } from "./images";
 
+/** 提携クラブページの公開フラグ。準備が整うまで false で非公開（ナビ非表示・404） */
+export const CLUBS_PUBLISHED = false;
+
 export type ClubSectionKey =
   | "overview"
   | "facilities"
@@ -31,33 +34,34 @@ export const clubs: Club[] = [
   {
     slug: "apafut",
     name: "APAFUT",
-    coverImage: HERO_IMAGE,
-    location: "ブラジル（詳細はお問い合わせください）",
-    ages: "詳細はお問い合わせください",
+    coverImage: "/images/clubs/apafut-cover.jpg",
+    logoImage: "/images/clubs/apafut-logo.png",
+    location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
+    ages: "13歳以上",
     features: [
       "Para Sonho提携クラブ",
-      "現地トレーニング環境での実践機会",
-      "選手のレベル・目標に応じた留学相談が可能",
+      "リオグランデ・ド・スル州カシアス・ド・スルを拠点",
+      "13歳以上の選手が対象",
     ],
     sections: {
       overview:
-        "APAFUTは、Para Sonhoが提携するブラジル現地クラブのひとつです。選手の年齢・レベル・目標に合わせた挑戦の場としてご案内しています。クラブの詳細な沿革やカテゴリー構成については、お問い合わせください。",
+        "APAFUTは、Para Sonhoが提携するブラジル現地クラブです。リオグランデ・ド・スル州カシアス・ド・スルを拠点に、13歳以上の選手の挑戦の場としてご案内しています。クラブの詳細な沿革やカテゴリー構成については、お問い合わせください。",
       facilities: INQUIRY,
       training: INQUIRY,
       matches: INQUIRY,
       coaches: INQUIRY,
       life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
-      location: "所在地の詳細はお問い合わせください。",
+      location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
     },
     gallery: [
-      { src: HERO_IMAGE, alt: "APAFUT トレーニング雰囲気", label: "トレーニング" },
-      { src: FIELD_IMAGE, alt: "サッカー場の風景", label: "ピッチ" },
+      { src: "/images/clubs/apafut-cover.jpg", alt: "APAFUTの活動風景", label: "クラブ" },
       { alt: "施設写真（準備中）", label: "施設" },
-      { alt: "クラブ写真（準備中）", label: "クラブ" },
+      { alt: "トレーニング写真（準備中）", label: "トレーニング" },
+      { alt: "試合写真（準備中）", label: "試合" },
     ],
     metaTitle: "APAFUT｜提携クラブ紹介",
     metaDescription:
-      "Para Sonho提携クラブ「APAFUT」の紹介ページ。所在地・対象年代・トレーニング環境など、ブラジルサッカー留学のクラブ選びのご参考に。",
+      "Para Sonho提携クラブ「APAFUT」の紹介ページ。リオグランデ・ド・スル州カシアス・ド・スル、対象13歳以上。ブラジルサッカー留学のクラブ選びのご参考に。",
   },
   {
     slug: "academia-paulo-miranda",
