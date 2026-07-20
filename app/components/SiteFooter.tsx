@@ -30,6 +30,7 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
 
   const siteLinks = [
     { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: lp("/clubs"), label: t.nav.clubs },
     { href: lp("/plans/pro-test"), label: t.nav.proTest },
     { href: `${lp()}#faq`, label: t.nav.faq },
   ];

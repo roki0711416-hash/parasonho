@@ -1,0 +1,34 @@
+import { notFound } from "next/navigation";
+import ClubDetailPageContent from "../../../components/ClubDetailPageContent";
+import { getClubBySlug, getClubSlugs } from "../../../lib/clubs";
+import { isLocale, locales } from "../../../lib/i18n/config";
+import { pageMetadata } from "../../../lib/i18n/metadata";
+import type { Metadata } from "next";
+
+export function generateStaticParams() {
+  const slugs = getClubSlugs();
+  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) return {};
+  const club = getClubBySlug(slug);
+  if (!club) return {};
+  return pageMetadata(locale, `/clubs/${slug}`, club.metaTitle, club.metaDescription);
+}
+
+export default async function ClubDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { slug } = await params;
+  const club = getClubBySlug(slug);
+  if (!club) notFound();
+  return <ClubDetailPageContent club={club} />;
+}

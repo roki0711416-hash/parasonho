@@ -27,6 +27,7 @@ export default function SiteHeader() {
   const sectionItems = [
     { href: lp("/service"), label: t.nav.service },
     { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: lp("/clubs"), label: t.nav.clubs },
     { href: lp("/plans/pro-test"), label: t.nav.proTest },
     { href: lp("/plans/team"), label: t.nav.team },
     { href: `${lp()}#faq`, label: t.nav.faq },
