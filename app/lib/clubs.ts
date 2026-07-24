@@ -1,7 +1,5 @@
-import { FIELD_IMAGE, HERO_IMAGE } from "./images";
-
-/** 提携クラブページの公開フラグ。準備が整うまで false で非公開（ナビ非表示・404） */
-export const CLUBS_PUBLISHED = false;
+/** 提携クラブページの公開フラグ。false のときナビ非表示・404 */
+export const CLUBS_PUBLISHED = true;
 
 export type ClubSectionKey =
   | "overview"
@@ -66,33 +64,34 @@ export const clubs: Club[] = [
   {
     slug: "academia-paulo-miranda",
     name: "Academia de Futebol Paulo Miranda",
-    coverImage: FIELD_IMAGE,
-    location: "ブラジル（詳細はお問い合わせください）",
-    ages: "詳細はお問い合わせください",
+    coverImage: "/images/clubs/paulo-miranda-cover.jpg",
+    logoImage: "/images/clubs/paulo-miranda-logo.png",
+    location: "ブラジル・パラナ州 クリチバ",
+    ages: "10〜18歳",
     features: [
       "Para Sonho提携クラブ",
-      "ブラジル現地でのサッカー留学環境",
-      "選手一人ひとりに合わせたクラブ提案が可能",
+      "パラナ州クリチバを拠点",
+      "10〜18歳の選手が対象",
     ],
     sections: {
       overview:
-        "Academia de Futebol Paulo Mirandaは、Para Sonhoが提携するブラジル現地のサッカーアカデミーです。留学希望者の目標やレベルに応じた環境としてご案内しています。施設・指導体制の詳細はお問い合わせください。",
+        "Academia de Futebol Paulo Mirandaは、Para Sonhoが提携するブラジル現地のサッカーアカデミーです。パラナ州クリチバを拠点に、10〜18歳の選手の成長と挑戦をサポートする環境としてご案内しています。施設・指導体制の詳細はお問い合わせください。",
       facilities: INQUIRY,
       training: INQUIRY,
       matches: INQUIRY,
       coaches: INQUIRY,
       life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
-      location: "所在地の詳細はお問い合わせください。",
+      location: "ブラジル・パラナ州 クリチバ",
     },
     gallery: [
-      { src: FIELD_IMAGE, alt: "ピッチ風景", label: "ピッチ" },
-      { src: HERO_IMAGE, alt: "選手の雰囲気", label: "トレーニング" },
+      { src: "/images/clubs/paulo-miranda-cover.jpg", alt: "Academia de Futebol Paulo Mirandaの活動風景", label: "クラブ" },
       { alt: "施設写真（準備中）", label: "施設" },
+      { alt: "トレーニング写真（準備中）", label: "トレーニング" },
       { alt: "アカデミー写真（準備中）", label: "アカデミー" },
     ],
     metaTitle: "Academia de Futebol Paulo Miranda｜提携クラブ紹介",
     metaDescription:
-      "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。ブラジルサッカー留学のクラブ選びのご参考に。",
+      "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。パラナ州クリチバ、対象10〜18歳。ブラジルサッカー留学のクラブ選びのご参考に。",
   },
 ];
 
