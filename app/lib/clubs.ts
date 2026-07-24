@@ -10,12 +10,15 @@ export type ClubSectionKey =
   | "life"
   | "location";
 
-/** 単一段落の文字列、または複数段落＋注意書き */
+/** 単一段落の文字列、または複数段落＋注意書き／住所＋地図リンク */
 export type ClubSectionContent =
   | string
   | {
-      paragraphs: string[];
+      paragraphs?: string[];
       note?: string;
+      /** 所在地の住所行（改行区切りで表示） */
+      addressLines?: string[];
+      mapUrl?: string;
     };
 
 export type Club = {
@@ -73,8 +76,23 @@ export const clubs: Club[] = [
         note: "※試合への出場は、選手のコンディション、競技登録、指導者の判断、大会規定などによって決定されます。",
       },
       coaches: INQUIRY,
-      life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
-      location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
+      life: {
+        paragraphs: [
+          "Para Sonhoが選手の留学期間や希望に合わせて、アパートまたはホテルなどの滞在先を手配します。現地での生活を安心して送れるよう、住居の準備だけでなく、滞在中の生活面についてもサポートします。",
+          "APAFUTの所在地であるカシアス・ド・スルは、生活に必要な商業施設やショッピングモールなどが揃った都市です。比較的落ち着いた環境で、サッカーに集中しながら快適な留学生活を送ることができます。",
+        ],
+        note: "※海外滞在中は、地域にかかわらず貴重品の管理や夜間の単独行動を避けるなど、基本的な安全対策が必要です。",
+      },
+      location: {
+        addressLines: [
+          "ブラジル・リオグランデ・ド・スル州",
+          "カシアス・ド・スル",
+          "Rua Francisco Getúlio Vargas, 1130",
+          "Bairro Petrópolis",
+        ],
+        mapUrl:
+          "https://www.google.com/maps/search/?api=1&query=APAFUT%20Rua%20Francisco%20Get%C3%BAlio%20Vargas%201130%20Caxias%20do%20Sul%20RS",
+      },
     },
     facilityGallery: [
       {
