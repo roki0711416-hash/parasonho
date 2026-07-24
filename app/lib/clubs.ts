@@ -10,6 +10,14 @@ export type ClubSectionKey =
   | "life"
   | "location";
 
+/** 単一段落の文字列、または複数段落＋注意書き */
+export type ClubSectionContent =
+  | string
+  | {
+      paragraphs: string[];
+      note?: string;
+    };
+
 export type Club = {
   slug: string;
   name: string;
@@ -22,7 +30,7 @@ export type Club = {
   location: string;
   ages: string;
   features: string[];
-  sections: Record<ClubSectionKey, string>;
+  sections: Record<ClubSectionKey, ClubSectionContent>;
   /** 施設紹介ギャラリー（あるクラブのみ） */
   facilityGallery?: Array<{ src: string; alt: string; caption: string }>;
   gallery: Array<{ src?: string; alt: string; label: string }>;
@@ -51,8 +59,19 @@ export const clubs: Club[] = [
         "APAFUTは、Para Sonhoが提携するブラジル現地クラブです。リオグランデ・ド・スル州カシアス・ド・スルを拠点に、13歳以上の選手の挑戦の場としてご案内しています。クラブの詳細な沿革やカテゴリー構成については、お問い合わせください。",
       facilities:
         "APAFUTでは、天然芝グラウンドや屋根付き人工芝コート、屋内コートを活用し、天候に左右されにくいトレーニング環境を整えています。また、トレーニングジム、屋内プール、測定・分析スペース、リハビリ・コンディショニング設備も利用し、技術・戦術・フィジカル・身体ケアの各面から選手の成長をサポートします。",
-      training: INQUIRY,
-      matches: INQUIRY,
+      training: {
+        paragraphs: [
+          "APAFUTでは、天然芝グラウンドと人工芝グラウンドを活用し、日常的なトレーニングを行っています。技術・戦術・フィジカルの向上を目的に、選手の年代や成長段階に合わせた指導を実施します。",
+          "雨天時も練習を中止せず、屋内コートでフットサルトレーニングを行える環境が整っています。天候に左右されず継続的にボールへ触れられるため、年間を通して充実したトレーニングに取り組むことができます。",
+        ],
+      },
+      matches: {
+        paragraphs: [
+          "APAFUTでは、グレミオ、インテルナシオナル、ジュベントゥージをはじめとする、ブラジルを代表するクラブの育成年代と対戦する機会があります。高いレベルの選手たちと実戦で競い合うことで、自分の現在地を知り、さらなるステップアップを目指せる環境です。",
+          "Para Sonhoでは、留学生がトレーニングに参加するだけで終わらず、試合経験を積めるよう、選手の状態や成長段階を確認しながらクラブ側と継続的に連携・交渉します。ブラジルの公式戦や練習試合への出場機会を可能な限り増やし、実戦を通じて成長できる留学をサポートします。",
+        ],
+        note: "※試合への出場は、選手のコンディション、競技登録、指導者の判断、大会規定などによって決定されます。",
+      },
       coaches: INQUIRY,
       life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
       location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
