@@ -23,6 +23,8 @@ export type Club = {
   ages: string;
   features: string[];
   sections: Record<ClubSectionKey, string>;
+  /** 施設紹介ギャラリー（あるクラブのみ） */
+  facilityGallery?: Array<{ src: string; alt: string; caption: string }>;
   gallery: Array<{ src?: string; alt: string; label: string }>;
   metaTitle: string;
   metaDescription: string;
@@ -47,18 +49,56 @@ export const clubs: Club[] = [
     sections: {
       overview:
         "APAFUTは、Para Sonhoが提携するブラジル現地クラブです。リオグランデ・ド・スル州カシアス・ド・スルを拠点に、13歳以上の選手の挑戦の場としてご案内しています。クラブの詳細な沿革やカテゴリー構成については、お問い合わせください。",
-      facilities: INQUIRY,
+      facilities:
+        "APAFUTでは、天然芝グラウンドや屋根付き人工芝コート、屋内コートを活用し、天候に左右されにくいトレーニング環境を整えています。また、トレーニングジム、屋内プール、測定・分析スペース、リハビリ・コンディショニング設備も利用し、技術・戦術・フィジカル・身体ケアの各面から選手の成長をサポートします。",
       training: INQUIRY,
       matches: INQUIRY,
       coaches: INQUIRY,
       life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
       location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
     },
+    facilityGallery: [
+      {
+        src: "/images/clubs/apafut/grass-field.jpg",
+        alt: "APAFUTの天然芝グラウンドでトレーニングする選手たち",
+        caption: "天然芝グラウンド",
+      },
+      {
+        src: "/images/clubs/apafut/training-gym.jpg",
+        alt: "APAFUTのトレーニングジムでフィジカル強化に取り組む選手たち",
+        caption: "トレーニングジム",
+      },
+      {
+        src: "/images/clubs/apafut/indoor-court.jpg",
+        alt: "APAFUTの屋内コートで練習を行う選手たち",
+        caption: "屋内コート",
+      },
+      {
+        src: "/images/clubs/apafut/covered-turf.jpg",
+        alt: "APAFUTの屋根付き人工芝コートで練習する選手たち",
+        caption: "屋根付き人工芝コート",
+      },
+      {
+        src: "/images/clubs/apafut/indoor-pool.jpg",
+        alt: "APAFUTが利用する屋内プール施設",
+        caption: "屋内プール",
+      },
+      {
+        src: "/images/clubs/apafut/analysis-space.jpg",
+        alt: "APAFUTの測定・分析スペース",
+        caption: "測定・分析スペース",
+      },
+      {
+        src: "/images/clubs/apafut/rehab-conditioning.jpg",
+        alt: "APAFUTのリハビリ・コンディショニングスペース",
+        caption: "リハビリ・コンディショニングスペース",
+      },
+    ],
     gallery: [
       { src: "/images/clubs/apafut-cover.jpg", alt: "APAFUTの活動風景", label: "クラブ" },
-      { alt: "施設写真（準備中）", label: "施設" },
-      { alt: "トレーニング写真（準備中）", label: "トレーニング" },
-      { alt: "試合写真（準備中）", label: "試合" },
+      { src: "/images/clubs/apafut/grass-field.jpg", alt: "APAFUTの天然芝グラウンド", label: "グラウンド" },
+      { src: "/images/clubs/apafut/covered-turf.jpg", alt: "APAFUTの屋根付き人工芝コート", label: "人工芝" },
+      { src: "/images/clubs/apafut/training-gym.jpg", alt: "APAFUTのトレーニングジム", label: "ジム" },
     ],
     metaTitle: "APAFUT｜提携クラブ紹介",
     metaDescription:

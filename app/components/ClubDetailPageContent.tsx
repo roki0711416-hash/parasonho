@@ -8,6 +8,7 @@ import ConsultCtaButtons from "./ConsultCtaButtons";
 import PagePhotoSection from "./PagePhotoSection";
 import Photo from "./Photo";
 import Reveal from "./Reveal";
+import ClubFacilityGallery from "./ClubFacilityGallery";
 import type { Club, ClubSectionKey } from "../lib/clubs";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
@@ -31,6 +32,9 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
   const t = dict.clubs;
   const c = dict.common;
   const lp = (path = "") => localePath(locale, path);
+  const hasFacilityGallery = Boolean(club.facilityGallery?.length);
+
+  const gridSections = SECTION_ORDER.filter((key) => !(key === "facilities" && hasFacilityGallery));
 
   return (
     <div className="ps-page min-h-screen">
@@ -82,14 +86,39 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            {SECTION_ORDER.map((key, index) => (
-              <Reveal key={key} delay={index * 40}>
-                <article className="ps-card h-full p-6 sm:p-7">
-                  <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles[key]}</h2>
-                  <p className="mt-4 text-sm leading-7 text-[#111111]/70">{club.sections[key]}</p>
-                </article>
-              </Reveal>
-            ))}
+            {gridSections
+              .filter((key) => key === "overview")
+              .map((key) => (
+                <Reveal key={key}>
+                  <article className="ps-card h-full p-6 sm:p-7 lg:col-span-2">
+                    <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles[key]}</h2>
+                    <p className="mt-4 text-sm leading-7 text-[#111111]/70">{club.sections[key]}</p>
+                  </article>
+                </Reveal>
+              ))}
+          </div>
+
+          {hasFacilityGallery && (
+            <Reveal>
+              <article className="ps-card mt-6 p-6 sm:p-8">
+                <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles.facilities}</h2>
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#111111]/70">{club.sections.facilities}</p>
+                <ClubFacilityGallery photos={club.facilityGallery!} />
+              </article>
+            </Reveal>
+          )}
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            {gridSections
+              .filter((key) => key !== "overview")
+              .map((key, index) => (
+                <Reveal key={key} delay={index * 40}>
+                  <article className="ps-card h-full p-6 sm:p-7">
+                    <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles[key]}</h2>
+                    <p className="mt-4 text-sm leading-7 text-[#111111]/70">{club.sections[key]}</p>
+                  </article>
+                </Reveal>
+              ))}
           </div>
         </section>
 
