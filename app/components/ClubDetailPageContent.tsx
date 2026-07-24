@@ -9,6 +9,7 @@ import PagePhotoSection from "./PagePhotoSection";
 import Reveal from "./Reveal";
 import ClubFacilityGallery from "./ClubFacilityGallery";
 import ClubSectionBody from "./ClubSectionBody";
+import ClubYoutubeEmbed from "./ClubYoutubeEmbed";
 import type { Club, ClubSectionKey } from "../lib/clubs";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
@@ -32,8 +33,13 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
   const c = dict.common;
   const lp = (path = "") => localePath(locale, path);
   const hasFacilityGallery = Boolean(club.facilityGallery?.length);
+  const hasLifeVideo = Boolean(club.lifeVideo);
 
-  const gridSections = SECTION_ORDER.filter((key) => !(key === "facilities" && hasFacilityGallery));
+  const gridSections = SECTION_ORDER.filter(
+    (key) =>
+      !(key === "facilities" && hasFacilityGallery) &&
+      !(hasLifeVideo && (key === "life" || key === "location")),
+  );
 
   return (
     <div className="ps-page min-h-screen">
@@ -104,26 +110,7 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
                 <ClubSectionBody content={club.sections.facilities} className="max-w-3xl" />
                 <ClubFacilityGallery photos={club.facilityGallery!} />
                 {club.facilityVideo && (
-                  <div className="mt-8">
-                    <h3 className="text-base font-extrabold text-[#14213D] sm:text-lg">
-                      {club.facilityVideo.heading}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-[#111111]/70">
-                      {club.facilityVideo.description}
-                    </p>
-                    <div className="mt-5 overflow-hidden rounded-2xl">
-                      <div className="relative aspect-video w-full">
-                        <iframe
-                          src={club.facilityVideo.embedUrl}
-                          title={club.facilityVideo.title}
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          className="absolute inset-0 h-full w-full border-0"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <ClubYoutubeEmbed video={club.facilityVideo} className="mt-8" />
                 )}
               </article>
             </Reveal>
@@ -141,6 +128,24 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
                 </Reveal>
               ))}
           </div>
+
+          {hasLifeVideo && club.lifeVideo && (
+            <>
+              <Reveal>
+                <article className="ps-card mt-6 p-6 sm:p-8">
+                  <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles.life}</h2>
+                  <ClubSectionBody content={club.sections.life} className="max-w-3xl" />
+                  <ClubYoutubeEmbed video={club.lifeVideo} className="mt-8" />
+                </article>
+              </Reveal>
+              <Reveal>
+                <article className="ps-card mt-6 p-6 sm:p-7">
+                  <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles.location}</h2>
+                  <ClubSectionBody content={club.sections.location} />
+                </article>
+              </Reveal>
+            </>
+          )}
         </section>
 
         <section className="ps-section ps-container">

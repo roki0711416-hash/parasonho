@@ -36,14 +36,18 @@ export type Club = {
   /** 施設紹介ギャラリー（あるクラブのみ） */
   facilityGallery?: Array<{ src: string; alt: string; caption: string }>;
   /** 施設紹介動画（あるクラブのみ） */
-  facilityVideo?: {
-    embedUrl: string;
-    title: string;
-    heading: string;
-    description: string;
-  };
+  facilityVideo?: ClubVideo;
+  /** 生活環境紹介動画（あるクラブのみ） */
+  lifeVideo?: ClubVideo;
   metaTitle: string;
   metaDescription: string;
+};
+
+export type ClubVideo = {
+  embedUrl: string;
+  title: string;
+  heading: string;
+  description: string;
 };
 
 const INQUIRY = "詳細はお問い合わせください。";
@@ -141,6 +145,13 @@ export const clubs: Club[] = [
       heading: "動画で見るAPAFUTの施設",
       description:
         "天然芝グラウンドや屋内施設など、APAFUTのトレーニング環境を動画でご覧いただけます。",
+    },
+    lifeVideo: {
+      embedUrl: "https://www.youtube.com/embed/jS4LZH4ZyE4",
+      title: "カシアス・ド・スル生活環境Vlog",
+      heading: "動画で見るカシアス・ド・スルでの生活",
+      description:
+        "APAFUTが拠点とするカシアス・ド・スルの街並みやショッピングモールなど、留学中の生活環境を動画でご紹介します。現地での暮らしを、より具体的にイメージしていただけます。",
     },
     metaTitle: "APAFUT｜提携クラブ紹介",
     metaDescription:
