@@ -35,6 +35,13 @@ export type Club = {
   sections: Record<ClubSectionKey, ClubSectionContent>;
   /** 施設紹介ギャラリー（あるクラブのみ） */
   facilityGallery?: Array<{ src: string; alt: string; caption: string }>;
+  /** 施設紹介動画（あるクラブのみ） */
+  facilityVideo?: {
+    embedUrl: string;
+    title: string;
+    heading: string;
+    description: string;
+  };
   metaTitle: string;
   metaDescription: string;
 };
@@ -128,6 +135,13 @@ export const clubs: Club[] = [
         caption: "リハビリ・コンディショニングスペース",
       },
     ],
+    facilityVideo: {
+      embedUrl: "https://www.youtube.com/embed/7UTHJlu2k60",
+      title: "APAFUT施設紹介動画",
+      heading: "動画で見るAPAFUTの施設",
+      description:
+        "天然芝グラウンドや屋内施設など、APAFUTのトレーニング環境を動画でご覧いただけます。",
+    },
     metaTitle: "APAFUT｜提携クラブ紹介",
     metaDescription:
       "Para Sonho提携クラブ「APAFUT」の紹介ページ。リオグランデ・ド・スル州カシアス・ド・スル、対象13歳以上。ブラジルサッカー留学のクラブ選びのご参考に。",

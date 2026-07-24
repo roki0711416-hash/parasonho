@@ -103,6 +103,28 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
                 <h2 className="text-lg font-extrabold text-[#14213D]">{t.sectionTitles.facilities}</h2>
                 <ClubSectionBody content={club.sections.facilities} className="max-w-3xl" />
                 <ClubFacilityGallery photos={club.facilityGallery!} />
+                {club.facilityVideo && (
+                  <div className="mt-8">
+                    <h3 className="text-base font-extrabold text-[#14213D] sm:text-lg">
+                      {club.facilityVideo.heading}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[#111111]/70">
+                      {club.facilityVideo.description}
+                    </p>
+                    <div className="mt-5 overflow-hidden rounded-2xl">
+                      <div className="relative aspect-video w-full">
+                        <iframe
+                          src={club.facilityVideo.embedUrl}
+                          title={club.facilityVideo.title}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="absolute inset-0 h-full w-full border-0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </article>
             </Reveal>
           )}
