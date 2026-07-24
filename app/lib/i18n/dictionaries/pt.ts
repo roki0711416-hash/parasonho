@@ -363,7 +363,6 @@ const pt = {
       facilities: "Instalações",
       training: "Treinamento",
       matches: "Ambiente de jogos",
-      coaches: "Comissão técnica",
       life: "Vida cotidiana",
       location: "Localização",
     },

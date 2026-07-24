@@ -363,7 +363,6 @@ const ja = {
       facilities: "施設紹介",
       training: "トレーニング内容",
       matches: "試合環境",
-      coaches: "指導者紹介",
       life: "生活環境",
       location: "所在地",
     },

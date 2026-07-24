@@ -363,7 +363,6 @@ const zh = {
       facilities: "设施介绍",
       training: "训练内容",
       matches: "比赛环境",
-      coaches: "教练介绍",
       life: "生活环境",
       location: "所在地",
     },

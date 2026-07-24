@@ -363,7 +363,6 @@ const en = {
       facilities: "Facilities",
       training: "Training",
       matches: "Match environment",
-      coaches: "Coaches",
       life: "Daily life",
       location: "Location",
     },

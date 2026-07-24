@@ -363,7 +363,6 @@ const ko = {
       facilities: "시설 소개",
       training: "트레이닝 내용",
       matches: "경기 환경",
-      coaches: "지도자 소개",
       life: "생활 환경",
       location: "소재지",
     },

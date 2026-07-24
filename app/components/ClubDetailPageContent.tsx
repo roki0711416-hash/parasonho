@@ -19,7 +19,6 @@ const SECTION_ORDER: ClubSectionKey[] = [
   "facilities",
   "training",
   "matches",
-  "coaches",
   "life",
   "location",
 ];

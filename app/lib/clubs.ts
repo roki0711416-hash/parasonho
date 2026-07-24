@@ -6,7 +6,6 @@ export type ClubSectionKey =
   | "facilities"
   | "training"
   | "matches"
-  | "coaches"
   | "life"
   | "location";
 
@@ -75,7 +74,6 @@ export const clubs: Club[] = [
         ],
         note: "※試合への出場は、選手のコンディション、競技登録、指導者の判断、大会規定などによって決定されます。",
       },
-      coaches: INQUIRY,
       life: {
         paragraphs: [
           "Para Sonhoが選手の留学期間や希望に合わせて、アパートまたはホテルなどの滞在先を手配します。現地での生活を安心して送れるよう、住居の準備だけでなく、滞在中の生活面についてもサポートします。",
@@ -160,7 +158,6 @@ export const clubs: Club[] = [
       facilities: INQUIRY,
       training: INQUIRY,
       matches: INQUIRY,
-      coaches: INQUIRY,
       life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
       location: "ブラジル・パラナ州 クリチバ",
     },
