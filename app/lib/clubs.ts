@@ -71,15 +71,15 @@ export const clubs: Club[] = [
     logoImage: "/images/clubs/paulo-miranda-logo.png",
     instagram: "pmacademiadefutebol",
     location: "ブラジル・パラナ州 クリチバ",
-    ages: "10〜18歳",
+    ages: "10〜17歳",
     features: [
       "Para Sonho提携クラブ",
       "パラナ州クリチバを拠点",
-      "10〜18歳の選手が対象",
+      "10〜17歳の選手が対象",
     ],
     sections: {
       overview:
-        "Academia de Futebol Paulo Mirandaは、Para Sonhoが提携するブラジル現地のサッカーアカデミーです。パラナ州クリチバを拠点に、10〜18歳の選手の成長と挑戦をサポートする環境としてご案内しています。施設・指導体制の詳細はお問い合わせください。",
+        "Academia de Futebol Paulo Mirandaは、Para Sonhoが提携するブラジル現地のサッカーアカデミーです。パラナ州クリチバを拠点に、10〜17歳の選手の成長と挑戦をサポートする環境としてご案内しています。施設・指導体制の詳細はお問い合わせください。",
       facilities: INQUIRY,
       training: INQUIRY,
       matches: INQUIRY,
@@ -95,7 +95,7 @@ export const clubs: Club[] = [
     ],
     metaTitle: "Academia de Futebol Paulo Miranda｜提携クラブ紹介",
     metaDescription:
-      "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。パラナ州クリチバ、対象10〜18歳。ブラジルサッカー留学のクラブ選びのご参考に。",
+      "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。パラナ州クリチバ、対象10〜17歳。ブラジルサッカー留学のクラブ選びのご参考に。",
   },
 ];
 
