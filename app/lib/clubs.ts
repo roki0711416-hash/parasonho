@@ -148,12 +148,66 @@ export const clubs: Club[] = [
     sections: {
       overview:
         "Academia de Futebol Paulo Mirandaは、Para Sonhoが提携するブラジル現地のサッカーアカデミーです。パラナ州クリチバを拠点に、10〜17歳の選手の成長と挑戦をサポートする環境としてご案内しています。施設・指導体制の詳細はお問い合わせください。",
-      facilities: INQUIRY,
-      training: INQUIRY,
-      matches: INQUIRY,
-      life: "滞在中の生活面は、Para Sonhoの現地サポートと合わせてご案内します。詳細はお問い合わせください。",
-      location: "ブラジル・パラナ州 クリチバ",
+      facilities: {
+        paragraphs: [
+          "Academia de Futebol Paulo Mirandaでは、天然芝グラウンドと整備された人工芝グラウンドを利用でき、選手が日々のトレーニングに集中できる環境が整っています。",
+          "さらに、屋根付きの人工芝コートも備えているため、雨天時にもトレーニングを継続できます。天候に左右されにくく、年間を通して充実した環境でサッカーに取り組めます。",
+        ],
+      },
+      training: {
+        paragraphs: [
+          "天然芝と人工芝のグラウンドを活用し、技術・判断力・戦術理解・フィジカルの向上を目的としたトレーニングを行います。選手一人ひとりの成長段階に合わせ、実戦を意識しながら総合的なレベルアップを目指します。",
+          "雨天時も屋根付きの人工芝コートでトレーニングを行えるため、天候による中止を抑え、継続的にボールへ触れられる環境です。",
+        ],
+      },
+      matches: {
+        paragraphs: [
+          "Academia de Futebol Paulo Mirandaでは、コリチーバ、アトレチコ・パラナエンセ、パラナ・クルーベをはじめとする、クリチバ周辺の有力クラブとの試合や交流の機会があります。",
+          "レベルの高い選手との実戦を通して、自分の現在地や課題を確認し、さらなるステップアップを目指せる環境です。Para Sonhoもクラブ側と連携し、留学生がトレーニングだけで終わらず、可能な限り試合経験を積めるようサポートします。",
+        ],
+        note: "※対戦クラブや試合日程は時期によって異なります。試合への出場は、選手のコンディション、競技登録、指導者の判断、大会規定などによって決定されます。",
+      },
+      life: {
+        paragraphs: [
+          "滞在中は、Academia de Futebol Paulo Mirandaが提携する滞在施設で生活します。現地クラブとPara Sonhoが連携し、選手が安心してサッカーに集中できるよう、住居をはじめとする日常生活をサポートします。",
+          "また、Academiaにはスポンサーとして提携する医療機関があり、選手のけがや体調不良など、何かあった際には迅速に相談・対応できる連携体制が整っています。",
+          "クリチバはブラジル南部を代表する大都市で、ショッピングモール、スーパーマーケット、飲食店、病院、公共交通機関など、生活に必要な環境が揃っています。都市としての利便性が高く、比較的落ち着いた環境で留学生活を送れます。",
+        ],
+        note: "※医療機関の受診方法や対応内容は、選手の症状、緊急性、滞在時期などによって異なります。海外滞在中は、基本的な安全対策と海外旅行保険への加入が必要です。",
+      },
+      location: {
+        addressLines: ["ブラジル・パラナ州", "クリチバ"],
+        mapUrl:
+          "https://www.google.com/maps/search/?api=1&query=Academia%20de%20Futebol%20Paulo%20Miranda%20Curitiba%20Parana",
+      },
     },
+    facilityGallery: [
+      {
+        src: "/images/clubs/paulo-miranda/artificial-turf.jpg",
+        alt: "Academia de Futebol Paulo Mirandaの人工芝グラウンド全体",
+        caption: "人工芝グラウンド",
+      },
+      {
+        src: "/images/clubs/paulo-miranda/grass-field.jpg",
+        alt: "Academia de Futebol Paulo Mirandaの天然芝グラウンド",
+        caption: "天然芝グラウンド",
+      },
+      {
+        src: "/images/clubs/paulo-miranda/artificial-turf-2.jpg",
+        alt: "Academia de Futebol Paulo Mirandaの人工芝グラウンドでの様子",
+        caption: "人工芝グラウンド",
+      },
+      {
+        src: "/images/clubs/paulo-miranda/covered-turf.jpg",
+        alt: "Academia de Futebol Paulo Mirandaの屋根付き人工芝コート",
+        caption: "屋根付き人工芝コート",
+      },
+      {
+        src: "/images/clubs/paulo-miranda/covered-turf-2.jpg",
+        alt: "Academia de Futebol Paulo Mirandaの屋根付き人工芝コート内部",
+        caption: "屋根付き人工芝コート",
+      },
+    ],
     metaTitle: "Academia de Futebol Paulo Miranda｜提携クラブ紹介",
     metaDescription:
       "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。パラナ州クリチバ、対象10〜17歳。ブラジルサッカー留学のクラブ選びのご参考に。",
