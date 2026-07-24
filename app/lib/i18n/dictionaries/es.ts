@@ -354,6 +354,7 @@ const es = {
       location: "Ubicación",
       ages: "Edades",
       features: "Características principales",
+      instagram: "Instagram",
       viewDetail: "Ver detalles",
       contact: "Contactar",
     },

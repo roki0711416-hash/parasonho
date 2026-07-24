@@ -17,6 +17,8 @@ export type Club = {
   coverImage: string;
   /** クラブロゴ（未用意の場合はプレースホルダー） */
   logoImage?: string;
+  /** Instagram ユーザー名（@なし） */
+  instagram?: string;
   location: string;
   ages: string;
   features: string[];
@@ -34,6 +36,7 @@ export const clubs: Club[] = [
     name: "APAFUT",
     coverImage: "/images/clubs/apafut-cover.jpg",
     logoImage: "/images/clubs/apafut-logo.png",
+    instagram: "apafutoficial",
     location: "ブラジル・リオグランデ・ド・スル州 カシアス・ド・スル",
     ages: "13歳以上",
     features: [
@@ -66,6 +69,7 @@ export const clubs: Club[] = [
     name: "Academia de Futebol Paulo Miranda",
     coverImage: "/images/clubs/paulo-miranda-cover.jpg",
     logoImage: "/images/clubs/paulo-miranda-logo.png",
+    instagram: "pmacademiadefutebol",
     location: "ブラジル・パラナ州 クリチバ",
     ages: "10〜18歳",
     features: [

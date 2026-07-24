@@ -354,6 +354,7 @@ const zh = {
       location: "所在地",
       ages: "适用年龄",
       features: "主要特点",
+      instagram: "Instagram",
       viewDetail: "查看详情",
       contact: "联系我们",
     },

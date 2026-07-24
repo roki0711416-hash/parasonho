@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Camera } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import ConsultCtaButtons from "./ConsultCtaButtons";
@@ -46,6 +47,19 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
             <p className="mt-2 text-sm text-white/75 sm:text-base">
               {t.labels.ages}：{club.ages}
             </p>
+            {club.instagram && (
+              <p className="mt-4">
+                <a
+                  href={`https://www.instagram.com/${club.instagram}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-white/80 transition hover:text-[#F5B041]"
+                >
+                  <Camera className="h-4 w-4" />
+                  @{club.instagram}
+                </a>
+              </p>
+            )}
           </div>
         </PagePhotoSection>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Camera } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import ConsultCtaButtons from "./ConsultCtaButtons";
@@ -70,6 +71,22 @@ export default function ClubsPageContent() {
                         <dt className="w-20 shrink-0 font-bold text-[#F5B041]">{t.labels.ages}</dt>
                         <dd className="text-[#111111]/70">{club.ages}</dd>
                       </div>
+                      {club.instagram && (
+                        <div className="flex gap-3">
+                          <dt className="w-20 shrink-0 font-bold text-[#F5B041]">{t.labels.instagram}</dt>
+                          <dd>
+                            <a
+                              href={`https://www.instagram.com/${club.instagram}/`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-[#111111]/70 transition hover:text-[#F5B041]"
+                            >
+                              <Camera className="h-3.5 w-3.5" />
+                              @{club.instagram}
+                            </a>
+                          </dd>
+                        </div>
+                      )}
                     </dl>
 
                     <div className="mt-6">

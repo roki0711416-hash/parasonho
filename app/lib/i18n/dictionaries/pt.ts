@@ -354,6 +354,7 @@ const pt = {
       location: "Localização",
       ages: "Faixas etárias",
       features: "Principais características",
+      instagram: "Instagram",
       viewDetail: "Ver detalhes",
       contact: "Fale conosco",
     },

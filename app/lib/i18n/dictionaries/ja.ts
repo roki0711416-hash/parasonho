@@ -354,6 +354,7 @@ const ja = {
       location: "所在地",
       ages: "対象年代",
       features: "主な特徴",
+      instagram: "Instagram",
       viewDetail: "詳しく見る",
       contact: "お問い合わせ",
     },

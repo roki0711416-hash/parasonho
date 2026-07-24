@@ -354,6 +354,7 @@ const ko = {
       location: "소재지",
       ages: "대상 연령",
       features: "주요 특징",
+      instagram: "Instagram",
       viewDetail: "자세히 보기",
       contact: "문의하기",
     },

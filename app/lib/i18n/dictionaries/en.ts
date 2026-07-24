@@ -354,6 +354,7 @@ const en = {
       location: "Location",
       ages: "Age groups",
       features: "Key features",
+      instagram: "Instagram",
       viewDetail: "View details",
       contact: "Contact us",
     },
