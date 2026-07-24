@@ -10,12 +10,18 @@ export const metadata = {
 type Staff = {
   name: string;
   furigana: string;
+  nameEn?: string;
   role: string;
+  roleEn?: string;
   image?: string;
+  imageAlt?: string;
+  /** next/image の object-position など */
+  imageClassName?: string;
   yearsPlayed?: number;
   yearsLabel?: string;
   career?: string[];
   bio?: string;
+  bioParagraphs?: string[];
 };
 
 const staff: Staff[] = [
@@ -49,6 +55,22 @@ const staff: Staff[] = [
     ],
     bio: "高いレベルの日本語・ポルトガル語に対応し、現地での生活や手続きを安全・安心にサポート。サッカー・フットサルで培った経験を活かし、選手目線で寄り添います。",
   },
+  {
+    name: "ウェリントン・モンテイロ",
+    furigana: "ウェリントン・モンテイロ",
+    nameEn: "Wellington Monteiro",
+    role: "スペシャルアドバイザー",
+    roleEn: "Special Advisor",
+    image: "/images/staff/wellington-monteiro.jpg",
+    imageAlt: "ウェリントン・モンテイロ（インテルナシオナル在籍時）",
+    // 右側のウェリントンが切れないよう、やや右寄り＋上寄りに配置
+    imageClassName: "object-cover object-[68%_18%]",
+    bioParagraphs: [
+      "元ブラジル人プロサッカー選手・指導者。ヴァスコ・ダ・ガマ、インテルナシオナル、フルミネンセなどでプレーし、2006年にはインテルナシオナルの一員としてコパ・リベルタドーレスとFIFAクラブワールドカップを制覇しました。",
+      "Para Sonho代表の清水裕基とは、選手時代に同じチームでプレーした経験があり、現在まで長年にわたって交流を続ける信頼できるパートナーです。",
+      "世界の舞台で培った経験とブラジルサッカー界のネットワークを生かし、留学生のプレーに関する助言だけでなく、今後の進路やクラブ選択など、選手一人ひとりのキャリア形成についても相談・サポートを行います。",
+    ],
+  },
 ];
 
 export default function StaffPage() {
@@ -59,17 +81,17 @@ export default function StaffPage() {
         日本と現地、両側からあなたの挑戦を支えるメンバーです。
       </p>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {staff.map((s) => (
-          <article key={s.name} className="ps-card flex flex-col overflow-hidden p-0">
+          <article key={s.name} className="ps-card flex h-full flex-col overflow-hidden p-0">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F8F9FB]">
               {s.image ? (
                 <Image
                   src={s.image}
-                  alt={`${s.name}（${s.furigana}）`}
+                  alt={s.imageAlt ?? `${s.name}（${s.furigana}）`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-center"
+                  className={s.imageClassName ?? "object-cover object-center"}
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center text-3xl font-extrabold text-[#14213D]/20">
@@ -78,13 +100,23 @@ export default function StaffPage() {
               )}
             </div>
 
-            <div className="flex flex-1 flex-col gap-3 p-5">
+            <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
               <div>
-                <p className="text-[10px] font-semibold tracking-[0.18em] text-[#111111]/40">
-                  {s.furigana}
-                </p>
-                <h2 className="mt-1 text-lg font-extrabold text-[#14213D]">{s.name}</h2>
-                <p className="mt-1 text-xs font-semibold text-[#F5B041]">{s.role}</p>
+                {!s.nameEn && (
+                  <p className="text-[10px] font-semibold tracking-[0.18em] text-[#111111]/40">
+                    {s.furigana}
+                  </p>
+                )}
+                <h2 className={`text-lg font-extrabold text-[#14213D] ${s.nameEn ? "" : "mt-1"}`}>
+                  {s.name}
+                </h2>
+                {s.nameEn && (
+                  <p className="mt-1 text-sm font-semibold tracking-wide text-[#111111]/50">{s.nameEn}</p>
+                )}
+                <p className="mt-2 text-xs font-semibold text-[#F5B041]">{s.role}</p>
+                {s.roleEn && (
+                  <p className="mt-0.5 text-xs font-medium text-[#F5B041]/80">{s.roleEn}</p>
+                )}
               </div>
 
               {typeof s.yearsPlayed === "number" && (
@@ -114,8 +146,14 @@ export default function StaffPage() {
                 </div>
               )}
 
-              {s.bio && (
-                <p className="mt-1 text-xs leading-6 text-[#111111]/55">{s.bio}</p>
+              {s.bioParagraphs && s.bioParagraphs.length > 0 ? (
+                <div className="mt-1 space-y-3 text-xs leading-6 text-[#111111]/55 sm:text-[13px] sm:leading-7">
+                  {s.bioParagraphs.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : (
+                s.bio && <p className="mt-1 text-xs leading-6 text-[#111111]/55">{s.bio}</p>
               )}
             </div>
           </article>
