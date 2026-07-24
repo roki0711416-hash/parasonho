@@ -6,7 +6,6 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import ConsultCtaButtons from "./ConsultCtaButtons";
 import PagePhotoSection from "./PagePhotoSection";
-import Photo from "./Photo";
 import Reveal from "./Reveal";
 import ClubFacilityGallery from "./ClubFacilityGallery";
 import ClubSectionBody from "./ClubSectionBody";
@@ -119,30 +118,6 @@ export default function ClubDetailPageContent({ club }: ClubDetailPageContentPro
                   </article>
                 </Reveal>
               ))}
-          </div>
-        </section>
-
-        <section className="ps-section ps-bg-subtle">
-          <div className="ps-container">
-            <p className="ps-eyebrow">{t.galleryEyebrow}</p>
-            <h2 className="ps-heading mt-4">{t.galleryTitle}</h2>
-            <p className="ps-lead mt-4 max-w-2xl text-sm sm:text-base">{t.galleryLead}</p>
-
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {club.gallery.map((item) => (
-                <div key={item.label} className="overflow-hidden rounded-2xl">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Photo
-                      src={item.src}
-                      alt={item.alt}
-                      placeholderLabel={item.label}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="h-full w-full"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
