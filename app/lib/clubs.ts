@@ -233,6 +233,13 @@ export const clubs: Club[] = [
         caption: "屋根付き人工芝コート",
       },
     ],
+    facilityVideo: {
+      embedUrl: "https://www.youtube.com/embed/h6IDbG4QAeE",
+      title: "Academia de Futebol Paulo Miranda紹介動画",
+      heading: "動画で見るAcademia de Futebol Paulo Miranda",
+      description:
+        "天然芝・人工芝グラウンドや屋根付きコートなど、Academia de Futebol Paulo Mirandaの育成環境を動画でご覧いただけます。",
+    },
     metaTitle: "Academia de Futebol Paulo Miranda｜提携クラブ紹介",
     metaDescription:
       "Para Sonho提携クラブ「Academia de Futebol Paulo Miranda」の紹介ページ。パラナ州クリチバ、対象10〜17歳。ブラジルサッカー留学のクラブ選びのご参考に。",
