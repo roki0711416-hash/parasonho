@@ -178,6 +178,15 @@ const zh = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "在巴西当地建立的信任关系",
+      lead: "Para Sonho 发挥与巴西当地合作俱乐部及足球相关人士的持续关系，为每一位选手创造适合的挑战机会。",
+      prev: "上一张",
+      next: "下一张",
+      pagination: "轮播页码",
+      page: "页",
+    },
   },
   service: {
     metaTitle: "服务内容｜巴西足球留学支持一览",

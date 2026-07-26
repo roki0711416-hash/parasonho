@@ -178,6 +178,15 @@ const ja = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "ブラジル現地で築いてきた信頼関係",
+      lead: "Para Sonhoは、ブラジル現地の提携クラブやサッカー関係者との継続的な関係を活かし、一人ひとりに合った挑戦の機会をつくります。",
+      prev: "前の写真へ",
+      next: "次の写真へ",
+      pagination: "スライダーのページ",
+      page: "ページ",
+    },
   },
   service: {
     metaTitle: "サービス内容｜ブラジルサッカー留学のサポート一覧",

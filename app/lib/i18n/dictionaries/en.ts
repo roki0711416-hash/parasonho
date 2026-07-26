@@ -178,6 +178,15 @@ const en = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "Trusted relationships built in Brazil",
+      lead: "Para Sonho leverages ongoing relationships with partner clubs and football professionals in Brazil to create opportunities tailored to each player.",
+      prev: "Previous photo",
+      next: "Next photo",
+      pagination: "Slider pages",
+      page: "Page",
+    },
   },
   service: {
     metaTitle: "Services | Brazil Football Study Abroad Support Overview",

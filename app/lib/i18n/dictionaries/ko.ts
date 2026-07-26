@@ -178,6 +178,15 @@ const ko = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "브라질 현지에서 쌓아 온 신뢰 관계",
+      lead: "Para Sonho는 브라질 현지 제휴 클럽과 축구 관계자와의 지속적인 관계를 활용해, 선수 한 사람 한 사람에게 맞는 도전의 기회를 만듭니다.",
+      prev: "이전 사진",
+      next: "다음 사진",
+      pagination: "슬라이더 페이지",
+      page: "페이지",
+    },
   },
   service: {
     metaTitle: "서비스 내용｜브라질 축구 유학 지원 일람",

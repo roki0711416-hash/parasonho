@@ -16,12 +16,20 @@ const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 
 interface SiteFooterProps {
   showChallengeCta?: boolean;
+  /** 問い合わせCTAの背景画像（未指定時はデフォルト） */
+  challengeImageSrc?: string;
+  challengeImageClassName?: string;
 }
 
-export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps) {
+export default function SiteFooter({
+  showChallengeCta = false,
+  challengeImageSrc,
+  challengeImageClassName = "object-cover object-center",
+}: SiteFooterProps) {
   const { locale, dict } = useI18n();
   const t = dict.common;
   const lp = (path = "") => localePath(locale, path);
+  const ctaSrc = challengeImageSrc ?? FIELD_IMAGE;
 
   const aboutLinks = [
     { href: lp("/about/company"), label: t.nav.company },
@@ -41,11 +49,14 @@ export default function SiteFooter({ showChallengeCta = false }: SiteFooterProps
       {showChallengeCta && (
         <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
           <PhotoBackdrop
-            src={FIELD_IMAGE}
+            src={ctaSrc}
             alt={t.footer.fieldAlt}
             variant="footer"
-            imageClassName="object-cover object-center"
+            imageClassName={challengeImageClassName}
           />
+          {challengeImageSrc && (
+            <div className="absolute inset-0 bg-[#14213D]/50" aria-hidden="true" />
+          )}
           <div className="ps-container relative z-10 py-20 text-center ps-on-photo sm:py-24">
             <p className="ps-eyebrow justify-center">{t.footer.challengeEyebrow}</p>
             <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">

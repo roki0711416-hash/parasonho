@@ -178,6 +178,15 @@ const pt = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "Relações de confiança construídas no Brasil",
+      lead: "O Para Sonho aproveita relações contínuas com clubes parceiros e profissionais do futebol no Brasil para criar oportunidades sob medida para cada atleta.",
+      prev: "Foto anterior",
+      next: "Próxima foto",
+      pagination: "Páginas do slider",
+      page: "Página",
+    },
   },
   service: {
     metaTitle: "Serviços | Visão geral do suporte ao intercâmbio de futebol no Brasil",

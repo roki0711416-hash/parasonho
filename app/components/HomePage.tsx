@@ -3,6 +3,8 @@
 import Link from "next/link";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+import LocalNetworkSlider from "./LocalNetworkSlider";
+import { LOCAL_NETWORK_CTA_IMAGE } from "../lib/local-network";
 import SocialFeed from "./SocialFeed";
 import PhotoBackdrop from "./PhotoBackdrop";
 import { HERO_IMAGE } from "../lib/images";
@@ -192,7 +194,13 @@ export default function HomePage() {
         </section>
       </main>
 
-      <SiteFooter showChallengeCta />
+      <LocalNetworkSlider />
+
+      <SiteFooter
+        showChallengeCta
+        challengeImageSrc={LOCAL_NETWORK_CTA_IMAGE}
+        challengeImageClassName="object-cover object-[center_30%] sm:object-[center_38%]"
+      />
     </div>
   );
 }

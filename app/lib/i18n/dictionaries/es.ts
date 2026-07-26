@@ -178,6 +178,15 @@ const es = {
         },
       ],
     },
+    localNetwork: {
+      eyebrow: "LOCAL NETWORK",
+      title: "Relaciones de confianza construidas en Brasil",
+      lead: "Para Sonho aprovecha relaciones continuas con clubes asociados y profesionales del fútbol en Brasil para crear oportunidades adaptadas a cada jugador.",
+      prev: "Foto anterior",
+      next: "Siguiente foto",
+      pagination: "Páginas del slider",
+      page: "Página",
+    },
   },
   service: {
     metaTitle: "Servicios | Resumen del apoyo al intercambio de fútbol en Brasil",
