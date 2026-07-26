@@ -106,14 +106,16 @@ export default function LocalNetworkSlider() {
                   style={{ width: `${100 / visible}%` }}
                 >
                   <div className="ps-card h-full overflow-hidden p-0">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8F9FB]">
+                    {/* スマホは顔優先でやや縦長、PCは横並び用の 4:3 */}
+                    <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#F8F9FB] sm:aspect-[4/3]">
                       <Image
                         src={slide.src}
                         alt={slide.alt}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         loading="lazy"
-                        className={`object-cover ${slide.objectPosition}`}
+                        className="object-cover"
+                        style={{ objectPosition: slide.objectPosition ?? "center center" }}
                       />
                     </div>
                     <p className="px-4 py-3.5 text-xs leading-5 font-semibold text-[#14213D]/80 sm:px-5 sm:text-sm sm:leading-6">
