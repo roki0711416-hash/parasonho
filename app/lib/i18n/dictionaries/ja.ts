@@ -142,20 +142,6 @@ const ja = {
       cardLead: "入団テストの流れ・サポート内容・費用の目安など、詳しくは専用ページをご覧ください。",
       cardButton: "プロテストページを見る",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "現地の様子を",
-      titleGold: "SNS",
-      titleEnd: "で発信中",
-      lead: "ブラジル現地の練習風景や日常を、各SNSで随時更新しています。",
-      follow: "フォローして最新情報をチェック",
-      platforms: {
-        instagram: { cta: "Instagramを見る", description: "写真・リール・ストーリーで現地の空気感をお届け。" },
-        x: { cta: "Xを見る", description: "最新情報や現地の様子をリアルタイムで発信。" },
-        tiktok: { cta: "TikTokを見る", description: "練習や日常のショート動画で臨場感をお届け。" },
-        youtube: { cta: "YouTubeを見る", description: "練習風景やドキュメンタリー動画を公開。" },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "よくある質問",

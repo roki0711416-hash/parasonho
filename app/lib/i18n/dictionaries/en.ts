@@ -142,20 +142,6 @@ const en = {
       cardLead: "For details on the trial process, support, and estimated costs, see the dedicated page.",
       cardButton: "View pro trial page",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "Follow life on the ground via",
-      titleGold: "SNS",
-      titleEnd: "",
-      lead: "We regularly update training scenes and daily life in Brazil on our social channels.",
-      follow: "Follow us for the latest updates",
-      platforms: {
-        instagram: { cta: "View Instagram", description: "Photos, reels, and stories that capture the local atmosphere." },
-        x: { cta: "View X", description: "Latest news and on-the-ground updates in real time." },
-        tiktok: { cta: "View TikTok", description: "Short videos of training and daily life for an immersive feel." },
-        youtube: { cta: "View YouTube", description: "Training footage and documentary videos." },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "Frequently Asked Questions",

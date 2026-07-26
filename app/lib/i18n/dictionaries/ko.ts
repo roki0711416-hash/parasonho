@@ -142,20 +142,6 @@ const ko = {
       cardLead: "입단 테스트 흐름·지원 내용·비용 기준 등 자세한 내용은 전용 페이지를 참고해 주세요.",
       cardButton: "프로 테스트 페이지 보기",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "현지 모습을",
-      titleGold: "SNS",
-      titleEnd: "로 전달 중",
-      lead: "브라질 현지의 훈련 풍경과 일상을 각 SNS에서 수시로 업데이트합니다.",
-      follow: "팔로우하고 최신 정보 확인하기",
-      platforms: {
-        instagram: { cta: "Instagram 보기", description: "사진·릴·스토리로 현지 분위기를 전달합니다." },
-        x: { cta: "X 보기", description: "최신 정보와 현지 모습을 실시간으로 전달합니다." },
-        tiktok: { cta: "TikTok 보기", description: "훈련과 일상의 숏 동영상으로 현장감을 전달합니다." },
-        youtube: { cta: "YouTube 보기", description: "훈련 풍경과 다큐멘터리 영상을 공개합니다." },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "자주 묻는 질문",

@@ -142,20 +142,6 @@ const es = {
       cardLead: "Para detalles sobre el proceso, apoyo y costos estimados, consulta la página dedicada.",
       cardButton: "Ver página de prueba profesional",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "Sigue la vida local en",
-      titleGold: "redes sociales",
-      titleEnd: "",
-      lead: "Actualizamos regularmente escenas de entrenamientos y la vida diaria en Brasil en nuestras redes.",
-      follow: "Síguenos para las últimas novedades",
-      platforms: {
-        instagram: { cta: "Ver Instagram", description: "Fotos, reels e historias que capturan el ambiente local." },
-        x: { cta: "Ver X", description: "Novedades y actualizaciones locales en tiempo real." },
-        tiktok: { cta: "Ver TikTok", description: "Videos cortos de entrenamientos y rutina para una sensación inmersiva." },
-        youtube: { cta: "Ver YouTube", description: "Imágenes de entrenamientos y videos documentales." },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "Preguntas frecuentes",

@@ -5,7 +5,6 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import LocalNetworkSlider from "./LocalNetworkSlider";
 import { LOCAL_NETWORK_CTA_IMAGE } from "../lib/local-network";
-import SocialFeed from "./SocialFeed";
 import PhotoBackdrop from "./PhotoBackdrop";
 import { HERO_IMAGE } from "../lib/images";
 import FloatingLineButton from "./FloatingLineButton";
@@ -168,8 +167,6 @@ export default function HomePage() {
             </Reveal>
           </div>
         </section>
-
-        <SocialFeed />
 
         <section id="faq" className="ps-section bg-white">
           <div className="ps-container relative z-10 max-w-3xl">

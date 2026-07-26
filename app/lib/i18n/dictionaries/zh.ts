@@ -142,20 +142,6 @@ const zh = {
       cardLead: "试训流程、支持内容、费用参考等详情，请查看专用页面。",
       cardButton: "查看职业试训页面",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "通过",
-      titleGold: "社交媒体",
-      titleEnd: "分享当地动态",
-      lead: "在各地社交媒体持续更新巴西当地的训练场景与日常。",
-      follow: "关注我们获取最新信息",
-      platforms: {
-        instagram: { cta: "查看 Instagram", description: "通过照片、Reels 与 Stories 传递当地氛围。" },
-        x: { cta: "查看 X", description: "实时发布最新信息与当地动态。" },
-        tiktok: { cta: "查看 TikTok", description: "训练与日常的短视频，带来身临其境的感受。" },
-        youtube: { cta: "查看 YouTube", description: "公开训练场景与纪录片视频。" },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "常见问题",

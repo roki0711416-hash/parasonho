@@ -142,20 +142,6 @@ const pt = {
       cardLead: "Para detalhes sobre o processo, suporte e custos estimados, veja a página dedicada.",
       cardButton: "Ver página do teste profissional",
     },
-    sns: {
-      eyebrow: "SNS",
-      title: "Acompanhe a rotina local nas",
-      titleGold: "redes sociais",
-      titleEnd: "",
-      lead: "Atualizamos regularmente cenas de treinos e do dia a dia no Brasil em nossas redes.",
-      follow: "Siga-nos para as últimas novidades",
-      platforms: {
-        instagram: { cta: "Ver Instagram", description: "Fotos, reels e stories que capturam o clima local." },
-        x: { cta: "Ver X", description: "Novidades e atualizações locais em tempo real." },
-        tiktok: { cta: "Ver TikTok", description: "Vídeos curtos de treinos e rotina para uma sensação imersiva." },
-        youtube: { cta: "Ver YouTube", description: "Imagens de treinos e vídeos documentários." },
-      },
-    },
     faq: {
       eyebrow: "FAQ",
       title: "Perguntas frequentes",
