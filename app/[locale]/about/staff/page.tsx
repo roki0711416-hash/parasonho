@@ -19,6 +19,8 @@ type Staff = {
   imageClassName?: string;
   yearsPlayed?: number;
   yearsLabel?: string;
+  /** 年数バッジの代わりに表示するラベル（例: 元プロ選手・指導者） */
+  badge?: string;
   career?: string[];
   bio?: string;
   bioParagraphs?: string[];
@@ -65,6 +67,15 @@ const staff: Staff[] = [
     imageAlt: "ウェリントン・モンテイロ（インテルナシオナル在籍時）",
     // 右側のウェリントンが切れないよう、やや右寄り＋上寄りに配置
     imageClassName: "object-cover object-[68%_18%]",
+    badge: "元プロ選手・指導者",
+    career: [
+      "CRヴァスコ・ダ・ガマ",
+      "SCインテルナシオナル",
+      "フルミネンセFC",
+      "2006年 コパ・リベルタドーレス優勝",
+      "2006年 FIFAクラブワールドカップ優勝",
+      "指導者ライセンス CBF Academy Licença B",
+    ],
     bioParagraphs: [
       "元ブラジル人プロサッカー選手・指導者。ヴァスコ・ダ・ガマ、インテルナシオナル、フルミネンセなどでプレーし、2006年にはインテルナシオナルの一員としてコパ・リベルタドーレスとFIFAクラブワールドカップを制覇しました。",
       "Para Sonhoの清水裕基とは、選手時代に同じチームでプレーした経験があり、現在まで長年にわたって交流を続ける信頼できるパートナーです。",
@@ -119,10 +130,10 @@ export default function StaffPage() {
                 )}
               </div>
 
-              {typeof s.yearsPlayed === "number" && (
+              {(s.badge || typeof s.yearsPlayed === "number") && (
                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(245,176,65,0.3)] bg-[rgba(245,176,65,0.08)] px-3 py-1 text-xs font-bold text-[#C4842A]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#F5B041]" />
-                  {s.yearsLabel ?? "サッカー歴"} {s.yearsPlayed}年
+                  {s.badge ?? `${s.yearsLabel ?? "サッカー歴"} ${s.yearsPlayed}年`}
                 </div>
               )}
 
@@ -147,7 +158,7 @@ export default function StaffPage() {
               )}
 
               {s.bioParagraphs && s.bioParagraphs.length > 0 ? (
-                <div className="mt-1 space-y-3 text-xs leading-6 text-[#111111]/55 sm:text-[13px] sm:leading-7">
+                <div className="mt-2 space-y-2.5 text-xs leading-6 text-[#111111]/55 sm:mt-3 sm:space-y-3 sm:text-[13px] sm:leading-7">
                   {s.bioParagraphs.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
