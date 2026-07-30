@@ -16,70 +16,38 @@ import WhyChooseSection from "./WhyChooseSection";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
 
-type PricingLine = {
-  label: string;
-  amount: string;
-  note?: string;
-};
-
 type PricingPlan = {
   period: string;
   title: string;
-  breakdown: PricingLine[];
-  summary?: string;
-  note?: string;
+  target: string;
+  points: string[];
 };
 
 const JAPANESE_PRICING_PLANS: PricingPlan[] = [
   {
     period: "約1か月",
     title: "短期留学プラン",
-    breakdown: [
-      { label: "サポート費", amount: "110万円" },
-      { label: "クラブ参加費", amount: "800米ドル", note: "為替相場により変動" },
-      { label: "宿泊費", amount: "旅行会社による手配・別途見積り" },
-    ],
-    summary: "参考費用：110万円＋800米ドル＋宿泊費",
+    target: "長期休みで海外に挑戦したい小中高生・大学生向け",
+    points: ["現地クラブ練習参加", "生活サポート", "空港送迎"],
   },
   {
     period: "約3か月",
     title: "中期留学プラン",
-    breakdown: [
-      { label: "サポート費", amount: "200万円" },
-      { label: "クラブ参加費", amount: "2,400米ドル", note: "為替相場により変動" },
-      { label: "チーム提携施設利用", amount: "90万円" },
-    ],
-    note:
-      "1か月を超える場合は、クラブ提携先の滞在施設を利用する方向で現在調整しています。宿泊条件および正式な費用は、確定後に改めてご案内します。",
+    target: "本気でレベルアップをめざす選手向け",
+    points: ["実戦的トレーニング", "語学サポート", "現地サポート"],
   },
   {
     period: "約6か月",
     title: "長期留学プラン",
-    breakdown: [
-      { label: "サポート費", amount: "350万円" },
-      { label: "長期滞在に伴う渡航準備・追加サポート費", amount: "30万円" },
-      { label: "クラブ参加費", amount: "4,800米ドル", note: "為替相場により変動" },
-      { label: "チーム提携施設利用", amount: "180万円" },
-    ],
+    target: "本格的に海外で勝負したい選手向け",
+    points: ["継続的な現地サポート", "進路相談", "定期面談"],
   },
   {
     period: "1年間",
     title: "年間留学プラン",
-    breakdown: [
-      { label: "サポート費", amount: "700万円" },
-      { label: "長期滞在に伴う渡航準備・追加サポート費", amount: "60万円" },
-      { label: "クラブ参加費", amount: "9,600米ドル", note: "為替相場により変動" },
-      { label: "チーム提携施設利用", amount: "300万円" },
-    ],
+    target: "一年を通して海外で成長したい選手向け",
+    points: ["継続的な現地サポート", "進路相談", "定期面談"],
   },
-];
-
-const JAPANESE_PRICING_NOTES = [
-  "料金は、為替相場、参加時期、クラブ、滞在方法などによって変動します。",
-  "往復航空券、海外旅行保険、診察費・治療費・薬代、個人的な支出などは含まれていません。",
-  "試合出場、セレクション合格、プロ契約を保証するものではありません。実戦機会を得られるよう、提携クラブと継続的に調整します。",
-  "正式なお申し込み前に、すべての費用を記載した個別見積書をご案内します。",
-  "未成年の選手は、必ず保護者の方と一緒に内容をご確認ください。",
 ];
 
 export default function HomePage() {
@@ -148,7 +116,7 @@ export default function HomePage() {
                   <p className="ps-eyebrow">PLANS</p>
                   <h2 className="ps-heading mt-4">留学費用の目安</h2>
                   <p className="ps-lead mt-5 max-w-3xl text-sm sm:text-base">
-                    留学期間、参加クラブ、滞在方法などに応じて、選手一人ひとりに合ったプランをご提案します。以下は現時点での費用の目安です。
+                    留学費用は、参加期間・クラブ・滞在方法・為替相場などによって異なります。ご希望や現在の状況を伺ったうえで、個別にお見積もりをご案内します。
                   </p>
                 </Reveal>
 
@@ -156,83 +124,56 @@ export default function HomePage() {
                   {JAPANESE_PRICING_PLANS.map((plan, i) => (
                     <Reveal key={plan.title} delay={i * 70}>
                       <article className="ps-card flex h-full flex-col overflow-hidden border border-[rgba(20,33,61,0.08)]">
-                        <div className="p-6 sm:p-8">
+                        <div className="flex flex-1 flex-col p-6 sm:p-8">
                           <p className="inline-flex rounded-full bg-[#F5B041]/15 px-3 py-1 text-[11px] font-bold tracking-[0.18em] text-[#C4842A]">
                             {plan.period}
                           </p>
                           <h3 className="mt-4 text-2xl font-black tracking-tight text-[#14213D] sm:text-[1.75rem]">
                             {plan.title}
                           </h3>
+                          <p className="ps-lead mt-3 text-sm">{plan.target}</p>
 
-                          <div className="mt-6 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#FCFDFC]">
-                            {plan.breakdown.map((item, itemIndex) => (
-                              <div
-                                key={`${plan.title}-${item.label}`}
-                                className={`flex flex-col gap-2 px-4 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-5 ${
-                                  itemIndex !== 0 ? "border-t border-[rgba(20,33,61,0.08)]" : ""
-                                }`}
-                              >
-                                <div className="min-w-0">
-                                  <p className="text-sm leading-6 font-semibold text-[#14213D] sm:text-[15px]">
-                                    {item.label}
-                                  </p>
-                                  {item.note && <p className="mt-1 text-xs leading-5 text-[#111111]/55">{item.note}</p>}
-                                </div>
-                                <p className="shrink-0 text-base leading-7 font-black text-[#14213D] sm:text-right sm:text-lg">
-                                  {item.amount}
-                                </p>
-                              </div>
+                          <ul className="mt-6 space-y-3 text-sm text-[#111111]/85">
+                            {plan.points.map((point) => (
+                              <li key={point} className="flex items-start gap-3">
+                                <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#F5B041]/15 text-[10px] font-bold text-[#C4842A]">
+                                  ✓
+                                </span>
+                                <span>{point}</span>
+                              </li>
                             ))}
+                          </ul>
+
+                          <div className="mt-7 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#FCFDFC] px-5 py-5">
+                            <p className="text-[11px] font-bold tracking-[0.18em] text-[#C4842A]">料金</p>
+                            <p className="mt-2 text-2xl font-black tracking-tight text-[#14213D]">個別見積もり</p>
+                            <p className="mt-2 text-sm leading-6 text-[#14213D]/75">
+                              参加期間・クラブ・滞在方法に応じてご案内します。
+                            </p>
                           </div>
                         </div>
 
-                        {(plan.summary || plan.note) && (
-                          <div className="border-t border-[rgba(20,33,61,0.08)] bg-[#F8F5EF] px-6 py-5 sm:px-8">
-                            {plan.summary && (
-                              <p className="text-sm leading-7 font-semibold text-[#14213D]">
-                                {plan.summary}
-                              </p>
-                            )}
-                            {plan.note && (
-                              <p className="text-sm leading-7 text-[#14213D]/80">
-                                {plan.note}
-                              </p>
-                            )}
-                          </div>
-                        )}
+                        <div className="border-t border-[rgba(20,33,61,0.08)] bg-[#F8F5EF] px-6 py-5 sm:px-8">
+                          <p className="text-sm leading-7 font-semibold text-[#14213D]">
+                            正式なお申し込み前に、サポート内容とすべての費用を記載した個別見積書をご案内します。
+                          </p>
+                          <p className="mt-3 text-xs leading-6 text-[#14213D]/70 sm:text-sm">
+                            ※往復航空券、海外旅行保険、医療費、個人的な支出などは原則として含まれません。詳しい対象項目は個別見積書でご確認いただけます。
+                          </p>
+                        </div>
                       </article>
                     </Reveal>
                   ))}
                 </div>
 
-                <Reveal delay={90}>
-                  <div className="mt-10 rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#FCF7EE] p-6 sm:p-8">
-                    <h3 className="text-xl font-black text-[#14213D] sm:text-2xl">料金についてのご案内</h3>
-                    <ul className="mt-5 space-y-3 text-sm leading-7 text-[#14213D]/82 sm:text-[15px]">
-                      {JAPANESE_PRICING_NOTES.map((note) => (
-                        <li key={note} className="flex items-start gap-3">
-                          <span className="mt-2 inline-block h-2 w-2 shrink-0 rounded-full bg-[#2BB673]" />
-                          <span>{note}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Reveal>
-
                 <Reveal delay={120}>
                   <div className="mt-10 overflow-hidden rounded-2xl border border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-6 py-10 text-center sm:px-10 sm:py-12">
-                    <h3 className="text-2xl font-black tracking-tight text-[#14213D] sm:text-3xl">
-                      選手に合ったプランと正式なお見積りをご案内します
-                    </h3>
-                    <p className="ps-lead mx-auto mt-4 max-w-2xl text-sm sm:text-base">
-                      選手の年齢、競技歴、希望期間、目標を確認したうえで、個別にプランをご提案します。まだ具体的に決まっていない段階でもご相談いただけます。
-                    </p>
                     <ConsultCtaButtons
                       variant="onLight"
                       align="center"
-                      lineLabel={c.cta.lineFreeFull}
+                      lineLabel="費用について相談する"
                       formLabel={c.cta.formInquiry}
-                      className="mx-auto mt-7 max-w-sm sm:max-w-none"
+                      className="mx-auto max-w-sm sm:max-w-none"
                     />
                   </div>
                 </Reveal>
