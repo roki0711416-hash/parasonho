@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import FloatingLineButton from "./FloatingLineButton";
 import { CLUBS_PUBLISHED } from "../lib/clubs";
-import { LINE_URL } from "../lib/contact";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
 
@@ -85,6 +85,7 @@ export default function SiteHeader() {
   }, []);
 
   return (
+    <>
     <header
       className={`sticky top-0 z-50 border-b transition ${
         scrolled
@@ -179,14 +180,6 @@ export default function SiteHeader() {
           <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
-          <a
-            href={LINE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-full bg-[#06C755] px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:scale-[1.02] hover:bg-[#05a847] md:inline-flex"
-          >
-            {isJapanese ? "無料相談" : t.cta.floatingFree}
-          </a>
 
           <div className="md:hidden">
             <LanguageSwitcher compact />
@@ -267,16 +260,6 @@ export default function SiteHeader() {
               ))}
           </ul>
 
-          <a
-            href={LINE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpenMobile(false)}
-            className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#06C755] px-4 py-4 text-base font-bold text-white shadow-md transition hover:bg-[#05a847]"
-          >
-            {isJapanese ? "無料相談" : t.cta.lineFree}
-          </a>
-
           <div className="mt-3 grid grid-cols-2 gap-2">
             {socialLinks.map(({ href, label, icon }) => (
               <a
@@ -295,5 +278,7 @@ export default function SiteHeader() {
         </div>
       </div>
     </header>
+      <FloatingLineButton />
+    </>
   );
 }

@@ -5,12 +5,10 @@ import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
-import FloatingLineButton from "./FloatingLineButton";
 import Reveal from "./Reveal";
 import HomeHero from "./home/HomeHero";
-import LineIcon from "./LineIcon";
 import { clubs } from "../lib/clubs";
-import { GFORM_URL, LINE_URL } from "../lib/contact";
+import { GFORM_URL } from "../lib/contact";
 import { LOCAL_NETWORK_CTA_IMAGE } from "../lib/local-network";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
@@ -212,21 +210,12 @@ function ChallengeCta({ id }: { id?: string }) {
           <br className="sm:hidden" />
           ここから始めよう。
         </h2>
-        <div className="mx-auto mt-10 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:justify-center">
-          <a
-            href={LINE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#06C755] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#05a847] sm:text-base"
-          >
-            <LineIcon className="h-5 w-5" />
-            公式LINEで無料相談
-          </a>
+        <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
           <a
             href={GFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/18 sm:text-base"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/18 sm:w-auto sm:min-w-[240px] sm:text-base"
           >
             お問い合わせフォーム
           </a>
@@ -265,7 +254,6 @@ export default function HomePage() {
   return (
     <div className="ps-page min-h-screen">
       <SiteHeader />
-      <FloatingLineButton />
 
       <main id="top">
         <HomeHero
@@ -274,7 +262,6 @@ export default function HomePage() {
           title2={isJapanese ? "人として成長する留学から、プロを目指す挑戦まで。" : h.hero.title2}
           lead={h.hero.lead}
           programsLabel={isJapanese ? "留学プログラムを見る" : h.hero.viewFlow}
-          lineLabel={isJapanese ? "公式LINEで無料相談" : c.cta.lineFreeFull}
         />
 
         {/* NEWS – data-ready shell, no fictional articles */}

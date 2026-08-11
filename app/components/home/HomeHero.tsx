@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { GFORM_URL, LINE_URL } from "../../lib/contact";
-import LineIcon from "../LineIcon";
+import { GFORM_URL } from "../../lib/contact";
 
 const SLIDES = [
   {
@@ -35,7 +34,6 @@ type HomeHeroProps = {
   title2: string;
   lead: string;
   programsLabel: string;
-  lineLabel: string;
 };
 
 export default function HomeHero({
@@ -44,7 +42,6 @@ export default function HomeHero({
   title2,
   lead,
   programsLabel,
-  lineLabel,
 }: HomeHeroProps) {
   const [index, setIndex] = useState(0);
 
@@ -104,24 +101,14 @@ export default function HomeHero({
             {programsLabel}
           </Link>
           <a
-            href={LINE_URL}
+            href={GFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#06C755] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#06C755]/25 transition hover:-translate-y-0.5 hover:bg-[#05a847] sm:text-base"
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/18 sm:text-base"
           >
-            <LineIcon className="h-5 w-5" />
-            {lineLabel}
+            お問い合わせフォーム
           </a>
         </div>
-
-        <a
-          href={GFORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="br-animate br-animate-delay-3 mt-4 inline-flex text-sm font-semibold text-white/70 underline-offset-4 transition hover:text-white hover:underline"
-        >
-          お問い合わせフォーム →
-        </a>
 
         <div className="mt-10 flex gap-2" aria-label="ヒーロー画像のページ">
           {SLIDES.map((slide, i) => (
