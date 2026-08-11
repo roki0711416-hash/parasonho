@@ -28,9 +28,8 @@ const STRENGTHS = [
     title: "練習・試合・日常生活での通訳",
     description: "日本語とポルトガル語で、クラブや生活のやり取りをスムーズにサポートします。",
     image: "/images/staff/kevin-matsunaga.jpg",
-    position: "object-top",
-    objectPosition: "center top",
-    imageAspect: "aspect-[4/5] sm:aspect-[5/6]",
+    position: "object-[center_18%]",
+    objectPosition: "center 18%",
   },
   {
     no: "03",
@@ -356,13 +355,7 @@ export default function HomePage() {
               {STRENGTHS.map((item, i) => (
                 <Reveal key={item.no} delay={i * 60}>
                   <article className="group ps-card h-full overflow-hidden p-0">
-                    <div
-                      className={`relative overflow-hidden ${
-                        "imageAspect" in item && item.imageAspect
-                          ? item.imageAspect
-                          : "aspect-[4/3] sm:aspect-[5/4]"
-                      }`}
-                    >
+                    <div className="relative aspect-[3/2] overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.title}
