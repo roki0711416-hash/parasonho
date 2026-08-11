@@ -361,12 +361,6 @@ export default function HomePage() {
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className={`ps-media-zoom object-cover ${item.position}`}
-                        style={{
-                          objectPosition:
-                            "objectPosition" in item && item.objectPosition
-                              ? item.objectPosition
-                              : undefined,
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/55 to-transparent" />
                       <p className="absolute left-4 top-4 font-saira text-3xl font-black text-white/90">{item.no}</p>
