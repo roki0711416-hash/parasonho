@@ -28,7 +28,9 @@ const STRENGTHS = [
     title: "練習・試合・日常生活での通訳",
     description: "日本語とポルトガル語で、クラブや生活のやり取りをスムーズにサポートします。",
     image: "/images/staff/kevin-matsunaga.jpg",
-    position: "object-[center_12%]",
+    position: "object-top",
+    objectPosition: "center top",
+    imageAspect: "aspect-[4/5] sm:aspect-[5/6]",
   },
   {
     no: "03",
@@ -98,7 +100,9 @@ const PROGRAMS = [
     description: "プロ契約・上位カテゴリ昇格をめざす選手向けの入団テストサポート。",
     points: ["受験クラブ選定", "テスト帯同", "契約交渉サポート"],
     image: "/images/local-network/04-santos-player-1.webp",
-    position: "object-[center_12%]",
+    position: "object-top",
+    objectPosition: "center top",
+    imageAspect: "aspect-[4/3] sm:aspect-[5/4]",
     href: "/plans/pro-test",
   },
 ] as const;
@@ -369,13 +373,25 @@ export default function HomePage() {
               {STRENGTHS.map((item, i) => (
                 <Reveal key={item.no} delay={i * 60}>
                   <article className="group ps-card h-full overflow-hidden p-0">
-                    <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[5/4]">
+                    <div
+                      className={`relative overflow-hidden ${
+                        "imageAspect" in item && item.imageAspect
+                          ? item.imageAspect
+                          : "aspect-[4/3] sm:aspect-[5/4]"
+                      }`}
+                    >
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className={`ps-media-zoom object-cover ${item.position}`}
+                        style={{
+                          objectPosition:
+                            "objectPosition" in item && item.objectPosition
+                              ? item.objectPosition
+                              : undefined,
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/55 to-transparent" />
                       <p className="absolute left-4 top-4 font-saira text-3xl font-black text-white/90">{item.no}</p>
@@ -410,13 +426,25 @@ export default function HomePage() {
               {PROGRAMS.map((program, i) => (
                 <Reveal key={program.id} delay={i * 70}>
                   <article className="group ps-card flex h-full flex-col overflow-hidden p-0">
-                    <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[16/9]">
+                    <div
+                      className={`relative overflow-hidden ${
+                        "imageAspect" in program && program.imageAspect
+                          ? program.imageAspect
+                          : "aspect-[16/10] sm:aspect-[16/9]"
+                      }`}
+                    >
                       <Image
                         src={program.image}
                         alt={program.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className={`ps-media-zoom object-cover ${program.position}`}
+                        style={{
+                          objectPosition:
+                            "objectPosition" in program && program.objectPosition
+                              ? program.objectPosition
+                              : undefined,
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/7 to-transparent" />
                       <p className="absolute left-5 top-5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-[#0A3D2C]">
