@@ -179,20 +179,17 @@ const SNS_LINKS = [
 ] as const;
 
 function SectionHeading({
-  eyebrow,
   title,
   lead,
   light = false,
 }: {
-  eyebrow: string;
   title: string;
   lead?: string;
   light?: boolean;
 }) {
   return (
     <div className="relative max-w-3xl">
-      <p className={`ps-eyebrow ${light ? "text-[#E8B423]" : ""}`}>{eyebrow}</p>
-      <h2 className={`ps-heading mt-4 ${light ? "text-white" : ""}`}>{title}</h2>
+      <h2 className={`ps-heading ${light ? "text-white" : ""}`}>{title}</h2>
       {lead && <p className={`ps-lead mt-5 text-sm sm:text-base ${light ? "text-white/75" : ""}`}>{lead}</p>}
     </div>
   );
@@ -212,8 +209,7 @@ function ChallengeCta({ id }: { id?: string }) {
         <div className="absolute inset-0 bg-[#061910]/78" aria-hidden="true" />
       </div>
       <div className="ps-container relative z-10 py-20 text-center sm:py-24">
-        <p className="ps-eyebrow justify-center text-[#E8B423]">START YOUR CHALLENGE</p>
-        <h2 className="mt-5 text-[clamp(1.8rem,5vw,3.2rem)] font-black tracking-tight text-white">
+        <h2 className="text-[clamp(1.8rem,5vw,3.2rem)] font-black tracking-tight text-white">
           ブラジルへの挑戦を、
           <br className="sm:hidden" />
           ここから始めよう。
@@ -283,13 +279,10 @@ export default function HomePage() {
           lineLabel={isJapanese ? "公式LINEで無料相談" : c.cta.lineFreeFull}
         />
 
-        {/* NEWS / TOPICS – data-ready shell, no fictional articles */}
+        {/* NEWS – data-ready shell, no fictional articles */}
         <section id="news" className="border-y border-[rgba(10,61,44,0.08)] bg-[#0A3D2C]">
-          <div className="ps-container flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:gap-8 sm:py-6">
-            <p className="shrink-0 font-saira text-sm font-black tracking-[0.28em] text-[#E8B423]">
-              NEWS / TOPICS
-            </p>
-            <p className="text-sm leading-6 text-white/75">
+          <div className="ps-container py-5 sm:py-6">
+            <p className="text-sm leading-6 text-white/80">
               {isJapanese
                 ? "最新のお知らせは準備中です。公開され次第、こちらに掲載します。"
                 : "News updates will appear here when published."}
@@ -299,12 +292,6 @@ export default function HomePage() {
 
         {/* WHY / INTRO */}
         <section id="about" className="ps-section relative overflow-hidden">
-          <p
-            className="ps-bg-wordmark absolute -right-4 top-8 hidden text-[clamp(4rem,14vw,10rem)] lg:block"
-            aria-hidden="true"
-          >
-            WHY
-          </p>
           <div className="ps-container relative">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
               <Reveal>
@@ -317,7 +304,6 @@ export default function HomePage() {
                     className="object-cover object-[center_12%]"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#061910]/85 to-transparent p-6">
-                    <p className="text-xs font-bold tracking-[0.2em] text-[#E8B423]">COORDINATOR</p>
                     <p className="mt-2 text-lg font-black text-white">清水 裕基</p>
                     <p className="mt-1 text-sm text-white/75">Santos FC U-17練習生 / ブラジル現地プレー経験</p>
                   </div>
@@ -326,7 +312,6 @@ export default function HomePage() {
 
               <Reveal delay={80}>
                 <SectionHeading
-                  eyebrow="WHY PARA SONHO"
                   title={isJapanese ? "ブラジル現地の経験とネットワークで、挑戦を支える。" : h.why.title}
                   lead={
                     isJapanese
@@ -358,7 +343,6 @@ export default function HomePage() {
           <div className="ps-container">
             <Reveal>
               <SectionHeading
-                eyebrow="STRENGTHS"
                 title={isJapanese ? "Para Sonhoの強み" : h.why.title}
                 lead={
                   isJapanese
@@ -411,7 +395,6 @@ export default function HomePage() {
           <div className="ps-container">
             <Reveal>
               <SectionHeading
-                eyebrow="PROGRAMS"
                 title={isJapanese ? "留学プログラム" : h.plans.title}
                 lead={
                   isJapanese
@@ -483,7 +466,6 @@ export default function HomePage() {
           <div className="ps-container">
             <Reveal>
               <SectionHeading
-                eyebrow="PARTNER CLUBS"
                 title={isJapanese ? "提携クラブ・留学先" : c.nav.clubs}
                 lead={
                   isJapanese
@@ -557,7 +539,6 @@ export default function HomePage() {
           <div className="ps-container">
             <Reveal>
               <SectionHeading
-                eyebrow="VIDEOS"
                 title={isJapanese ? "現地の様子を動画で見る" : "Videos"}
                 lead={
                   isJapanese
@@ -604,16 +585,9 @@ export default function HomePage() {
 
         {/* SUPPORT FLOW */}
         <section id="support-flow" className="ps-section relative overflow-hidden">
-          <p
-            className="ps-bg-wordmark absolute -left-2 top-10 hidden text-[clamp(3.5rem,12vw,8rem)] lg:block"
-            aria-hidden="true"
-          >
-            SUPPORT
-          </p>
           <div className="ps-container relative">
             <Reveal>
               <SectionHeading
-                eyebrow="SUPPORT"
                 title={isJapanese ? "サポート体制" : c.nav.support}
                 lead={
                   isJapanese
@@ -652,7 +626,7 @@ export default function HomePage() {
         <section id="faq" className="ps-section-tight ps-bg-subtle">
           <div className="ps-container max-w-3xl">
             <Reveal>
-              <SectionHeading eyebrow="FAQ" title={h.faq.title} />
+              <SectionHeading title={h.faq.title} />
             </Reveal>
             <div className="mt-10 space-y-4">
               {h.faq.items.map((item, i) => (
@@ -674,8 +648,7 @@ export default function HomePage() {
         <section id="sns" className="border-y border-[rgba(10,61,44,0.08)] bg-white">
           <div className="ps-container flex flex-col items-start justify-between gap-6 py-10 sm:flex-row sm:items-center">
             <div>
-              <p className="ps-eyebrow">SOCIAL</p>
-              <h2 className="mt-3 text-2xl font-black text-[#0A3D2C] sm:text-3xl">
+              <h2 className="text-2xl font-black text-[#0A3D2C] sm:text-3xl">
                 {isJapanese ? "現地の様子をSNSでチェック" : "Follow Para Sonho"}
               </h2>
             </div>

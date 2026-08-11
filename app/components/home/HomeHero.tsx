@@ -86,9 +86,6 @@ export default function HomeHero({
       />
 
       <div className="relative z-10 mx-auto flex min-h-[92svh] w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:min-h-[100svh] sm:justify-center sm:px-8 sm:pb-24 sm:pt-32">
-        <p className="br-animate text-[11px] font-bold tracking-[0.35em] text-[#E8B423] sm:text-xs">
-          BRAZIL FOOTBALL CHALLENGE
-        </p>
         <h1 className="br-animate br-animate-delay-1 mt-5 max-w-4xl text-[clamp(2.1rem,7.2vw,4.6rem)] font-black leading-[1.08] tracking-tight text-white">
           {title1}
         </h1>
