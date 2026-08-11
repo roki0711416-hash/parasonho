@@ -28,8 +28,8 @@ const STRENGTHS = [
     title: "練習・試合・日常生活での通訳",
     description: "日本語とポルトガル語で、クラブや生活のやり取りをスムーズにサポートします。",
     image: "/images/staff/kevin-matsunaga.jpg",
-    position: "object-[center_18%]",
-    objectPosition: "center 18%",
+    position: "object-[center_top]",
+    objectPosition: "center top",
   },
   {
     no: "03",
