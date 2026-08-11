@@ -90,7 +90,7 @@ const PROGRAMS = [
     description: "継続的な現地サポートのもと、本格的に海外で勝負したい選手向け。",
     points: ["継続的な現地サポート", "進路相談", "定期面談"],
     image: "/images/clubs/apafut/covered-turf.jpg",
-    position: "object-center",
+    position: "object-[center_55%]",
     href: "#plans",
   },
   {
@@ -100,8 +100,8 @@ const PROGRAMS = [
     description: "プロ契約・上位カテゴリ昇格をめざす選手向けの入団テストサポート。",
     points: ["受験クラブ選定", "テスト帯同", "契約交渉サポート"],
     image: "/images/local-network/04-santos-player-1.webp",
-    position: "object-[center_20%]",
-    objectPosition: "center 20%",
+    position: "object-[center_12%]",
+    objectPosition: "center 12%",
     href: "/plans/pro-test",
   },
 ] as const;
@@ -407,7 +407,7 @@ export default function HomePage() {
         </section>
 
         {/* PROGRAMS */}
-        <section id="programs" className="ps-section">
+        <section id="programs" className="ps-section-tight scroll-mt-24">
           <div className="ps-container">
             <Reveal>
               <SectionHeading
@@ -421,23 +421,17 @@ export default function HomePage() {
               />
             </Reveal>
 
-            <div id="plans" className="mt-12 grid gap-6 md:grid-cols-2">
+            <div id="plans" className="mt-10 grid scroll-mt-24 gap-5 md:grid-cols-2 lg:gap-6">
               {PROGRAMS.map((program, i) => (
                 <Reveal key={program.id} delay={i * 70}>
                   <article className="group ps-card flex h-full flex-col overflow-hidden p-0">
-                    <div
-                      className={`relative overflow-hidden ${
-                        "imageAspect" in program && program.imageAspect
-                          ? program.imageAspect
-                          : "aspect-[16/10] sm:aspect-[16/9]"
-                      }`}
-                    >
+                    <div className="relative aspect-[16/10] overflow-hidden lg:aspect-[2.05/1]">
                       <Image
                         src={program.image}
                         alt={program.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className={`ps-media-zoom object-cover ${program.position}`}
+                        className={`object-cover ${program.position}`}
                         style={{
                           objectPosition:
                             "objectPosition" in program && program.objectPosition
@@ -445,15 +439,15 @@ export default function HomePage() {
                               : undefined,
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/7 to-transparent" />
-                      <p className="absolute left-5 top-5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-[#0A3D2C]">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/55 to-transparent" />
+                      <p className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-[#0A3D2C]">
                         {program.period}
                       </p>
                     </div>
-                    <div className="flex flex-1 flex-col p-6 sm:p-7">
-                      <h3 className="text-2xl font-black text-[#0A3D2C]">{program.title}</h3>
-                      <p className="ps-lead mt-3 text-sm">{program.description}</p>
-                      <ul className="mt-5 space-y-2.5 text-sm text-[#111111]/85">
+                    <div className="flex flex-1 flex-col p-5 sm:p-6 lg:p-6">
+                      <h3 className="text-xl font-black text-[#0A3D2C] lg:text-2xl">{program.title}</h3>
+                      <p className="ps-lead mt-2.5 text-sm">{program.description}</p>
+                      <ul className="mt-4 space-y-2 text-sm text-[#111111]/85">
                         {program.points.map((point) => (
                           <li key={point} className="flex items-start gap-3">
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4A017]" />
@@ -461,16 +455,16 @@ export default function HomePage() {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-6 rounded-xl bg-[#F4F6F5] px-4 py-4">
+                      <div className="mt-5 rounded-xl bg-[#F4F6F5] px-4 py-3.5">
                         <p className="text-[11px] font-bold tracking-[0.18em] text-[#D4A017]">料金</p>
-                        <p className="mt-1 text-lg font-black text-[#0A3D2C]">個別見積もり</p>
+                        <p className="mt-1 text-base font-black text-[#0A3D2C] lg:text-lg">個別見積もり</p>
                         <p className="mt-1 text-sm leading-6 text-[#111111]/65">
                           期間・内容に応じて個別にご案内します。
                         </p>
                       </div>
                       <Link
                         href={program.id === "pro" ? lp(program.href) : `${lp()}${program.href}`}
-                        className="mt-6 inline-flex text-sm font-bold text-[#0A3D2C] underline-offset-4 transition hover:text-[#D4A017] hover:underline"
+                        className="mt-5 inline-flex text-sm font-bold text-[#0A3D2C] underline-offset-4 transition hover:text-[#D4A017] hover:underline"
                       >
                         {program.id === "pro" ? "プロテスト詳細を見る →" : "詳しく相談する →"}
                       </Link>
