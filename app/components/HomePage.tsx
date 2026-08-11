@@ -100,9 +100,8 @@ const PROGRAMS = [
     description: "プロ契約・上位カテゴリ昇格をめざす選手向けの入団テストサポート。",
     points: ["受験クラブ選定", "テスト帯同", "契約交渉サポート"],
     image: "/images/local-network/04-santos-player-1.webp",
-    position: "object-top",
-    objectPosition: "center top",
-    imageAspect: "aspect-[4/3] sm:aspect-[5/4]",
+    position: "object-[center_20%]",
+    objectPosition: "center 20%",
     href: "/plans/pro-test",
   },
 ] as const;
