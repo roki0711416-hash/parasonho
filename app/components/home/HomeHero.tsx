@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { GFORM_URL } from "../../lib/contact";
 
 const SLIDES = [
@@ -30,7 +30,7 @@ const SLIDES = [
 
 type HomeHeroProps = {
   programsHref: string;
-  title1: string;
+  title1: ReactNode;
   title2: string;
   lead: string;
   programsLabel: string;
@@ -83,7 +83,7 @@ export default function HomeHero({
       />
 
       <div className="relative z-10 mx-auto flex min-h-[92svh] w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:min-h-[100svh] sm:justify-center sm:px-8 sm:pb-24 sm:pt-32">
-        <h1 className="br-animate br-animate-delay-1 mt-5 max-w-4xl text-[clamp(2.1rem,7.2vw,4.6rem)] font-black leading-[1.08] tracking-tight text-white">
+        <h1 className="br-animate br-animate-delay-1 mt-5 max-w-5xl text-[clamp(2.1rem,6.4vw,4.4rem)] font-black leading-[1.12] tracking-tight text-white">
           {title1}
         </h1>
         <p className="br-animate br-animate-delay-1 mt-4 max-w-3xl text-[clamp(1.05rem,3.2vw,1.65rem)] font-bold leading-snug text-white/92">

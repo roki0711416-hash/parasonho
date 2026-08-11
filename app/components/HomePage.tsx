@@ -258,7 +258,16 @@ export default function HomePage() {
       <main id="top">
         <HomeHero
           programsHref={`${lp()}#programs`}
-          title1={isJapanese ? "ブラジルで、本気の挑戦を。" : h.hero.title1}
+          title1={
+            isJapanese ? (
+              <>
+                ブラジルで、
+                <span className="whitespace-nowrap">本気の挑戦を。</span>
+              </>
+            ) : (
+              h.hero.title1
+            )
+          }
           title2={isJapanese ? "人として成長する留学から、プロを目指す挑戦まで。" : h.hero.title2}
           lead={h.hero.lead}
           programsLabel={isJapanese ? "留学プログラムを見る" : h.hero.viewFlow}
