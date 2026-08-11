@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import { Camera, Music2 } from "lucide-react";
-import ConsultCtaButtons from "./ConsultCtaButtons";
-import PhotoBackdrop from "./PhotoBackdrop";
 import { CLUBS_PUBLISHED } from "../lib/clubs";
-import { FIELD_IMAGE } from "../lib/images";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
 
@@ -15,21 +12,16 @@ const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCE_sb8Gl_vGjHHjiN3wNK-Q";
 
 interface SiteFooterProps {
+  /** @deprecated CTAはHomePage側で表示。互換のため残置 */
   showChallengeCta?: boolean;
-  /** 問い合わせCTAの背景画像（未指定時はデフォルト） */
   challengeImageSrc?: string;
   challengeImageClassName?: string;
 }
 
-export default function SiteFooter({
-  showChallengeCta = false,
-  challengeImageSrc,
-  challengeImageClassName = "object-cover object-center",
-}: SiteFooterProps) {
+export default function SiteFooter(_props: SiteFooterProps = {}) {
   const { locale, dict } = useI18n();
   const t = dict.common;
   const lp = (path = "") => localePath(locale, path);
-  const ctaSrc = challengeImageSrc ?? FIELD_IMAGE;
 
   const aboutLinks = [
     { href: lp("/about/company"), label: t.nav.company },
@@ -38,42 +30,19 @@ export default function SiteFooter({
   ];
 
   const siteLinks = [
-    { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: `${lp()}#programs`, label: t.nav.plans },
     ...(CLUBS_PUBLISHED ? [{ href: lp("/clubs"), label: t.nav.clubs }] : []),
-    { href: lp("/plans/pro-test"), label: t.nav.proTest },
+    { href: lp("/about/support"), label: t.nav.support },
     { href: `${lp()}#faq`, label: t.nav.faq },
+    { href: `${lp()}#contact`, label: locale === "ja" ? "お問い合わせ" : t.cta.formInquiry },
   ];
 
   return (
-    <footer className="border-t border-[rgba(20,33,61,0.08)] bg-white">
-      {showChallengeCta && (
-        <div className="relative min-h-[420px] overflow-hidden sm:min-h-[480px]">
-          <PhotoBackdrop
-            src={ctaSrc}
-            alt={t.footer.fieldAlt}
-            variant="footer"
-            imageClassName={challengeImageClassName}
-          />
-          {challengeImageSrc && (
-            <div className="absolute inset-0 bg-[#14213D]/50" aria-hidden="true" />
-          )}
-          <div className="ps-container relative z-10 py-20 text-center ps-on-photo sm:py-24">
-            <p className="ps-eyebrow justify-center">{t.footer.challengeEyebrow}</p>
-            <h2 className="ps-heading mx-auto mt-5 max-w-3xl text-white">
-              {t.footer.challengeTitle1}
-              <br className="sm:hidden" />
-              <span className="ps-gold-text">{t.footer.challengeTitle2}</span>
-            </h2>
-            <p className="ps-lead mx-auto mt-5 max-w-xl text-sm sm:text-base">{t.footer.challengeLead}</p>
-            <ConsultCtaButtons variant="onDark" align="center" showLineId className="mx-auto mt-10 max-w-sm sm:max-w-none" />
-          </div>
-        </div>
-      )}
-
+    <footer className="border-t border-[rgba(10,61,44,0.08)] bg-white">
       <div className="ps-container py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="text-lg font-black tracking-tight text-[#14213D]">{t.brand}</p>
+            <p className="text-lg font-black tracking-tight text-[#0A3D2C]">{t.brand}</p>
             <p className="ps-lead mt-3 max-w-sm text-sm">{t.footer.description}</p>
             <div className="mt-6 flex items-center gap-3">
               {[
@@ -104,7 +73,7 @@ export default function SiteFooter({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(20,33,61,0.12)] text-[#14213D]/70 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(10,61,44,0.12)] text-[#0A3D2C]/70 transition hover:border-[#D4A017]/50 hover:text-[#D4A017]"
                 >
                   {icon}
                 </a>
@@ -113,11 +82,11 @@ export default function SiteFooter({
           </div>
 
           <nav>
-            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">{t.contents}</p>
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#D4A017]">{t.contents}</p>
             <ul className="mt-4 space-y-3 text-sm">
               {siteLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#14213D]">
+                <li key={`${link.href}-${link.label}`}>
+                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#0A3D2C]">
                     {link.label}
                   </Link>
                 </li>
@@ -126,11 +95,11 @@ export default function SiteFooter({
           </nav>
 
           <nav>
-            <p className="text-[10px] font-bold tracking-[0.25em] text-[#F5B041]">{t.about}</p>
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#D4A017]">{t.about}</p>
             <ul className="mt-4 space-y-3 text-sm">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#14213D]">
+                  <Link href={link.href} className="text-[#111111]/70 transition hover:text-[#0A3D2C]">
                     {link.label}
                   </Link>
                 </li>
@@ -139,7 +108,7 @@ export default function SiteFooter({
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[rgba(20,33,61,0.08)] pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[rgba(10,61,44,0.08)] pt-8 sm:flex-row">
           <p className="text-[10px] font-semibold tracking-[0.25em] text-[#111111]/35">{t.globalTagline}</p>
           <p className="text-xs text-[#111111]/50" suppressHydrationWarning>
             © {new Date().getFullYear()} {t.brand}

@@ -5,10 +5,10 @@ import { Camera, Music2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { CLUBS_PUBLISHED } from "../lib/clubs";
+import { LINE_URL } from "../lib/contact";
 import { useI18n } from "../lib/i18n/I18nProvider";
 import { localePath } from "../lib/i18n/locale-path";
 
-const LINE_URL = "https://line.me/R/ti/p/@593loohp";
 const INSTAGRAM_URL = "https://www.instagram.com/para_sonho/";
 const X_URL = "https://x.com/Para_Sonho";
 const TIKTOK_URL = "https://www.tiktok.com/@para.sonho";
@@ -18,6 +18,7 @@ export default function SiteHeader() {
   const { locale, dict } = useI18n();
   const t = dict.common;
   const lp = (path = "") => localePath(locale, path);
+  const isJapanese = locale === "ja";
 
   const aboutItems = [
     { href: lp("/about/company"), label: t.nav.company },
@@ -26,12 +27,12 @@ export default function SiteHeader() {
   ];
 
   const sectionItems = [
-    { href: lp("/service"), label: t.nav.service },
-    { href: `${lp()}#plans`, label: t.nav.plans },
+    { href: lp("/about/company"), label: isJapanese ? "Para Sonhoについて" : t.aboutParaSonho },
+    { href: `${lp()}#programs`, label: isJapanese ? "留学プログラム" : t.nav.plans },
     ...(CLUBS_PUBLISHED ? [{ href: lp("/clubs"), label: t.nav.clubs }] : []),
-    { href: lp("/plans/pro-test"), label: t.nav.proTest },
-    { href: lp("/plans/team"), label: t.nav.team },
+    { href: lp("/about/support"), label: t.nav.support },
     { href: `${lp()}#faq`, label: t.nav.faq },
+    { href: `${lp()}#contact`, label: isJapanese ? "お問い合わせ" : t.cta.formInquiry },
   ];
 
   const socialLinks = [
@@ -60,6 +61,7 @@ export default function SiteHeader() {
   const [openDesktop, setOpenDesktop] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
   const [openMobileAbout, setOpenMobileAbout] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const desktopRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -73,8 +75,23 @@ export default function SiteHeader() {
     return () => document.removeEventListener("mousedown", onDocClick);
   }, []);
 
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 12);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(20,33,61,0.08)] bg-white/90 backdrop-blur-xl">
+    <header
+      className={`sticky top-0 z-50 border-b transition ${
+        scrolled
+          ? "border-[rgba(10,61,44,0.1)] bg-white/95 shadow-sm backdrop-blur-xl"
+          : "border-[rgba(10,61,44,0.08)] bg-white/90 backdrop-blur-xl"
+      }`}
+    >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
         <Link href={lp()} aria-label={t.logoAlt} className="inline-flex shrink-0 items-center bg-transparent">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -89,7 +106,7 @@ export default function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm md:flex">
+        <nav className="hidden items-center gap-4 text-[13px] font-semibold lg:flex xl:gap-5">
           <div
             ref={desktopRef}
             className="group relative"
@@ -101,9 +118,9 @@ export default function SiteHeader() {
               aria-haspopup="menu"
               aria-expanded={openDesktop}
               onClick={() => setOpenDesktop((v) => !v)}
-              className="inline-flex items-center gap-1 text-[#14213D]/85 transition hover:text-[#F5B041]"
+              className="inline-flex items-center gap-1 text-[#0A3D2C]/85 transition hover:text-[#D4A017]"
             >
-              {t.aboutParaSonho}
+              {isJapanese ? "Para Sonhoについて" : t.aboutParaSonho}
               <svg
                 className={`h-3 w-3 transition-transform ${openDesktop ? "rotate-180" : ""}`}
                 viewBox="0 0 20 20"
@@ -120,12 +137,12 @@ export default function SiteHeader() {
 
             <div
               className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 transition-all duration-200 ${
-                openDesktop ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-1"
+                openDesktop ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
               }`}
               role="menu"
             >
-              <div className="w-64 overflow-hidden rounded-2xl border border-[rgba(20,33,61,0.08)] bg-white text-[#14213D] shadow-xl">
-                <div className="border-b border-[rgba(20,33,61,0.08)] bg-[#F8F9FB] px-4 py-3 text-xs tracking-wide text-[#F5B041]">
+              <div className="w-64 overflow-hidden rounded-2xl border border-[rgba(10,61,44,0.1)] bg-white text-[#0A3D2C] shadow-xl">
+                <div className="border-b border-[rgba(10,61,44,0.08)] bg-[#F4F6F5] px-4 py-3 text-xs tracking-wide text-[#D4A017]">
                   {t.aboutMenuTitle}
                 </div>
                 <ul className="py-2">
@@ -134,7 +151,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         role="menuitem"
-                        className="block px-4 py-2.5 text-sm transition hover:bg-[#F8F9FB] hover:text-[#F5B041]"
+                        className="block px-4 py-2.5 text-sm transition hover:bg-[#F4F6F5] hover:text-[#D4A017]"
                       >
                         {item.label}
                       </Link>
@@ -145,11 +162,17 @@ export default function SiteHeader() {
             </div>
           </div>
 
-          {sectionItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-[#14213D]/85 transition hover:text-[#F5B041]">
-              {item.label}
-            </Link>
-          ))}
+          {sectionItems
+            .filter((item) => item.href !== lp("/about/company"))
+            .map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-[#0A3D2C]/85 transition hover:text-[#D4A017]"
+              >
+                {item.label}
+              </Link>
+            ))}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -157,25 +180,12 @@ export default function SiteHeader() {
             <LanguageSwitcher />
           </div>
           <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="hidden items-center gap-1 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-2 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041] lg:inline-flex"
-          >
-            <Camera className="h-4 w-4" />
-            Instagram
-          </a>
-          <a
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-full bg-[#22C55E] px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:scale-[1.02] hover:bg-[#16A34A] md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-[#06C755] px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:scale-[1.02] hover:bg-[#05a847] md:inline-flex"
           >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-              <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-            </svg>
-            {t.cta.lineFree}
+            {isJapanese ? "無料相談" : t.cta.floatingFree}
           </a>
 
           <div className="md:hidden">
@@ -186,7 +196,7 @@ export default function SiteHeader() {
             aria-label={t.openMenu}
             aria-expanded={openMobile}
             onClick={() => setOpenMobile((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(20,33,61,0.12)] bg-[#F8F9FB] text-[#14213D] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(10,61,44,0.12)] bg-[#F4F6F5] text-[#0A3D2C] md:hidden"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
               {openMobile ? (
@@ -199,17 +209,15 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <div
-        className={`md:hidden ${openMobile ? "block" : "hidden"} border-t border-[rgba(20,33,61,0.08)] bg-white`}
-      >
+      <div className={`md:hidden ${openMobile ? "block" : "hidden"} border-t border-[rgba(10,61,44,0.08)] bg-white`}>
         <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6">
           <button
             type="button"
             onClick={() => setOpenMobileAbout((v) => !v)}
             aria-expanded={openMobileAbout}
-            className="flex w-full items-center justify-between rounded-xl bg-[#F8F9FB] px-4 py-3 text-left text-sm font-semibold text-[#14213D]"
+            className="flex w-full items-center justify-between rounded-xl bg-[#F4F6F5] px-4 py-3 text-left text-sm font-semibold text-[#0A3D2C]"
           >
-            {t.aboutParaSonho}
+            {isJapanese ? "Para Sonhoについて" : t.aboutParaSonho}
             <svg
               className={`h-4 w-4 transition-transform ${openMobileAbout ? "rotate-180" : ""}`}
               viewBox="0 0 20 20"
@@ -228,13 +236,13 @@ export default function SiteHeader() {
               openMobileAbout ? "mt-2 max-h-[600px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <ul className="overflow-hidden rounded-xl border border-[rgba(20,33,61,0.08)] bg-white">
+            <ul className="overflow-hidden rounded-xl border border-[rgba(10,61,44,0.08)] bg-white">
               {aboutItems.map((item) => (
-                <li key={item.href} className="border-t border-[rgba(20,33,61,0.08)] first:border-t-0">
+                <li key={item.href} className="border-t border-[rgba(10,61,44,0.08)] first:border-t-0">
                   <Link
                     href={item.href}
                     onClick={() => setOpenMobile(false)}
-                    className="block px-4 py-3 text-sm transition hover:bg-[#F8F9FB] hover:text-[#F5B041]"
+                    className="block px-4 py-3 text-sm transition hover:bg-[#F4F6F5] hover:text-[#D4A017]"
                   >
                     {item.label}
                   </Link>
@@ -244,17 +252,19 @@ export default function SiteHeader() {
           </div>
 
           <ul className="mt-4 space-y-1 text-sm">
-            {sectionItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpenMobile(false)}
-                  className="block rounded-lg px-3 py-2 text-[#14213D]/85 transition hover:bg-[#F8F9FB] hover:text-[#F5B041]"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {sectionItems
+              .filter((item) => item.href !== lp("/about/company"))
+              .map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpenMobile(false)}
+                    className="block rounded-lg px-3 py-3 text-[#0A3D2C]/85 transition hover:bg-[#F4F6F5] hover:text-[#D4A017]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
           </ul>
 
           <a
@@ -262,9 +272,9 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpenMobile(false)}
-            className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#22C55E] px-4 py-4 text-base font-bold text-white shadow-md transition hover:bg-[#16A34A]"
+            className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#06C755] px-4 py-4 text-base font-bold text-white shadow-md transition hover:bg-[#05a847]"
           >
-            {t.cta.lineFree}
+            {isJapanese ? "無料相談" : t.cta.lineFree}
           </a>
 
           <div className="mt-3 grid grid-cols-2 gap-2">
@@ -275,7 +285,7 @@ export default function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpenMobile(false)}
-                className="flex items-center justify-center gap-2 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-3 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
+                className="flex items-center justify-center gap-2 rounded-full border border-[rgba(10,61,44,0.12)] px-3 py-3 text-sm font-semibold text-[#0A3D2C]/85 transition hover:border-[#D4A017]/50 hover:text-[#D4A017]"
               >
                 {icon}
                 {label}

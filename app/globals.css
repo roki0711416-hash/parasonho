@@ -430,20 +430,23 @@ body {
    ========================================================= */
 
 :root {
+  /* Deep green × muted Brazil yellow – club-official feel */
   --ps-bg: #ffffff;
-  --ps-bg-subtle: #f8f9fb;
-  --ps-bg-navy: #14213d;
-  --ps-primary: #14213d;
+  --ps-bg-subtle: #f4f6f5;
+  --ps-bg-navy: #0a3d2c;
+  --ps-primary: #0a3d2c;
   --ps-text: #111111;
-  --ps-text-muted: rgba(17, 17, 17, 0.62);
-  --ps-line: rgba(20, 33, 61, 0.08);
-  --ps-line-strong: rgba(20, 33, 61, 0.16);
-  --ps-gold: #f5b041;
-  --ps-gold-hover: #ffc766;
-  --ps-gold-soft: #ffd98a;
-  --ps-gold-deep: #c4842a;
-  --ps-cta: #22c55e;
-  --ps-cta-hover: #16a34a;
+  --ps-text-muted: rgba(17, 17, 17, 0.64);
+  --ps-line: rgba(10, 61, 44, 0.1);
+  --ps-line-strong: rgba(10, 61, 44, 0.18);
+  --ps-gold: #d4a017;
+  --ps-gold-hover: #e8b423;
+  --ps-gold-soft: #f0d78a;
+  --ps-gold-deep: #a67c0f;
+  --ps-cta: #06c755;
+  --ps-cta-hover: #05a847;
+  --ps-green: #0a3d2c;
+  --ps-green-mid: #0f5a40;
 }
 
 .ps-page,
@@ -578,8 +581,57 @@ body {
 
 .ps-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(245, 176, 65, 0.35);
-  box-shadow: 0 20px 44px -24px rgba(20, 33, 61, 0.14);
+  border-color: rgba(212, 160, 23, 0.4);
+  box-shadow: 0 20px 44px -24px rgba(10, 61, 44, 0.16);
+}
+
+/* Club-site flourishes */
+.ps-bg-wordmark {
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-saira), sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: rgba(10, 61, 44, 0.06);
+  text-transform: uppercase;
+}
+
+.ps-slash {
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-slash::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -8%;
+  width: 42%;
+  height: 140%;
+  background: linear-gradient(135deg, transparent 42%, rgba(212, 160, 23, 0.12) 42%, rgba(212, 160, 23, 0.12) 48%, transparent 48%);
+  pointer-events: none;
+}
+
+.ps-diagonal-band {
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+}
+
+.ps-media-zoom {
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .ps-media-zoom {
+  transform: scale(1.05);
+}
+
+.ps-section-tight {
+  position: relative;
+  padding-block: clamp(4rem, 10vw, 7rem);
+}
+
+.font-saira {
+  font-family: var(--font-saira), sans-serif;
 }
 
 .ps-btn-gold {
@@ -793,7 +845,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #f5b041;
+  color: #d4a017;
   white-space: nowrap;
 }
 
@@ -802,8 +854,8 @@ body {
   width: 0.35rem;
   flex-shrink: 0;
   border-radius: 9999px;
-  background: #f5b041;
-  box-shadow: 0 0 8px rgba(245, 176, 65, 0.55);
+  background: #d4a017;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.45);
 }
 
 @keyframes psTickerScroll {
@@ -819,17 +871,17 @@ body {
 .ps-photo-scrim-bottom {
   background: linear-gradient(
     to top,
-    rgba(20, 33, 61, 0.78) 0%,
-    rgba(20, 33, 61, 0.32) 38%,
-    rgba(20, 33, 61, 0.06) 100%
+    rgba(7, 28, 20, 0.82) 0%,
+    rgba(7, 28, 20, 0.36) 40%,
+    rgba(7, 28, 20, 0.08) 100%
   );
 }
 
 .ps-photo-scrim-side {
   background: linear-gradient(
     to right,
-    rgba(20, 33, 61, 0.52) 0%,
-    rgba(20, 33, 61, 0.16) 42%,
+    rgba(7, 28, 20, 0.55) 0%,
+    rgba(7, 28, 20, 0.18) 42%,
     transparent 68%
   );
 }
@@ -838,7 +890,7 @@ body {
   .ps-photo-scrim-side {
     background: linear-gradient(
       to right,
-      rgba(20, 33, 61, 0.28) 0%,
+      rgba(7, 28, 20, 0.32) 0%,
       transparent 52%
     );
   }

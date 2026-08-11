@@ -39,8 +39,8 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
         aria-label={dict.common.selectLanguage}
         className={
           compact
-            ? "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(20,33,61,0.12)] bg-[#F8F9FB] text-[#14213D] transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
-            : "inline-flex items-center gap-1.5 rounded-full border border-[rgba(20,33,61,0.12)] px-3 py-2 text-sm font-semibold text-[#14213D]/85 transition hover:border-[#F5B041]/50 hover:text-[#F5B041]"
+            ? "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(10,61,44,0.12)] bg-[#F4F6F5] text-[#0A3D2C] transition hover:border-[#D4A017]/50 hover:text-[#D4A017]"
+            : "inline-flex items-center gap-1.5 rounded-full border border-[rgba(10,61,44,0.12)] px-3 py-2 text-sm font-semibold text-[#0A3D2C]/85 transition hover:border-[#D4A017]/50 hover:text-[#D4A017]"
         }
       >
         <Globe className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -51,15 +51,15 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
         <ul
           role="listbox"
           aria-label={dict.common.selectLanguage}
-          className="absolute right-0 top-full z-[60] mt-2 max-h-72 w-52 overflow-y-auto rounded-2xl border border-[rgba(20,33,61,0.08)] bg-white py-2 shadow-xl"
+          className="absolute right-0 top-full z-[60] mt-2 max-h-72 w-52 overflow-y-auto rounded-2xl border border-[rgba(10,61,44,0.08)] bg-white py-2 shadow-xl"
         >
           {locales.map((code) => (
             <li key={code} role="option" aria-selected={code === locale}>
               <button
                 type="button"
                 onClick={() => selectLanguage(code)}
-                className={`flex w-full px-4 py-2.5 text-left text-sm transition hover:bg-[#F8F9FB] ${
-                  code === locale ? "font-bold text-[#14213D]" : "text-[#111111]/75"
+                className={`flex w-full px-4 py-2.5 text-left text-sm transition hover:bg-[#F4F6F5] ${
+                  code === locale ? "font-bold text-[#0A3D2C]" : "text-[#111111]/75"
                 }`}
               >
                 {localeNames[code]}
