@@ -7,6 +7,7 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import Reveal from "./Reveal";
 import HomeHero from "./home/HomeHero";
+import TickerBar from "./TickerBar";
 import { clubs } from "../lib/clubs";
 import { GFORM_URL } from "../lib/contact";
 import { LOCAL_NETWORK_CTA_IMAGE } from "../lib/local-network";
@@ -273,15 +274,9 @@ export default function HomePage() {
           programsLabel={isJapanese ? "留学プログラムを見る" : h.hero.viewFlow}
         />
 
-        {/* NEWS – data-ready shell, no fictional articles */}
-        <section id="news" className="border-y border-[rgba(10,61,44,0.08)] bg-[#0A3D2C]">
-          <div className="ps-container py-5 sm:py-6">
-            <p className="text-sm leading-6 text-white/80">
-              {isJapanese
-                ? "最新のお知らせは準備中です。公開され次第、こちらに掲載します。"
-                : "News updates will appear here when published."}
-            </p>
-          </div>
+        {/* NEWS ticker */}
+        <section id="news">
+          <TickerBar />
         </section>
 
         {/* WHY / INTRO */}

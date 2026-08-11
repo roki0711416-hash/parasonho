@@ -52,11 +52,10 @@ const en = {
     ticker: {
       aria: "Announcements",
       items: [
-        "⚽️ Now accepting pro trial participants",
-        "Free consultations available",
-        "🇧🇷 Challenge yourself in Brazil",
-        "Full Japanese-language support",
-        "Regular reports to parents",
+        "⚽ Now recruiting players ready to challenge Brazil!",
+        "🇧🇷 Free consultations for short, mid, and long-term programs",
+        "🤝 Local staff support training and daily life 24/7",
+        "🔥 Experience world-class football at clubs in Brazil",
       ],
     },
   },

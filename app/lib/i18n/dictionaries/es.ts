@@ -52,11 +52,10 @@ const es = {
     ticker: {
       aria: "Avisos",
       items: [
-        "⚽️ Inscripciones abiertas para prueba profesional",
-        "Consultas gratuitas disponibles",
-        "🇧🇷 Desafíate en Brasil",
-        "Apoyo en japonés disponible",
-        "Informes regulares a los padres",
+        "⚽ ¡Reclutando jugadores para desafiar Brasil!",
+        "🇧🇷 Consultas gratuitas para programas corto, medio y largo",
+        "🤝 El staff local apoya entrenamientos y vida diaria 24h",
+        "🔥 Vive el fútbol de nivel mundial en clubes de Brasil",
       ],
     },
   },

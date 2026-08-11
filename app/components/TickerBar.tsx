@@ -2,7 +2,7 @@
 
 import { useI18n } from "../lib/i18n/I18nProvider";
 
-function TickerContent({ items }: { items: string[] }) {
+function TickerContent({ items }: { items: readonly string[] }) {
   return (
     <>
       {items.map((item) => (
@@ -17,15 +17,19 @@ function TickerContent({ items }: { items: string[] }) {
 
 export default function TickerBar() {
   const { dict } = useI18n();
+  const items = dict.common.ticker.items;
 
   return (
-    <div className="ps-ticker border-y border-[#F5B041]/15 bg-[#14213D]" aria-label={dict.common.ticker.aria}>
+    <div
+      className="ps-ticker border-y border-[rgba(10,61,44,0.12)] bg-[#0A3D2C]"
+      aria-label={dict.common.ticker.aria}
+    >
       <div className="ps-ticker-track">
-        <div className="ps-ticker-group" aria-hidden="true">
-          <TickerContent items={dict.common.ticker.items} />
+        <div className="ps-ticker-group">
+          <TickerContent items={items} />
         </div>
         <div className="ps-ticker-group" aria-hidden="true">
-          <TickerContent items={dict.common.ticker.items} />
+          <TickerContent items={items} />
         </div>
       </div>
     </div>
