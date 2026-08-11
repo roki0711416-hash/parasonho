@@ -10,22 +10,22 @@ const SLIDES = [
   {
     src: "/images/ヒーロー画像.png",
     alt: "スタジアムへ向かうサッカー選手",
-    position: "object-[center_35%]",
+    position: "object-[center_28%]",
   },
   {
     src: "/images/local-network/cta-background.webp",
     alt: "提携クラブ関係者との交流風景",
-    position: "object-[center_30%]",
+    position: "object-[center_18%]",
   },
   {
     src: "/images/IMG_5800.jpg",
     alt: "ブラジル現地でのトレーニング風景",
-    position: "object-[center_40%]",
+    position: "object-[center_35%]",
   },
   {
     src: "/images/clubs/apafut/grass-field.jpg",
     alt: "APAFUTの天然芝グラウンド",
-    position: "object-center",
+    position: "object-[center_40%]",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function HomeHero({
             fill
             priority={i === 0}
             sizes="100vw"
-            className={`object-cover ${slide.position} scale-105`}
+            className={`object-cover ${slide.position}`}
           />
         </div>
       ))}

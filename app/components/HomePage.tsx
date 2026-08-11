@@ -21,42 +21,42 @@ const STRENGTHS = [
     title: "現地スタッフによる24時間サポート",
     description: "滞在中の生活・練習・トラブル対応まで、現地スタッフが24時間体制で支えます。",
     image: "/images/local-network/05-apafut-facility.webp",
-    position: "object-[center_28%]",
+    position: "object-[32%_18%]",
   },
   {
     no: "02",
     title: "練習・試合・日常生活での通訳",
     description: "日本語とポルトガル語で、クラブや生活のやり取りをスムーズにサポートします。",
     image: "/images/staff/kevin-matsunaga.jpg",
-    position: "object-[center_20%]",
+    position: "object-[center_12%]",
   },
   {
     no: "03",
     title: "ブラジルの提携クラブでの実戦機会",
     description: "トレーニングだけで終わらず、提携クラブと連携して試合経験を積めるよう調整します。",
     image: "/images/clubs/apafut/grass-field.jpg",
-    position: "object-center",
+    position: "object-[center_40%]",
   },
   {
     no: "04",
     title: "元プロ選手・現地アドバイザーによるサポート",
     description: "ブラジルサッカー界の経験を持つアドバイザーが、プレーや進路の相談に応じます。",
     image: "/images/local-network/03-wellington-advisor.webp",
-    position: "object-top",
+    position: "object-[center_8%]",
   },
   {
     no: "05",
     title: "保護者への定期的な状況報告",
     description: "遠方でも安心できるよう、滞在中の様子を保護者の方へ定期的に共有します。",
     image: "/images/local-network/06-paulo-miranda-exchange.webp",
-    position: "object-[center_25%]",
+    position: "object-[center_12%]",
   },
   {
     no: "06",
     title: "ポルトガル語と生活面のサポート",
     description: "言語の壁を減らし、買い物や手続きなど日常生活も安心して過ごせる環境を整えます。",
     image: "/images/local-network/02-apafut-trust.webp",
-    position: "object-top",
+    position: "object-[center_8%]",
   },
 ] as const;
 
@@ -68,6 +68,7 @@ const PROGRAMS = [
     description: "長期休みなどを活用し、本場ブラジルの練習環境を体験したい選手向け。",
     points: ["現地クラブ練習参加", "生活サポート", "空港送迎"],
     image: "/images/local-network/01-paulo-miranda-partnership.webp",
+    position: "object-[center_22%]",
     href: "#plans",
   },
   {
@@ -77,6 +78,7 @@ const PROGRAMS = [
     description: "実戦的なトレーニングを通じて、本気でレベルアップをめざす選手向け。",
     points: ["実戦的トレーニング", "語学サポート", "現地サポート"],
     image: "/images/clubs/paulo-miranda/artificial-turf.jpg",
+    position: "object-center",
     href: "#plans",
   },
   {
@@ -86,6 +88,7 @@ const PROGRAMS = [
     description: "継続的な現地サポートのもと、本格的に海外で勝負したい選手向け。",
     points: ["継続的な現地サポート", "進路相談", "定期面談"],
     image: "/images/clubs/apafut/covered-turf.jpg",
+    position: "object-center",
     href: "#plans",
   },
   {
@@ -95,6 +98,7 @@ const PROGRAMS = [
     description: "プロ契約・上位カテゴリ昇格をめざす選手向けの入団テストサポート。",
     points: ["受験クラブ選定", "テスト帯同", "契約交渉サポート"],
     image: "/images/local-network/04-santos-player-1.webp",
+    position: "object-[center_12%]",
     href: "/plans/pro-test",
   },
 ] as const;
@@ -200,7 +204,7 @@ function ChallengeCta({ id }: { id?: string }) {
           alt="ブラジル現地での挑戦の風景"
           fill
           sizes="100vw"
-          className="object-cover object-[center_32%]"
+          className="object-cover object-[center_20%]"
         />
         <div className="absolute inset-0 bg-[#061910]/78" aria-hidden="true" />
       </div>
@@ -307,7 +311,7 @@ export default function HomePage() {
                     alt="留学コーディネーター清水裕基"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-[center_18%]"
+                    className="object-cover object-[center_12%]"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#061910]/85 to-transparent p-6">
                     <p className="text-xs font-bold tracking-[0.2em] text-[#E8B423]">COORDINATOR</p>
@@ -365,7 +369,7 @@ export default function HomePage() {
               {STRENGTHS.map((item, i) => (
                 <Reveal key={item.no} delay={i * 60}>
                   <article className="group ps-card h-full overflow-hidden p-0">
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[5/4]">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -406,13 +410,13 @@ export default function HomePage() {
               {PROGRAMS.map((program, i) => (
                 <Reveal key={program.id} delay={i * 70}>
                   <article className="group ps-card flex h-full flex-col overflow-hidden p-0">
-                    <div className="relative aspect-[16/9] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[16/9]">
                       <Image
                         src={program.image}
                         alt={program.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="ps-media-zoom object-cover object-center"
+                        className={`ps-media-zoom object-cover ${program.position}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061910]/7 to-transparent" />
                       <p className="absolute left-5 top-5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-[#0A3D2C]">
